@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" type="image/svg+xml" href="/stock-dashboard/favicon.svg">
+<title>2026-04-03-morning</title>
+<style>:root {
+  --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a;
+  --text: #e1e4ed; --muted: #8b8fa3; --accent: #6c8aff;
+  --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px; }
+header { padding: 24px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+header h1 { font-size: 1.4rem; font-weight: 600; }
+header .date { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+.card h2 { font-size: 1.1rem; margin-bottom: 14px; color: var(--accent); }
+.card h3 { font-size: 0.95rem; margin: 18px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 8px 0; }
+th { background: #22252f; color: var(--muted); text-align: left; padding: 8px 10px; font-weight: 500; white-space: nowrap; }
+td { padding: 7px 10px; border-top: 1px solid var(--border); white-space: nowrap; }
+tr:hover td { background: #1f2230; }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+.warn { color: var(--orange); }
+ul { padding-left: 20px; margin: 8px 0; }
+li { margin: 4px 0; }
+p { margin: 6px 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.report-list { list-style: none; padding: 0; }
+.report-list li { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.report-list li:last-child { border-bottom: none; }
+.report-list .type { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: #22252f; color: var(--muted); }
+.report-list .type.morning { color: var(--orange); border: 1px solid var(--orange); }
+.report-list .type.evening { color: var(--accent); border: 1px solid var(--accent); }
+.report-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8rem; }
+.report-controls select { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 0.8rem; cursor: pointer; }
+.report-pager { display: flex; gap: 6px; align-items: center; }
+.report-pager button { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.8rem; cursor: pointer; }
+.report-pager button:hover { background: var(--border); }
+.report-pager button:disabled { opacity: 0.3; cursor: default; }
+.report-pager button:disabled:hover { background: #22252f; }
+.report-pager .page-info { color: var(--muted); font-size: 0.75rem; }
+.back { display: inline-block; margin-bottom: 16px; color: var(--muted); font-size: 0.85rem; }
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.summary-item { background: #22252f; border-radius: 8px; padding: 14px; }
+.summary-item .label { color: var(--muted); font-size: 0.75rem; margin-bottom: 4px; }
+.summary-item .value { font-size: 1.2rem; font-weight: 600; }
+@media (max-width: 600px) {
+  table { font-size: 0.78rem; }
+  td, th { padding: 6px 6px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="../index.html">&larr; 대시보드</a>
+<header><h1>장 시작 전 브리핑 [2026-04-03]</h1></header>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>가격 기준: <strong>전일 종가</strong> (2026-04-02) | 동시호가 예상가 미제공</p>
+</blockquote>
+<div class="card"><h2>해외증시 (2026-04-02 마감)</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>지수</th><th>종가</th><th>등락률</th></tr></thead><tbody><tr><td>다우존스</td><td>46,504.67</td><td><span class="neg">-0.13%</span></td></tr><tr><td>S&P 500</td><td>6,582.69</td><td><span class="pos">+0.11%</span></td></tr><tr><td>나스닥</td><td>21,879.18</td><td><span class="pos">+0.18%</span></td></tr><tr><td>WTI 유가</td><td>$111.54/bbl</td><td><strong><span class="pos">+11.41%</span></strong></td></tr></tbody></table></div>
+<p><strong>배경:</strong> 트럼프 "2~3주 내 이란 극도로 강타" 발언 → WTI 2022년 6월 이후 최고. 장중 급락 후 이란-오만 호르무즈 협의 소식에 반등, 혼조 마감. 테슬라 <span class="neg">-5.44%</span>(1Q 출하 부진) / 엔비디아 <span class="pos">+0.93%</span> / MS <span class="pos">+1.11%</span>.</p>
+</div>
+<div class="card"><h2>오늘 핵심 포인트</h2>
+<ol style="padding-left:20px;margin:8px 0;">
+<li><strong>코스피 <span class="neg">-4.47%</span>(5,234), 코스닥 <span class="neg">-5.36%</span>(1,056) 급락·사이드카 발동</strong> — 트럼프 이란 강공 발언으로 종전 기대 소멸. 원/달러 18원 급등, 외국인 수급 부담.</li>
+<li><strong>고유가 장기화 리스크</strong> — WTI 111달러대 안착 시 인플레이션·성장 우려 동반. 에너지 인프라(전력망)는 단기 수혜 가능.</li>
+<li><strong>오늘 전망</strong> — 호르무즈 협의 결과·미국 추가 군사행동 여부가 핵심 변수. 코스피 5,000선 지지 공방 예상. 낙폭 과대 반도체·바이오 반등 주시.</li>
+</ul>
+</div>
+<div class="card"><h2>보유종목 점검</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>평균단가</th><th>전일종가</th><th>수익률</th><th>5일MA</th><th>20일MA</th><th>RSI(14)</th><th>추세</th><th>뉴스·신호</th></tr></thead><tbody><tr><td>유진투자증권</td><td>5,458</td><td>4,415</td><td><span class="neg">-19.1%</span></td><td>4,654</td><td>4,876</td><td>36.8</td><td>하락</td><td>중립 / 지지선(4,365) 근접</td></tr><tr><td>보성파워텍</td><td>11,061</td><td>9,220</td><td><span class="neg">-16.6%</span></td><td>9,756</td><td>10,978</td><td>35.6</td><td>하락</td><td>중립 / 전력망 기대 유효, 대형수주 미확인</td></tr><tr><td>비츠로테크</td><td>11,137</td><td>11,200</td><td><span class="pos">+0.6%</span></td><td>11,402</td><td>11,080</td><td>46.9</td><td>횡보</td><td>중립 / 방산 모멘텀 유지, MA5>MA20</td></tr><tr><td>에코프로</td><td>169,486</td><td>142,400</td><td><span class="neg">-16.0%</span></td><td>145,340</td><td>151,610</td><td>42.8</td><td>하락</td><td>호재 / 전사업장 흑자전환 목표·헝가리 2Q 양산</td></tr><tr><td>한라캐스트</td><td>18,521</td><td>13,800</td><td><span class="neg">-25.5%</span></td><td>14,470</td><td>15,674</td><td>39.6</td><td>하락</td><td>호재 / 수주잔고 1조·휴머노이드 부품 연내 양산</td></tr><tr><td>에이비엘바이오</td><td>191,320</td><td>159,800</td><td><span class="neg">-16.5%</span></td><td>171,480</td><td>181,105</td><td>39.7</td><td>하락</td><td>호재 / AACR2026 발표·FDA IND 완료 / <strong>지지선근접+거래량급증(1.68x)</strong></td></tr><tr><td>현대차</td><td>458,500</td><td>465,500</td><td><span class="pos">+1.5%</span></td><td>472,700</td><td>504,825</td><td>45.1</td><td>하락</td><td>호재 / 美관세 15%+1Q美판매 역대최고·하이브리드 53%↑</td></tr><tr><td>삼성전자</td><td>187,300</td><td>178,400</td><td><span class="neg">-4.8%</span></td><td>178,240</td><td>186,915</td><td>46.2</td><td>하락</td><td>호재 / HBM4 양산출하·시총 700조 목전</td></tr><tr><td>이수페타시스</td><td>102,900</td><td>101,800</td><td><span class="neg">-1.1%</span></td><td>104,700</td><td>112,690</td><td>46.2</td><td>하락</td><td>호재 / 엔비디아향 MLB 메인벤더·800G수주 목표가 160,000</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>목표가·손절가 점검</h2>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>전 종목 target_price/stop_loss = null → 기술적 분석 기반 제안</p>
+</blockquote>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>전일종가</th><th>목표가(제안)</th><th>손절가(제안)</th><th>지지선</th><th>저항선</th><th>상태</th></tr></thead><tbody><tr><td>유진투자증권</td><td>4,415</td><td>5,340</td><td>4,150</td><td>4,365</td><td>5,340</td><td>지지선(4,365) 50p 위 — 손절 근접</td></tr><tr><td>보성파워텍</td><td>9,220</td><td>11,500</td><td>8,500</td><td>8,800</td><td>13,800</td><td>지지선 420p 위</td></tr><tr><td>비츠로테크</td><td>11,200</td><td>12,990</td><td>10,200</td><td>9,250</td><td>12,990</td><td>안정권, 보유 유지</td></tr><tr><td>에코프로</td><td>142,400</td><td>165,000</td><td>132,000</td><td>138,500</td><td>174,900</td><td>지지선 3,900p 위</td></tr><tr><td>한라캐스트</td><td>13,800</td><td>16,500</td><td>12,800</td><td>13,340</td><td>17,550</td><td>지지선 460p 위 — 모니터링</td></tr><tr><td>에이비엘바이오</td><td>159,800</td><td>190,000</td><td>150,000</td><td>157,000</td><td>199,900</td><td>지지선(157,000) 근접 — 집중 모니터링</td></tr><tr><td>현대차</td><td>465,500</td><td>510,000</td><td>435,000</td><td>445,000</td><td>564,000</td><td>평단 상회 유일 대형주</td></tr><tr><td>삼성전자</td><td>178,400</td><td>200,000</td><td>160,000</td><td>167,000</td><td>209,000</td><td>MA5 돌파 여부 주시</td></tr><tr><td>이수페타시스</td><td>101,800</td><td>120,000</td><td>93,000</td><td>96,300</td><td>132,500</td><td>평단 근접</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>매수 후보 TOP 3</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>순위</th><th>종목</th><th>섹터</th><th>전일종가</th><th>5일MA</th><th>20일MA</th><th>RSI(14)</th><th>선별 이유</th><th>추천매수구간</th><th>뉴스 요약</th></tr></thead><tbody><tr><td>1</td><td><strong>엘앤씨바이오</strong> (290650)</td><td>바이오_제약</td><td>66,600</td><td>69,200</td><td>75,775</td><td><strong>27.5</strong></td><td>RSI 과매도 최강(27.5), 지지선(65,000) 근접, 고점대비 <span class="neg">-24.8%</span> 급락 후 반등 구간</td><td>65,000~66,950</td><td>2025년 매출 855억·리투오 2026년 500억 목표, 중국 현지생산 투트랙 [호재]</td></tr><tr><td>2</td><td><strong>HPSP</strong> (403870)</td><td>반도체</td><td>40,850</td><td>42,860</td><td>45,750</td><td>42.0</td><td>지지선(40,350) 500p 위, 고점대비 <span class="neg">-24.2%</span>, 특허분쟁 종료로 수주 재개</td><td>40,350~41,560</td><td>예스티 특허분쟁 사실상 종결, 2026년 고객사 4개+ 확대, 영업이익 컨센 <span class="pos">+34%</span> [호재]</td></tr><tr><td>3</td><td><strong>에스피지</strong> (058610)</td><td>로봇_자동화</td><td>107,800</td><td>108,400</td><td>119,945</td><td>41.3</td><td>거래량 급증(1.79x), 고점대비 <span class="neg">-25.4%</span>, 피지컬AI 로봇 감속기 유일 3종 독자생산 수혜주</td><td>101,500~104,545</td><td>레인보우로보틱스향 공급 확대·국방 수주 다변화·2026 감속기 매출 300억+ [호재]</td></tr></tbody></table></div>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>⚠️ 레인보우로보틱스(277810): RSI 과매도이나 검찰 미공개정보 수사 진행 중 → 법적 리스크로 제외</p>
+</blockquote>
+</div>
+<div class="card"><h2>오늘의 액션 플랜</h2>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>Cash: <strong>107,359원</strong> (소규모 신규 매수 가능 — 엘앤씨바이오 1주 66,600원 시 잔여 40,759원)</p>
+</blockquote>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>액션</th><th>추천시간대</th><th>목표가격</th><th>수량·비중</th><th>근거</th></tr></thead><tbody><tr><td><strong>에이비엘바이오</strong></td><td>지지선 모니터링</td><td>9:00~9:30</td><td>157,000 하회 시 손절 검토</td><td>5주 보유 유지</td><td>지지선(157,000) 2,800p 여유, 거래량급증+AACR 호재 vs 하락 추세 충돌</td></tr><tr><td><strong>한라캐스트</strong></td><td>지지선 모니터링</td><td>9:00~9:30</td><td>13,340 하회 시 손절 검토</td><td>11주 보유 유지</td><td>지지선(13,340) 460p 위, <span class="neg">-25.5%</span> 손실 중</td></tr><tr><td><strong>엘앤씨바이오</strong></td><td>신규 소량 매수 검토</td><td>10:00 이후</td><td>65,000~66,950</td><td>1주 (cash 66,600 사용)</td><td>RSI 27.5 과매도+지지선근접+실적 호재. 단 시장 하락 지속 시 진입 보류</td></tr><tr><td><strong>삼성전자</strong></td><td>보유 관찰</td><td>—</td><td>—</td><td>1주 보유</td><td>MA5(178,240)≈현가, 돌파 시 반등 신호</td></tr><tr><td><strong>기타 보유 전종목</strong></td><td>보유 유지</td><td>—</td><td>—</td><td>—</td><td>하락 추세+지정학 미해소, 손절선 도달 전 보유</td></tr></tbody></table></div>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p><strong>기본 스탠스: 방어적 관망</strong> — 이란 지정학 리스크 미해소, 고유가 충격 진행 중. 코스피 5,000 지지 여부 오전 확인 후 대응.</p>
+</blockquote>
+</div>
+<div class="card"><h2>전략 요약</h2>
+<p>트럼프 이란 강공 발언·고유가(WTI 111달러)로 코스피가 전일 <span class="neg">-4.47%</span> 급락한 상황에서 오늘도 변동성 확대가 예상된다. 에이비엘바이오·한라캐스트 지지선 이탈 모니터링이 최우선이며, RSI 27.5 과매도권에 진입한 엘앤씨바이오는 지지선(65,000) 확인 시 cash 한도 내 소량 진입을 검토한다.</p>
+</div>
+</div>
+</body>
+</html>

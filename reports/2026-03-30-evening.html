@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" type="image/svg+xml" href="/stock-dashboard/favicon.svg">
+<title>2026-03-30-evening</title>
+<style>:root {
+  --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a;
+  --text: #e1e4ed; --muted: #8b8fa3; --accent: #6c8aff;
+  --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px; }
+header { padding: 24px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+header h1 { font-size: 1.4rem; font-weight: 600; }
+header .date { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+.card h2 { font-size: 1.1rem; margin-bottom: 14px; color: var(--accent); }
+.card h3 { font-size: 0.95rem; margin: 18px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 8px 0; }
+th { background: #22252f; color: var(--muted); text-align: left; padding: 8px 10px; font-weight: 500; white-space: nowrap; }
+td { padding: 7px 10px; border-top: 1px solid var(--border); white-space: nowrap; }
+tr:hover td { background: #1f2230; }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+.warn { color: var(--orange); }
+ul { padding-left: 20px; margin: 8px 0; }
+li { margin: 4px 0; }
+p { margin: 6px 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.report-list { list-style: none; padding: 0; }
+.report-list li { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.report-list li:last-child { border-bottom: none; }
+.report-list .type { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: #22252f; color: var(--muted); }
+.report-list .type.morning { color: var(--orange); border: 1px solid var(--orange); }
+.report-list .type.evening { color: var(--accent); border: 1px solid var(--accent); }
+.report-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8rem; }
+.report-controls select { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 0.8rem; cursor: pointer; }
+.report-pager { display: flex; gap: 6px; align-items: center; }
+.report-pager button { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.8rem; cursor: pointer; }
+.report-pager button:hover { background: var(--border); }
+.report-pager button:disabled { opacity: 0.3; cursor: default; }
+.report-pager button:disabled:hover { background: #22252f; }
+.report-pager .page-info { color: var(--muted); font-size: 0.75rem; }
+.back { display: inline-block; margin-bottom: 16px; color: var(--muted); font-size: 0.85rem; }
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.summary-item { background: #22252f; border-radius: 8px; padding: 14px; }
+.summary-item .label { color: var(--muted); font-size: 0.75rem; margin-bottom: 4px; }
+.summary-item .value { font-size: 1.2rem; font-weight: 600; }
+@media (max-width: 600px) {
+  table { font-size: 0.78rem; }
+  td, th { padding: 6px 6px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="../index.html">&larr; 대시보드</a>
+<p># 장 마감 결산 2026-03-30</p>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p><strong>데이터 주의:</strong> latest_prices.json이 KST 08:49 수집분 (장 시작 전)으로 3/30 당일 종가는 파일에 미포함(volume=0 플레이스홀더). 에코프로는 웹검색 장중 범위(112,900~119,600) 기반 추정, 에이비엘바이오는 웹검색 현재가(190,500) 기반, 나머지 4종목은 KOSPI/KOSDAQ 낙폭(<span class="neg">-4%</span>) 비례 추정.</p>
+</blockquote>
+<header><h1>시장 마감</h1></header>
+<div style="overflow-x:auto;"><table><thead><tr><th>지수</th><th>종가</th><th>전일대비</th><th>등락률</th></tr></thead><tbody><tr><td>KOSPI</td><td>5,207</td><td>-231.87</td><td><span class="neg">-4.27%</span></td></tr><tr><td>KOSDAQ</td><td>1,101</td><td>-40.51</td><td><span class="neg">-3.55%</span></td></tr><tr><td>원/달러</td><td>1,515.2원</td><td>+6.3</td><td><span class="pos">+0.42%</span></td></tr></tbody></table></div>
+<p><strong>핵심 이슈:</strong></p>
+<ol style="padding-left:20px;margin:8px 0;">
+<li><strong>미·이란 전쟁 격화</strong> — 트럼프 지상군 투입 가능성 언급, 에너지 인프라 공격 중단 10일 연장(→4월 초)</li>
+<li><strong>구글 '터보퀀트' 쇼크</strong> — AI 연산 압축 알고리즘으로 HBM 의존도 저감 가능→ 반도체·배터리 동반 급락</li>
+<li><strong>외국인 이탈 지속</strong> — 1개월 누적 순매도 36.9조원, 삼성전자 외국인 지분율 48.9%(2013년 이후 최저)</li>
+</ul>
+<header><h1>포트폴리오 요약</h1></header>
+<div style="overflow-x:auto;"><table><thead><tr><th>항목</th><th>금액</th></tr></thead><tbody><tr><td>총 평가금액 (주식)</td><td>3,745,710원</td></tr><tr><td>총 매입금액 (주식)</td><td>4,383,117원</td></tr><tr><td>총 평가손익</td><td><strong>-637,407원</strong></td></tr><tr><td>총 수익률</td><td><strong><span class="neg">-14.54%</span></strong></td></tr><tr><td>주문가능금액 (cash)</td><td>30,459원</td></tr><tr><td>총 자산 (주식+현금)</td><td>3,776,169원</td></tr></tbody></table></div>
+<header><h1>보유 종목 오늘 성과</h1></header>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>평균단가</th><th>오늘종가</th><th>수익률</th><th>당일등락</th><th>평가금액</th><th>평가손익</th></tr></thead><tbody><tr><td>유진투자증권</td><td>5,572</td><td>4,760*</td><td><span class="neg">-14.57%</span></td><td><span class="neg">-4.03%</span>*</td><td>761,600</td><td>-129,920</td></tr><tr><td>보성파워텍</td><td>11,264</td><td>9,770*</td><td><span class="neg">-13.27%</span></td><td><span class="neg">-4.03%</span>*</td><td>683,900</td><td>-104,580</td></tr><tr><td>비츠로테크</td><td>11,137</td><td>10,980*</td><td><span class="neg">-1.41%</span></td><td><span class="neg">-4.02%</span>*</td><td>351,360</td><td>-5,024</td></tr><tr><td>에코프로</td><td>169,486</td><td>119,000†</td><td><span class="neg">-29.79%</span></td><td><strong><span class="neg">-20.13%</span>†</strong></td><td>833,000</td><td>-353,402</td></tr><tr><td>한라캐스트</td><td>18,521</td><td>14,850*</td><td><span class="neg">-19.82%</span></td><td><span class="neg">-4.01%</span>*</td><td>163,350</td><td>-40,381</td></tr><tr><td>에이비엘바이오</td><td>191,320</td><td>190,500‡</td><td><span class="neg">-0.43%</span></td><td><strong><span class="pos">+5.77%</span>‡</strong></td><td>952,500</td><td>-4,100</td></tr></tbody></table></div>
+<p>`*` 추정 (KOSPI/KOSDAQ <span class="neg">-4%</span> 기준) | `†` 웹검색 장중범위 112,900~119,600 기반 추정 | `‡` 웹검색 현재가 기반</p>
+<header><h1>기술적 분석 요약</h1></header>
+<p>*(20일 일별 데이터 직접 계산. 오늘 추정 종가 포함)*</p>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>5일MA</th><th>20일MA</th><th>RSI(14)</th><th>추세</th><th>특이신호</th></tr></thead><tbody><tr><td>유진투자증권</td><td>4,984</td><td>4,889</td><td>49</td><td>횡보</td><td>5MA>20MA 유지. 지지선(4,930) 이탈 경계</td></tr><tr><td>보성파워텍</td><td>10,918</td><td>10,994</td><td>47</td><td>하락</td><td><strong>5MA<20MA 데드크로스 형성.</strong> 지지선(10,180) 이탈</td></tr><tr><td>비츠로테크</td><td>11,652</td><td>10,748</td><td>61</td><td>하락</td><td>5MA>20MA 유지. 12,080 고점 후 3연속 하락. RSI는 아직 양호</td></tr><tr><td>에코프로</td><td>146,980</td><td>153,321</td><td><strong>25</strong></td><td>급락</td><td><strong>RSI 과매도 진입. 전 저점(139,600) 붕괴. 52주 최저권</strong></td></tr><tr><td>한라캐스트</td><td>15,898</td><td>15,885</td><td>45</td><td>하락</td><td>5MA≈20MA 수렴 후 동반 하향. 52주 저점 근접</td></tr><tr><td>에이비엘바이오</td><td>174,800</td><td>182,074</td><td>54</td><td>상승</td><td>시장 역행 상승. 3/23 저점(168,800) 이후 반등세 유지</td></tr></tbody></table></div>
+<ul>
+<li><strong>지지/저항 요약:</strong></li>
+<li>유진투자증권 지지 4,700~4,800 / 저항 5,120~5,240</li>
+<li>보성파워텍 지지 9,400~9,600 / 저항 10,630~11,000</li>
+<li>비츠로테크 지지 10,748(20MA) / 저항 12,080</li>
+<li>에코프로 지지 112,000~113,000 / 저항 139,600</li>
+<li>한라캐스트 지지 14,200~14,500 / 저항 15,470~15,540</li>
+<li>에이비엘바이오 지지 172,300~174,800 / 저항 190,000~195,500</li>
+</ul>
+<header><h1>오늘 핵심 뉴스</h1></header>
+<p><strong>보성파워텍 (006910):</strong></p>
+<ul>
+<li>한국전력공사와 234억원 규모 동해안-신가평 송전선로 강관철탑 공급계약 기체결. 2030년까지 154kV 이상 3,000km 증설 정책 유효.</li>
+<li>2025년 3분기 누적 영업이익 <span class="pos">+1,594%</span>, 매출 <span class="pos">+157.9%</span>. 오늘 하락은 심리 요인, 펀더멘털 변화 없음.</li>
+<li>[관련: 보성파워텍 1만2,700원 기록 VI 발동 기사 — CBC뉴스]</li>
+</ul>
+<p><strong>에코프로 (086520):</strong></p>
+<ul>
+<li>오늘 장중 시가 114,600원(<span class="neg">-23%</span>), 범위 112,900~119,600원. 배터리 섹터 전반 타격.</li>
+<li>KB증권 "에코프로비엠 1분기 실적 우려 대비 양호" 유지. 수급 악화가 주가 주도.</li>
+</ul>
+<p><strong>에이비엘바이오 (298380):</strong></p>
+<ul>
+<li>급락장에도 단독 상승 추정(<span class="pos">+5.8%</span>). Grabody 플랫폼 기반 이중항체 파이프라인·글로벌 빅파마 파트너십 지속 부각. 구체적 촉매 별도 확인 필요.</li>
+</ul>
+<p><strong>유진투자증권 / 비츠로테크 / 한라캐스트:</strong></p>
+<ul>
+<li>별도 특이 뉴스 없음. 시장 하락 동반.</li>
+</ul>
+<header><h1>목표가·손절가 상태</h1></header>
+<p>*(기존 모두 null → 기술적 분석 기반 신규 제안)*</p>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>오늘종가</th><th>제안 목표가</th><th>제안 손절가</th><th>상태</th></tr></thead><tbody><tr><td>유진투자증권</td><td>4,760</td><td>5,120</td><td>4,600</td><td>⚠️ <span class="neg">-14.6%</span> 손실. 손절선(-7~10%) 이미 초과. 4,600 이탈 시 손절 필수</td></tr><tr><td>보성파워텍</td><td>9,770</td><td>11,000</td><td>9,400</td><td>⚠️ <span class="neg">-13.3%</span> 손실. 데드크로스. 9,400 이탈 시 손절</td></tr><tr><td>비츠로테크</td><td>10,980</td><td>12,000</td><td>10,500</td><td>✅ <span class="neg">-1.4%</span> 손실로 상대적 양호. 10,748(20MA) 이탈 주의</td></tr><tr><td>에코프로</td><td>119,000</td><td>139,600</td><td>112,000</td><td>🔴 <span class="neg">-29.8%</span> 대손실. RSI 25 과매도. 112,900 저점 이탈 시 즉시 손절</td></tr><tr><td>한라캐스트</td><td>14,850</td><td>16,500</td><td>14,200</td><td>⚠️ <span class="neg">-19.8%</span> 손실. 손절선 초과. 14,200 이탈 시 손절</td></tr><tr><td>에이비엘바이오</td><td>190,500</td><td>195,500</td><td>172,300</td><td>✅ <span class="neg">-0.4%</span> 거의 손익분기. 172,300(최근 지지선) 이탈 시 손절</td></tr></tbody></table></div>
+<header><h1>관심 종목 동향</h1></header>
+<p><strong>바이오 섹터 — 주목:</strong></p>
+<p>에이비엘바이오 시장 역행 상승(<span class="pos">+5.8%</span> 추정). 바이오 관심 종목(삼천당제약, 한미약품, 디앤디파마텍) 상대적 방어 가능성. 단, 시장 전반 하락이므로 개별 촉매 확인 필요.</p>
+<p><strong>전력망 섹터 — 하락 후 구조적 테마 유효:</strong></p>
+<p>보성파워텍 <span class="neg">-4%</span> 추정. 비츠로테크 <span class="neg">-4%</span> 추정. 정부 HVDC 확충, 데이터센터 전력 수요는 구조적 변화 없음. 단기 투심 악화는 매수 기회 탐색 구간.</p>
+<p><strong>반도체 섹터 — 직격탄:</strong></p>
+<p>구글 터보퀀트 발표로 삼성전자·한미반도체·HPSP 등 낙폭 클 것으로 추정. RSI 과매도 구간 진입 종목 증가 → 다음 주 반등 모멘텀 가능.</p>
+<p><strong>배터리 섹터 — 과매도:</strong></p>
+<p>에코프로 <span class="neg">-20%</span>대, 에코프로비엠·포스코퓨처엠 동반 급락 추정. RSI 25-30 과매도 구간. 협박장 속 저점매수 기회를 노리는 개인 매수세 유입 가능성.</p>
+<header><h1>매수/매도 검토 의견</h1></header>
+<p><strong>에코프로 (086520) — 과매도 반등 탐색:</strong></p>
+<ul>
+<li>RSI 25 (과매도). 장중 저점 112,900 근접. 오늘 당일등락 <span class="neg">-20%</span> → 단기 기술적 반등 가능성.</li>
+<li>단, 트렌드는 여전히 하락. 추세 전환 확인 전 풀매수 금지.</li>
+<li><strong>분할매수 전략(피라미딩):</strong> ①120,000원 이상 안정 및 거래량 증가 확인 시 1차(현금 전액 1주 = ~119,000원, 거의 소진). ②130,000원 돌파 확인 시 추가 고려(현금 부족, 타 종목 일부 정리 후).</li>
+<li><strong>현재 cash 30,459원으로는 0.25주 이하 → 사실상 신규 매수 불가.</strong> 관망.</li>
+</ul>
+<p><strong>에이비엘바이오 (298380) — 195,500 저항 돌파 시 일부 차익:</strong></p>
+<ul>
+<li>시장 역행 상승 중(<span class="pos">+5.8%</span> 추정). 거의 손익분기(<span class="neg">-0.4%</span>).</li>
+<li>195,500원(저항선=3/18 고점) 이상 안착 시 → 1주(20%) 분할 매도 검토.</li>
+<li>172,300원(지지선=20MA 부근) 이탈 시 손절.</li>
+</ul>
+<p><strong>유진투자증권·보성파워텍·한라캐스트 — 오늘 추가 매매 없음:</strong></p>
+<ul>
+<li>세 종목 모두 평균단가 대비 -13~<span class="neg">-20%</span> 손실로 손절선 초과 상태.</li>
+<li>반등 신호 없이 물타기 불가. 시장 안정화 확인 후 재평가.</li>
+<li>손절가(각각 4,600 / 9,400 / 14,200) 이탈 시 즉시 손절 실행.</li>
+</ul>
+<header><h1>내일 전략 포인트</h1></header>
+<ol style="padding-left:20px;margin:8px 0;">
+<li><strong>미·이란 협상 동향</strong> (최우선) — 에너지 공격 중단 협정 4월 초까지. 주말 협상 결과가 화요일(4/1) 장 방향 결정.</li>
+<li><strong>에코프로 112,900 지지 여부</strong> — 오늘 저점이 최종 저점인지 확인. 이탈 시 추가 손실 확대.</li>
+<li><strong>에이비엘바이오 상승 지속성 확인</strong> — 특이 촉매 공시 여부 체크. 195,500 돌파 시 1주 매도 실행.</li>
+<li><strong>미국 나스닥/S&P500 오늘 밤 마감</strong> — 터보퀀트 쇼크 후 반도체(엔비디아 등) 반응이 내일 국내 반도체·배터리 방향 결정.</li>
+<li><strong>4월 2일 트럼프 관세 보고서 발표</strong> — 자동차 25% 관세 부과 예정 → 한라캐스트(자동차 부품) 추가 하방 리스크.</li>
+<li><strong>4월 9일 한국은행 금통위</strong> — 금리 방향이 금융주(유진투자증권) 방향에 영향.</li>
+<li><strong>비츠로테크 10,748(20MA) 이탈 여부</strong> — 현재 RSI 61로 양호하나, 20MA 이탈 시 보유 재점검 필요.</li>
+</ul>
+</div>
+</body>
+</html>

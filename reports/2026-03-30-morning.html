@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" type="image/svg+xml" href="/stock-dashboard/favicon.svg">
+<title>2026-03-30-morning</title>
+<style>:root {
+  --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a;
+  --text: #e1e4ed; --muted: #8b8fa3; --accent: #6c8aff;
+  --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px; }
+header { padding: 24px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+header h1 { font-size: 1.4rem; font-weight: 600; }
+header .date { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+.card h2 { font-size: 1.1rem; margin-bottom: 14px; color: var(--accent); }
+.card h3 { font-size: 0.95rem; margin: 18px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 8px 0; }
+th { background: #22252f; color: var(--muted); text-align: left; padding: 8px 10px; font-weight: 500; white-space: nowrap; }
+td { padding: 7px 10px; border-top: 1px solid var(--border); white-space: nowrap; }
+tr:hover td { background: #1f2230; }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+.warn { color: var(--orange); }
+ul { padding-left: 20px; margin: 8px 0; }
+li { margin: 4px 0; }
+p { margin: 6px 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.report-list { list-style: none; padding: 0; }
+.report-list li { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.report-list li:last-child { border-bottom: none; }
+.report-list .type { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: #22252f; color: var(--muted); }
+.report-list .type.morning { color: var(--orange); border: 1px solid var(--orange); }
+.report-list .type.evening { color: var(--accent); border: 1px solid var(--accent); }
+.report-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8rem; }
+.report-controls select { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 0.8rem; cursor: pointer; }
+.report-pager { display: flex; gap: 6px; align-items: center; }
+.report-pager button { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.8rem; cursor: pointer; }
+.report-pager button:hover { background: var(--border); }
+.report-pager button:disabled { opacity: 0.3; cursor: default; }
+.report-pager button:disabled:hover { background: #22252f; }
+.report-pager .page-info { color: var(--muted); font-size: 0.75rem; }
+.back { display: inline-block; margin-bottom: 16px; color: var(--muted); font-size: 0.85rem; }
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.summary-item { background: #22252f; border-radius: 8px; padding: 14px; }
+.summary-item .label { color: var(--muted); font-size: 0.75rem; margin-bottom: 4px; }
+.summary-item .value { font-size: 1.2rem; font-weight: 600; }
+@media (max-width: 600px) {
+  table { font-size: 0.78rem; }
+  td, th { padding: 6px 6px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="../index.html">&larr; 대시보드</a>
+<header><h1>장 시작 전 브리핑 2026-03-30</h1></header>
+<div class="card"><h2>해외증시 (3/27 마감)</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>지수</th><th>종가</th><th>등락률</th></tr></thead><tbody><tr><td>다우존스</td><td>45,166</td><td><span class="neg">-1.73%</span></td></tr><tr><td>S&P 500</td><td>6,369</td><td><span class="neg">-1.67%</span></td></tr><tr><td>나스닥</td><td>20,948</td><td><span class="neg">-2.15%</span></td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>오늘 핵심 포인트</h2>
+<ol style="padding-left:20px;margin:8px 0;">
+<li><strong>미국 3대 지수 동반 하락</strong> → 코스피 오늘 갭하락 출발 예상. 나스닥 <span class="neg">-2.15%</span>, 매그니피센트7 하루 ~500조원 시총 소멸. 반도체·성장주 직격.</li>
+<li><strong>미-이란 지정학 리스크</strong> 4/6 협상 데드라인, WTI $99 고유가 지속 → 변동성 장세 유지. 4/1 한국 수출·미국 ISM PMI, 4/3 고용지표, 4/7 삼성전자 잠정실적 주목.</li>
+<li><strong>Cash 30,459원</strong> (신규 매수 불가) → 기존 보유 관리·위험 종목 손절 모니터링 중심. 비츠로테크 RSI 과매수 경계 진입, 부분 매도로 현금 확보 우선.</li>
+</ul>
+</div>
+<div class="card"><h2>보유종목 점검 (기준: 전일종가 2026-03-27)</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>평균단가</th><th>전일종가</th><th>수익률</th><th>MA5</th><th>MA20</th><th>RSI(14)</th><th>추세</th><th>뉴스·신호</th></tr></thead><tbody><tr><td>유진투자증권</td><td>5,572</td><td>4,960</td><td><span class="neg">-10.98%</span></td><td>4,984</td><td>4,910</td><td>56.7</td><td>상승</td><td>특이뉴스 없음. 가격 MA5(4,984) 하회. 거래량 평균比 71%</td></tr><tr><td>보성파워텍</td><td>11,264</td><td>10,180</td><td><span class="neg">-9.62%</span></td><td>10,918</td><td>11,008</td><td>56.0</td><td>하락</td><td>MA5·MA20 모두 하회. 전력망 섹터 약세. 거래량 평균比 72%</td></tr><tr><td>비츠로테크</td><td>11,137</td><td>11,440</td><td><strong><span class="pos">+2.72%</span></strong></td><td>11,652</td><td>10,736</td><td><strong>69.2</strong></td><td>상승</td><td><strong>RSI 69.2 과매수 경계</strong>. MA20 상회·MA5 하회. 거래량 평균比 50%</td></tr><tr><td>에코프로</td><td>169,486</td><td>149,000</td><td><span class="neg">-12.09%</span></td><td>146,980</td><td>154,905</td><td>38.0</td><td>상승</td><td>2026년 전 사업장 흑자 목표 발표. MA5 위 안착 시도. 주선물 변동성 확대</td></tr><tr><td>한라캐스트</td><td>18,521</td><td>15,470</td><td><span class="neg">-16.47%</span></td><td>15,898</td><td>15,974</td><td>54.5</td><td>하락</td><td>특이뉴스 없음. MA5·MA20 모두 하회. 포트폴리오 내 최대 낙폭</td></tr><tr><td>에이비엘바이오</td><td>191,320</td><td>180,100</td><td><span class="neg">-5.86%</span></td><td>174,800</td><td>182,670</td><td>42.6</td><td>상승</td><td>자회사 NEOK Bio 설립, ABL206/209 ADC 파이프라인 공개. 2026년 중반 임상 1상 IND 예정. MA5 상회</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>목표가·손절가 점검 (기술적 분석 기반 제안)</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>전일종가</th><th>목표가(제안)</th><th>손절가(제안)</th><th>지지선</th><th>저항선</th><th>상태</th></tr></thead><tbody><tr><td>유진투자증권</td><td>4,960</td><td>5,510</td><td>4,600</td><td>4,055</td><td>5,510</td><td>평단比 <span class="neg">-11%</span>. 4,600 이탈 시 추가 손실 위험</td></tr><tr><td>보성파워텍</td><td>10,180</td><td>11,800</td><td><strong>9,700</strong></td><td>7,800</td><td>13,800</td><td>평단比 <span class="neg">-9.6%</span>. 10,000 붕괴 여부 주시</td></tr><tr><td>비츠로테크</td><td>11,440</td><td>12,990</td><td>10,500</td><td>8,400</td><td>12,990</td><td><strong>유일 보유 흑자 종목</strong>. RSI 과매수 → 이익 실현 구간</td></tr><tr><td>에코프로</td><td>149,000</td><td>175,000</td><td><strong>138,000</strong></td><td>133,500</td><td>189,400</td><td>평단比 <span class="neg">-12.1%</span>. MA5(146,980) 상회 유지 여부 핵심</td></tr><tr><td>한라캐스트</td><td>15,470</td><td>17,500</td><td><strong>14,300</strong></td><td>12,890</td><td>18,050</td><td>평단比 <span class="neg">-16.5%</span>. 하락추세 지속 → 14,300 이탈 시 손절</td></tr><tr><td>에이비엘바이오</td><td>180,100</td><td>203,000</td><td>168,000</td><td>150,600</td><td>203,000</td><td>바이오 파이프라인 모멘텀 유효. 168,000(MA5 하방) 손절선</td></tr></tbody></table></div>
+<p>※ 목표가: 20일 저항선·직전 고점 기반 / 손절가: 지지선 이탈 -5~7% 수준</p>
+</div>
+<div class="card"><h2>매수 후보 TOP 3</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>순위</th><th>종목</th><th>섹터</th><th>전일종가</th><th>MA5</th><th>MA20</th><th>RSI(14)</th><th>선별이유</th><th>추천매수구간</th><th>뉴스요약</th></tr></thead><tbody><tr><td>1</td><td>레인보우로보틱스</td><td>로봇_자동화</td><td>567,000</td><td>585,200</td><td>716,050</td><td><strong>23.9</strong></td><td>RSI 과매도(23.9), 3/9 검찰수사 악재 소화 완료 단계, 삼성전자 협력 신공장 완공 모멘텀</td><td>540,000~555,000 (1차 지지 526,000 위)</td><td>3/9 미공개정보 수사로 <span class="neg">-12%</span> 급락 악재 반영. 삼성 협력 제품 개발 3월 내 구체화 기대. 과매도 반등 신호</td></tr><tr><td>2</td><td>에코프로비엠</td><td>자동차_배터리</td><td>202,500</td><td>195,300</td><td>195,600</td><td>50.0</td><td>상승추세, MA5≈MA20 골든크로스 직전(MA5 195,300 < MA20 195,600 역전 임박), 유럽 현지 생산 독점 수혜</td><td>195,000~200,000 (MA 지지 확인 후 진입)</td><td>다올證 목표가 27만원 상향(BUY). 헝가리 공장 2Q 가동, 유럽 IAA 이중수혜. 1Q 적자 예상은 이미 반영</td></tr><tr><td>3</td><td>포스코퓨처엠</td><td>자동차_배터리</td><td>209,000</td><td>198,860</td><td>204,145</td><td>54.0</td><td>상승추세, MA5>MA20 상승배열, <span class="pos">+4.5%</span> 강한 모멘텀, 배터리 소재 2H26 업황 회복 기대</td><td>200,000~205,000 (MA5 눌림목 매수)</td><td>인터배터리2026 참가, 얼티엄 공장 2H26 재가동, 목표가 236,000원(Trading Buy, IBK)</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>오늘의 액션 플랜 (보유+매수후보 통합)</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>액션</th><th>추천시간대</th><th>목표가격</th><th>수량·비중</th><th>근거</th></tr></thead><tbody><tr><td>비츠로테크</td><td><strong>부분매도 검토</strong></td><td>9:30~10:00, 갭 확인 후</td><td>11,600~11,800</td><td>10주 (보유 32주의 30%)</td><td>RSI 69.2 과매수 경계. 미증시 하락으로 갭하락 시 저항(12,990) 돌파 어려움. 흑자 구간 이익실현 + 현금 확보</td></tr><tr><td>보성파워텍</td><td><strong>손절 모니터링</strong></td><td>장 초반 9:00~9:30</td><td>9,700 이하</td><td>70주 전량</td><td>MA 하락배열. 10,000 하회 지속 시 손절 검토. 전력망 섹터 약세</td></tr><tr><td>한라캐스트</td><td><strong>손절 모니터링</strong></td><td>장 초반 9:00~9:30</td><td>14,300 이하</td><td>11주 전량</td><td>하락추세 지속, 평단比 <span class="neg">-16.5%</span> 최대 낙폭. 14,300 이탈 확인 시 손절</td></tr><tr><td>레인보우로보틱스</td><td>관찰 (Cash 부족)</td><td>-</td><td>555,000 이하 확인</td><td>-</td><td>Cash 소진으로 진입 불가. 비츠로테크 매도 후 현금 확보 시 차회 검토</td></tr><tr><td>전체</td><td><strong>관망</strong></td><td>-</td><td>-</td><td>-</td><td>Cash 30,459원으로 신규 매수 불가. 미증시 하락·고유가·중동 리스크로 갭하락 출발 예상. 방어적 대응 우선</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>전략 요약</h2>
+<p>미국 3대 지수 동반 하락(-1.7~2.1%)·미-이란 리스크 지속으로 오늘 코스피 갭하락 출발, 변동성 장세 지속 예상. Cash 소진 상태에서 비츠로테크 RSI 과매수(69.2) 구간 부분 매도로 이익 실현 및 현금 확보가 최우선; 보성파워텍·한라캐스트는 추가 하락 확인 시 손절 단행으로 포트폴리오 리스크 관리에 집중한다.</p>
+</div>
+</div>
+</body>
+</html>
