@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" type="image/svg+xml" href="/stock-dashboard/favicon.svg">
+<title>2026-04-08-morning</title>
+<style>:root {
+  --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a;
+  --text: #e1e4ed; --muted: #8b8fa3; --accent: #6c8aff;
+  --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px; }
+header { padding: 24px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+header h1 { font-size: 1.4rem; font-weight: 600; }
+header .date { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+.card h2 { font-size: 1.1rem; margin-bottom: 14px; color: var(--accent); }
+.card h3 { font-size: 0.95rem; margin: 18px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 8px 0; }
+th { background: #22252f; color: var(--muted); text-align: left; padding: 8px 10px; font-weight: 500; white-space: nowrap; }
+td { padding: 7px 10px; border-top: 1px solid var(--border); white-space: nowrap; }
+tr:hover td { background: #1f2230; }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+.warn { color: var(--orange); }
+ul { padding-left: 20px; margin: 8px 0; }
+li { margin: 4px 0; }
+p { margin: 6px 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.report-list { list-style: none; padding: 0; }
+.report-list li { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.report-list li:last-child { border-bottom: none; }
+.report-list .type { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: #22252f; color: var(--muted); }
+.report-list .type.morning { color: var(--orange); border: 1px solid var(--orange); }
+.report-list .type.evening { color: var(--accent); border: 1px solid var(--accent); }
+.report-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8rem; }
+.report-controls select { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 0.8rem; cursor: pointer; }
+.report-pager { display: flex; gap: 6px; align-items: center; }
+.report-pager button { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.8rem; cursor: pointer; }
+.report-pager button:hover { background: var(--border); }
+.report-pager button:disabled { opacity: 0.3; cursor: default; }
+.report-pager button:disabled:hover { background: #22252f; }
+.report-pager .page-info { color: var(--muted); font-size: 0.75rem; }
+.back { display: inline-block; margin-bottom: 16px; color: var(--muted); font-size: 0.85rem; }
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.summary-item { background: #22252f; border-radius: 8px; padding: 14px; }
+.summary-item .label { color: var(--muted); font-size: 0.75rem; margin-bottom: 4px; }
+.summary-item .value { font-size: 1.2rem; font-weight: 600; }
+@media (max-width: 600px) {
+  table { font-size: 0.78rem; }
+  td, th { padding: 6px 6px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="../index.html">&larr; 대시보드</a>
+<p># 장 시작 전 브리핑 [2026-04-08 수]</p>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>가격 기준: 삼성전자 전일종가(4/7), 나머지 종목 전일종가(4/6) — latest_prices.json은 4/7 장 시작 전 fetch(UTC 04-06 23:52)로 4/7 종가 미포함, 4/7 일중 0거래량</p>
+</blockquote>
+<header><h1>해외증시 (4/7 미국 마감)</h1></header>
+<div style="overflow-x:auto;"><table><thead><tr><th>지수</th><th>등락</th><th>비고</th></tr></thead><tbody><tr><td>다우존스</td><td><span class="pos">+0.36%</span></td><td>종전 협상 기대감</td></tr><tr><td>S&P 500</td><td><span class="pos">+0.44%</span></td><td></td></tr><tr><td>나스닥</td><td><span class="pos">+0.54%</span></td><td></td></tr></tbody></table></div>
+<ul>
+<li>미-이란 휴전 협상 시한 하루 전, 협상 진전 기대감으로 소폭 상승</li>
+<li>이란의 45일 휴전안 거부 보도 나왔으나 트럼프 "협상 잘 진행 중" 발언 병행 → 변동성 제한적</li>
+</ul>
+<header><h1>오늘 핵심 포인트</h1></header>
+<ol style="padding-left:20px;margin:8px 0;">
+<li><strong>삼성전자 1Q 어닝서프라이즈</strong> — 매출 133조, 영업이익 57.2조 (YoY <span class="pos">+755%</span>). HBM·AI서버 수요 폭증. 전일 코스피를 5,494.78(<span class="pos">+0.82%</span>)로 견인. 삼성전자 단독 MA5>MA20 돌파, 골든크로스 진입.</li>
+<li><strong>코스닥 <span class="neg">-1.02%</span>(1,036.00)로 하락 전환</strong> — 바이오·배터리 차익실현 매물. 에이비엘바이오(<span class="neg">-1.53%</span>), 삼천당제약(<span class="neg">-16.02%</span>) 타격. 보성파워텍, 한라캐스트 추가 조정 가능성.</li>
+<li><strong>미-이란 불확실성 지속</strong> — 전력망·방산 관련 변동성 경계. 장 초반 방향성 확인 후 진입.</li>
+</ul>
+<header><h1>보유종목 점검</h1></header>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>평균단가</th><th>전일종가</th><th>기준일</th><th>수익률</th><th>MA5</th><th>MA20</th><th>RSI</th><th>추세</th><th>주요 신호·뉴스</th></tr></thead><tbody><tr><td>유진투자증권</td><td>5,458</td><td>4,525</td><td>4/6</td><td><strong><span class="neg">-17.09%</span></strong></td><td>4,524</td><td>4,842</td><td>42.3</td><td>상승</td><td>역배열. 금융섹터 약세.</td></tr><tr><td>보성파워텍</td><td>11,061</td><td>9,330</td><td>4/6</td><td><strong><span class="neg">-15.65%</span></strong></td><td>9,580</td><td>10,982</td><td>39.9</td><td>횡보</td><td>역배열. 4/6 <span class="neg">-4.01%</span> 급락. 지지선 9,120 근접. HVDC 전력망 테마 유효.</td></tr><tr><td>비츠로테크</td><td>11,137</td><td>11,300</td><td>4/6</td><td><span class="pos">+1.46%</span></td><td>11,430</td><td>11,254</td><td>49.2</td><td>횡보</td><td>정배열(MA5>MA20). 4/6 <span class="neg">-4.48%</span> 단기 조정. 전력망 수혜 장기 유효.</td></tr><tr><td>에코프로</td><td>169,486</td><td>143,000</td><td>4/6</td><td><strong><span class="neg">-15.63%</span></strong></td><td>143,100</td><td>149,145</td><td>43.4</td><td>횡보</td><td>역배열. 주총서 3대 전략 발표. 지지선 138,500 주시.</td></tr><tr><td>한라캐스트</td><td>18,521</td><td>13,600</td><td>4/6</td><td><strong><span class="neg">-26.57%</span></strong></td><td>14,034</td><td>15,523</td><td>39.8</td><td>횡보</td><td>역배열. 지지선 13,340 근접. 로봇/ESS 양산 기대 중장기 유효, 단기 위험.</td></tr><tr><td>에이비엘바이오</td><td>191,320</td><td>154,400</td><td>4/6</td><td><strong><span class="neg">-19.30%</span></strong></td><td>163,380</td><td>177,665</td><td>37.8</td><td>하락</td><td>역배열. 4/17~22 AACR서 ABL001 임상2/3상 데이터 발표 예정 (이벤트 대기).</td></tr><tr><td>현대차</td><td>458,500</td><td>469,000</td><td>4/6</td><td><span class="pos">+2.29%</span></td><td>467,800</td><td>498,825</td><td>45.1</td><td>횡보</td><td>역배열. 관세 완화(25%→15%) 호재. 4/23 분기 실적 발표.</td></tr><tr><td>삼성전자</td><td>187,300</td><td><strong>196,500</strong></td><td><strong>4/7</strong></td><td><strong><span class="pos">+4.91%</span></strong></td><td>188,760</td><td>187,965</td><td>~55</td><td>상승</td><td><strong>골든크로스 진입(MA5 188,760 > MA20 187,965).</strong> 1Q 영업익 57.2조. 외국인 매수세.</td></tr><tr><td>이수페타시스</td><td>102,900</td><td>104,800</td><td>4/6</td><td><span class="pos">+1.85%</span></td><td>103,180</td><td>112,150</td><td>45.9</td><td>상승</td><td>역배열이나 MA5 접근 중. 구글TPU·Anthropic 신규계약 1,000억+. 5공장 증설 확정.</td></tr></tbody></table></div>
+<header><h1>목표가·손절가 점검</h1></header>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>가격(기준일)</th><th>제안 목표가</th><th>제안 손절가</th><th>지지선</th><th>저항선</th><th>상태</th></tr></thead><tbody><tr><td>유진투자증권</td><td>4,525 (4/6)</td><td>5,000</td><td><strong>4,365</strong></td><td>4,365</td><td>5,340</td><td>⚠️ 역배열, 손절 근접</td></tr><tr><td>보성파워텍</td><td>9,330 (4/6)</td><td>11,000</td><td><strong>9,120</strong></td><td>9,120</td><td>13,800</td><td>⚠️ 지지선 210원 위</td></tr><tr><td>비츠로테크</td><td>11,300 (4/6)</td><td>12,500</td><td>11,000</td><td>9,740</td><td>12,990</td><td>✅ 정배열 유지</td></tr><tr><td>에코프로</td><td>143,000 (4/6)</td><td>155,000</td><td><strong>138,500</strong></td><td>138,500</td><td>174,900</td><td>⚠️ 지지선 3.1% 위</td></tr><tr><td>한라캐스트</td><td>13,600 (4/6)</td><td>15,500</td><td><strong>13,340</strong></td><td>13,340</td><td>17,550</td><td>🔴 손절 260원 위</td></tr><tr><td>에이비엘바이오</td><td>154,400 (4/6)</td><td>175,000</td><td><strong>153,200</strong></td><td>153,200</td><td>199,900</td><td>⚠️ 지지선 직전. AACR 이벤트 보유</td></tr><tr><td>현대차</td><td>469,000 (4/6)</td><td>500,000</td><td>445,000</td><td>445,000</td><td>561,000</td><td>🟡 역배열, 보유</td></tr><tr><td>삼성전자</td><td>196,500 (4/7)</td><td>210,000</td><td>186,000</td><td>189,600</td><td>209,000</td><td>✅ 골든크로스, 목표가 7% 위</td></tr><tr><td>이수페타시스</td><td>104,800 (4/6)</td><td>120,000</td><td>100,000</td><td>96,300</td><td>132,500</td><td>🟡 역배열이나 반등 중</td></tr></tbody></table></div>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>목표가 근거: 삼성전자 210,000 = 최근 20일 저항선. 에이비엘바이오 175,000 = MA20 회복. 현대차 500,000 = 심리적 저항. 손절가 모두 지지선 이탈 기준.</p>
+</blockquote>
+<header><h1>매수 후보 TOP 3</h1></header>
+<div style="overflow-x:auto;"><table><thead><tr><th>순위</th><th>종목</th><th>섹터</th><th>전일종가</th><th>MA5</th><th>MA20</th><th>RSI</th><th>선별 이유</th><th>추천 매수 구간</th><th>뉴스 요약</th></tr></thead><tbody><tr><td>1</td><td><strong>LS ELECTRIC</strong> (010120)</td><td>전력망</td><td>799,000 (4/6)</td><td>767,800</td><td>787,450</td><td>52.0</td><td>MA5>MA20 정배열, 상승추세. 4/6 <span class="pos">+3.9%</span> 강세. 북미향 초고압변압기 수출 본격화, 2026 영업익 <span class="pos">+32%</span> 전망, 수주잔고 4.5조. 전력망 섹터 대장주.</td><td>780,000~795,000 (MA5 지지 구간)</td><td>부산 초고압변압기 공장 증설 효과 반영 시작. 배당 현금지급 4/10.</td></tr><tr><td>2</td><td><strong>HD현대일렉트릭</strong> (267260)</td><td>전력망</td><td>894,000 (4/6)</td><td>878,600</td><td>922,750</td><td>42.4</td><td>최근 상승 추세 전환. 4/6 <span class="pos">+1.25%</span>. 20일 고점 대비 <span class="neg">-9.9%</span> 조정 후 반등. RSI 42로 중립~과매도 경계. LS ELECTRIC과 전력망 섹터 동반 강세 기대.</td><td>875,000~890,000 (MA5 지지)</td><td>전력기기 섹터 동반 강세, 신규 수주 지속.</td></tr><tr><td>3</td><td><strong>한미반도체</strong> (042700)</td><td>반도체</td><td>252,000 (4/6)</td><td>258,500</td><td>289,375</td><td>49.5</td><td>지지선(242,500) 근접, 20일 고점 대비 <span class="neg">-22.2%</span> 조정. 삼성전자 1Q 어닝서프라이즈로 반도체 섹터 수혜 기대. RSI 중립권.</td><td>248,000~255,000 (지지선 위 분할매수)</td><td>삼성전자 HBM 공급망 수혜 기대, 반도체 장비 수주 모멘텀.</td></tr></tbody></table></div>
+<header><h1>오늘의 액션 플랜</h1></header>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>Cash: 107,359원 (소액 — 신규 포지션 개설보다 기존 관리 집중)</p>
+</blockquote>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>액션</th><th>추천 시간대</th><th>목표가격</th><th>수량·비중</th><th>근거</th></tr></thead><tbody><tr><td><strong>삼성전자</strong></td><td>보유 유지</td><td>—</td><td>210,000</td><td>1주</td><td>골든크로스, 1Q 어닝서프라이즈, 외국인 매수 지속</td></tr><tr><td><strong>이수페타시스</strong></td><td>보유 유지</td><td>—</td><td>120,000</td><td>1주</td><td>구글·Anthropic 수주, 5공장 증설, 상승 추세</td></tr><tr><td><strong>비츠로테크</strong></td><td>보유 유지</td><td>—</td><td>12,500</td><td>32주</td><td>정배열, 전력망 장기 테마</td></tr><tr><td><strong>현대차</strong></td><td>보유 유지</td><td>—</td><td>500,000 (4/23 실적 前)</td><td>1주</td><td>관세 완화 호재, RSI 중립, 실적 발표 모멘텀</td></tr><tr><td><strong>에이비엘바이오</strong></td><td>보유 + 이벤트 대기</td><td>지지선(153,200) 이탈 시 1차 손절</td><td>AACR 4/17</td><td>5주 보유</td><td>ABL001 임상 2/3상 데이터 발표 전 보유 유지. 데이터 부정 → 즉시 손절 검토</td></tr><tr><td><strong>에코프로</strong></td><td>조건부 손절 검토</td><td>오전 10시 이후 방향 확인</td><td>138,500 이탈 시 손절</td><td>7주</td><td>역배열, 배터리 섹터 약세, 지지선 3.1% 위</td></tr><tr><td><strong>보성파워텍</strong></td><td>보유 + 지지선 주시</td><td>—</td><td>9,120 이탈 시 손절</td><td>80주</td><td>전력망 장기 테마 유효. 지지선(9,120) 210원 위. 추가 하락 시 재평가</td></tr><tr><td><strong>유진투자증권</strong></td><td>손절 검토</td><td>장 초반 (9:00~9:30)</td><td>4,365 이하 시 즉시 손절</td><td>180주</td><td><span class="neg">-17.09%</span> 손실, 역배열, 금융 섹터 약세. 추가 반등 모멘텀 없음</td></tr><tr><td><strong>한라캐스트</strong></td><td>손절 검토</td><td>장 초반 (9:00~9:30)</td><td>13,340 이하 시 즉시 손절</td><td>11주</td><td><strong><span class="neg">-26.57%</span> 손실</strong>, 지지선 260원 위, 추가 이탈 시 회복 불명확. 로봇 양산 가시화 전까지 리스크 큼</td></tr><tr><td>LS ELECTRIC</td><td>관심 (신규 매수 후보)</td><td>오전 10시 방향 확인 후</td><td>780,000~795,000</td><td>cash 부족으로 당장 불가, 유진/한라 손절 후 검토</td><td>전력망 섹터 최강, 정배열</td></tr></tbody></table></div>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p><strong>유진투자증권 + 한라캐스트 손절 시 회수 현금</strong>: 4,525×180 + 13,600×11 + 107,359 = 약 <strong>1,071,459원</strong> → LS ELECTRIC(799,000) 또는 한미반도체(252,000) + 여유자금 확보 가능. 손절 확정 손실: 약 222,071원.</p>
+</blockquote>
+<header><h1>전략 요약</h1></header>
+<p>삼성전자 1Q 어닝서프라이즈가 반도체·전력망 섹터 분위기를 견인하는 가운데, 보유 중 손실 심화 종목(유진투자증권 <span class="neg">-17%</span>, 한라캐스트 <span class="neg">-27%</span>)은 장 초반 지지선 이탈 여부를 보고 손절로 손실을 제한하고, 확보된 현금으로 전력망 섹터 정배열 종목(LS ELECTRIC) 신규 진입을 검토하는 포트폴리오 재편이 필요한 시점.</p>
+</div>
+</body>
+</html>

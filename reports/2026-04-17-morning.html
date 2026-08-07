@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" type="image/svg+xml" href="/stock-dashboard/favicon.svg">
+<title>2026-04-17-morning</title>
+<style>:root {
+  --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a;
+  --text: #e1e4ed; --muted: #8b8fa3; --accent: #6c8aff;
+  --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px; }
+header { padding: 24px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+header h1 { font-size: 1.4rem; font-weight: 600; }
+header .date { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+.card h2 { font-size: 1.1rem; margin-bottom: 14px; color: var(--accent); }
+.card h3 { font-size: 0.95rem; margin: 18px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 8px 0; }
+th { background: #22252f; color: var(--muted); text-align: left; padding: 8px 10px; font-weight: 500; white-space: nowrap; }
+td { padding: 7px 10px; border-top: 1px solid var(--border); white-space: nowrap; }
+tr:hover td { background: #1f2230; }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+.warn { color: var(--orange); }
+ul { padding-left: 20px; margin: 8px 0; }
+li { margin: 4px 0; }
+p { margin: 6px 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.report-list { list-style: none; padding: 0; }
+.report-list li { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.report-list li:last-child { border-bottom: none; }
+.report-list .type { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: #22252f; color: var(--muted); }
+.report-list .type.morning { color: var(--orange); border: 1px solid var(--orange); }
+.report-list .type.evening { color: var(--accent); border: 1px solid var(--accent); }
+.report-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8rem; }
+.report-controls select { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 0.8rem; cursor: pointer; }
+.report-pager { display: flex; gap: 6px; align-items: center; }
+.report-pager button { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.8rem; cursor: pointer; }
+.report-pager button:hover { background: var(--border); }
+.report-pager button:disabled { opacity: 0.3; cursor: default; }
+.report-pager button:disabled:hover { background: #22252f; }
+.report-pager .page-info { color: var(--muted); font-size: 0.75rem; }
+.back { display: inline-block; margin-bottom: 16px; color: var(--muted); font-size: 0.85rem; }
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.summary-item { background: #22252f; border-radius: 8px; padding: 14px; }
+.summary-item .label { color: var(--muted); font-size: 0.75rem; margin-bottom: 4px; }
+.summary-item .value { font-size: 1.2rem; font-weight: 600; }
+@media (max-width: 600px) {
+  table { font-size: 0.78rem; }
+  td, th { padding: 6px 6px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="../index.html">&larr; 대시보드</a>
+<header><h1>장 시작 전 브리핑 2026-04-17</h1></header>
+<p>가격 기준: 전일 종가 (2026-04-16)</p>
+<div class="card"><h2>해외증시</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>지수</th><th>종가</th><th>등락</th></tr></thead><tbody><tr><td>S&P 500</td><td>7,041.28</td><td><span class="pos">+0.26%</span> (사상 최고)</td></tr><tr><td>나스닥</td><td>24,102.70</td><td><span class="pos">+0.36%</span> (12연속 상승)</td></tr><tr><td>다우</td><td>48,578.72</td><td><span class="pos">+0.24%</span></td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>오늘 핵심 포인트</h2>
+<p>나스닥 2009년 이후 최장 연속 상승(12일)·S&P 500 사상 최고치로 외국인 수급 개선 기대. AACR(미국암연구학회) 개막(4/17)으로 국내 바이오 섹터 단기 모멘텀 주목. 이스라엘-레바논 평화 협상 기대로 지정학 리스크 완화 중.</p>
+</div>
+<div class="card"><h2>보유 종목 점검</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>평균단가</th><th>전일종가</th><th>수익률</th><th>5일선</th><th>20일선</th><th>RSI</th><th>추세</th><th>뉴스·신호</th></tr></thead><tbody><tr><td>유진투자증권</td><td>5,458</td><td>5,090</td><td><span class="neg">-6.75%</span></td><td>위(4,992)</td><td>위(4,837)</td><td>52.6</td><td>횡보</td><td>-</td></tr><tr><td>보성파워텍</td><td>10,906</td><td>10,670</td><td><span class="neg">-2.16%</span></td><td>위(10,098)</td><td>위(10,225)</td><td>53.7</td><td>상승</td><td>원자력 관련주 테마 지속</td></tr><tr><td>에코프로</td><td>169,486</td><td>149,200</td><td><span class="neg">-11.97%</span></td><td>위(146,280)</td><td>위(146,310)</td><td>50.2</td><td>상승</td><td>-</td></tr><tr><td>한라캐스트</td><td>18,521</td><td>14,110</td><td><strong><span class="neg">-23.82%</span></strong></td><td>위(13,540)</td><td>아래(14,479)</td><td>43.5</td><td>상승</td><td>-</td></tr><tr><td>에이비엘바이오</td><td>191,320</td><td>163,900</td><td><span class="neg">-14.33%</span></td><td>위(159,260)</td><td>아래(165,855)</td><td>39.3</td><td>상승</td><td>AACR 개막 기대</td></tr><tr><td>비에이치아이</td><td>91,840</td><td>97,400</td><td><span class="pos">+6.05%</span></td><td>위(92,860)</td><td>위(95,820)</td><td>53.4</td><td>상승</td><td>원자력 관련주 테마 지속</td></tr><tr><td>마이크로컨텍솔</td><td>29,775</td><td>34,150</td><td><span class="pos">+14.70%</span></td><td>위(32,550)</td><td>위(28,758)</td><td><strong>73.3</strong></td><td>횡보</td><td>⚠️ RSI 과매수</td></tr><tr><td>하나마이크론</td><td>31,525</td><td>34,650</td><td><span class="pos">+9.91%</span></td><td>위(32,720)</td><td>위(31,365)</td><td>60.8</td><td>상승</td><td>-</td></tr><tr><td>산일전기</td><td>175,300</td><td>189,000</td><td><span class="pos">+7.82%</span></td><td>위(178,660)</td><td>위(154,430)</td><td>67.4</td><td>상승</td><td>-</td></tr></tbody></table></div>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>포트폴리오 평가액: 5,035,810원 / 현금: 179,539원 / 총: <strong>5,215,349원</strong></p>
+<p>에코프로 비중 20.0% (한도 경계)</p>
+</blockquote>
+</div>
+<div class="card"><h2>목표가·손절가 점검</h2>
+<p>전 종목 target_price / stop_loss null → 기술적 분석 기반 제안. 목표가 = 저항선, 손절가 = 지지선 × 0.97</p>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>전일종가</th><th>목표가(제안)</th><th>손절가(제안)</th><th>지지선</th><th>저항선</th><th>상태</th></tr></thead><tbody><tr><td>유진투자증권</td><td>5,090</td><td>4,955</td><td>4,641</td><td>4,785</td><td>4,955</td><td>목표 도달¹</td></tr><tr><td>보성파워텍</td><td>10,670</td><td>10,310</td><td>9,356</td><td>9,645</td><td>10,310</td><td>목표 도달¹</td></tr><tr><td>에코프로</td><td>149,200</td><td>151,200</td><td>140,020</td><td>144,350</td><td>151,200</td><td>구간 내</td></tr><tr><td>한라캐스트</td><td>14,110</td><td>14,570</td><td>13,391</td><td>13,805</td><td>14,570</td><td>구간 내</td></tr><tr><td>에이비엘바이오</td><td>163,900</td><td>170,950</td><td>155,345</td><td>160,150</td><td>170,950</td><td>구간 내</td></tr><tr><td>비에이치아이</td><td>97,400</td><td>97,500</td><td>88,804</td><td>91,550</td><td>97,500</td><td><strong>목표 도달</strong></td></tr><tr><td>마이크로컨텍솔</td><td>34,150</td><td>28,725</td><td>25,996</td><td>26,800</td><td>28,725</td><td><strong>목표 도달¹</strong></td></tr><tr><td>하나마이크론</td><td>34,650</td><td>32,225</td><td>29,270</td><td>30,175</td><td>32,225</td><td><strong>목표 도달¹</strong></td></tr><tr><td>산일전기</td><td>189,000</td><td>158,450</td><td>140,844</td><td>145,200</td><td>158,450</td><td><strong>목표 도달¹</strong></td></tr></tbody></table></div>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>¹ 최근 상승으로 20일 저항선 이미 돌파. 실질 저항선은 현 가격 상단에 위치. 손절가는 유효, 목표가 갱신 필요.</p>
+<p>LS ELECTRIC (010120 관심종목): 일별 데이터 이상 감지(가격-이평선 대폭 괴리, 주식분할 가능성). 분석 생략.</p>
+</blockquote>
+</div>
+<div class="card"><h2>매수 후보 TOP 3</h2>
+<p>점수 기준: RSI≤30 +3 / 종가가 지지선 3%이내 +2 / 거래량 5일평균 1.5배+ +2 / MA5>MA20 +1 / 5일추세 상승 +1</p>
+<div style="overflow-x:auto;"><table><thead><tr><th>순위</th><th>종목</th><th>섹터</th><th>전일종가</th><th>5일선</th><th>20일선</th><th>RSI</th><th>선별이유</th><th>뉴스검증</th></tr></thead><tbody><tr><td>1</td><td>이뮨온시아</td><td>바이오_제약</td><td>7,630</td><td>아래(7,334)</td><td>아래(7,987)</td><td><strong>22.5</strong></td><td>RSI과매도+3, 지지선근접(−1.2%)+2 = <strong>5점</strong></td><td>중립 — 개별 뉴스 없음. AACR 개막 간접 수혜 가능</td></tr><tr><td>2</td><td>비츠로테크</td><td>전력망_에너지</td><td>17,490</td><td>위(14,112)</td><td>위(12,146)</td><td>76.3</td><td>거래량2.08x+2, MA5>MA20+1, 상승추세+1 = <strong>4점</strong> (등락 <span class="pos">+7.63%</span>)</td><td>중립 — 뉴스 없음. RSI <strong>과매수</strong> → 액션플랜 관망 조정</td></tr><tr><td>3</td><td>두산에너빌리티</td><td>전력망_에너지</td><td>110,800</td><td>위(102,840)</td><td>위(99,690)</td><td>64.1</td><td>거래량2.02x+2, MA5>MA20+1, 상승추세+1 = <strong>4점</strong> (등락 <span class="pos">+6.33%</span>)</td><td><strong>호재</strong> — 미국 데이터센터 스팀터빈 납품 계약, AI 데이터센터 가스터빈 7대 수주, SMR 수주 임박·목표가 상향(메리츠증권)</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>오늘의 액션 플랜</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>액션</th><th>추천시간대</th><th>분할구간</th><th>총수량·비중</th><th>근거</th></tr></thead><tbody><tr><td>마이크로컨텍솔</td><td><strong>매도</strong></td><td>장 초반(09:00~09:30)</td><td>1차: 34,000×1 / 2차: 35,000×2 / 3차: 36,000×1</td><td>4주 전량 / 2.6%</td><td>이익실현 분할(30/40/30), RSI 73.3 과매수 + 저항선(28,725) 대폭 돌파</td></tr><tr><td>비에이치아이</td><td><strong>매도</strong></td><td>오전 10시경</td><td>1차: 97,500×1 / 2차: 99,450×2 / 3차: 101,400×2</td><td>5주 전량 / 9.3%</td><td>이익실현 분할(30/40/30), 저항선(97,500) 도달</td></tr><tr><td>이뮨온시아</td><td><strong>매수</strong></td><td>오전 10시경</td><td>1차: 7,630×5 / 2차: 7,479×5</td><td>10주 / 1.4%</td><td>축소 분할(50/50), RSI 22.5 과매도 + 지지선(7,725) 근접. 총 75,545원 (cash 42.1% 소진)</td></tr><tr><td>유진투자증권</td><td>보유</td><td>—</td><td>—</td><td>180주 / 17.6%</td><td>횡보, 손절가(4,641) 충분한 여유</td></tr><tr><td>보성파워텍</td><td>보유</td><td>—</td><td>—</td><td>90주 / 18.4%</td><td>상승 추세, 거래량 1.87x</td></tr><tr><td>에코프로</td><td>보유</td><td>—</td><td>—</td><td>7주 / 20.0%</td><td>MA5≈MA20 수렴, 상승 전환 확인 중. 지지선(144,350) 이탈 시 주의</td></tr><tr><td>한라캐스트</td><td><strong>관망</strong></td><td>—</td><td>—</td><td>11주 / 3.0%</td><td><span class="neg">-23.82%</span> 누적 손실. 지지선(13,805) 이탈 시 전량 손절(@13,391)</td></tr><tr><td>에이비엘바이오</td><td>보유</td><td>—</td><td>—</td><td>5주 / 15.7%</td><td>RSI 39.3 반등 가능, AACR 모멘텀</td></tr><tr><td>하나마이크론</td><td>보유</td><td>—</td><td>—</td><td>4주 / 2.7%</td><td>RSI 60.8, 상승 추세</td></tr><tr><td>산일전기</td><td>보유</td><td>—</td><td>—</td><td>2주 / 7.2%</td><td>RSI 67.4(70 미만), 저항선 돌파 상승 중</td></tr><tr><td>비츠로테크</td><td><strong>관망</strong></td><td>—</td><td>—</td><td>—</td><td>RSI 76.3 과매수, 뉴스 부재. RSI 60선 하락 조정 후 재검토</td></tr><tr><td>두산에너빌리티</td><td><strong>관망</strong></td><td>—</td><td>—</td><td>—</td><td>뉴스 호재 확인. 현금 부족(잔여 103,994원 < 1주 110,800원). 마이크로컨텍솔 매도 대금 입금 후 역피라미딩 1차: 110,800×1 / 2차: 113,016×1 / 3차: 116,340×1</td></tr></tbody></table></div>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p><strong>현금 흐름</strong>: 이뮨온시아 75,545원 매수 후 잔여 103,994원 → 두산에너빌리티 단독 진입 불가.</p>
+<p>마이크로컨텍솔 매도 대금(≈140,000원) 수령 후 총 243,994원 확보 → 두산에너빌리티 역피라미딩 3단계 합계(340,156원) 여전히 초과. 1~2차(223,816원)만 진입 가능.</p>
+</blockquote>
+</div>
+<div class="card"><h2>전략 요약</h2>
+<p>나스닥 최장 연속 상승에 따른 외국인 복귀 기대 속, RSI 과매수 마이크로컨텍솔 이익실현 + 저항선 도달 비에이치아이 분할매도로 현금을 확보한다. 확보 현금으로 RSI 과매도 이뮨온시아(AACR 간접 수혜) 저점 분할매수 및 두산에너빌리티(AI 데이터센터 수주 호재) 진입을 순차 추진한다.</p>
+</div>
+</div>
+</body>
+</html>

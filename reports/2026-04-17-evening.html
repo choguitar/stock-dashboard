@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" type="image/svg+xml" href="/stock-dashboard/favicon.svg">
+<title>2026-04-17-evening</title>
+<style>:root {
+  --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a;
+  --text: #e1e4ed; --muted: #8b8fa3; --accent: #6c8aff;
+  --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px; }
+header { padding: 24px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+header h1 { font-size: 1.4rem; font-weight: 600; }
+header .date { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+.card h2 { font-size: 1.1rem; margin-bottom: 14px; color: var(--accent); }
+.card h3 { font-size: 0.95rem; margin: 18px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 8px 0; }
+th { background: #22252f; color: var(--muted); text-align: left; padding: 8px 10px; font-weight: 500; white-space: nowrap; }
+td { padding: 7px 10px; border-top: 1px solid var(--border); white-space: nowrap; }
+tr:hover td { background: #1f2230; }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+.warn { color: var(--orange); }
+ul { padding-left: 20px; margin: 8px 0; }
+li { margin: 4px 0; }
+p { margin: 6px 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.report-list { list-style: none; padding: 0; }
+.report-list li { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.report-list li:last-child { border-bottom: none; }
+.report-list .type { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: #22252f; color: var(--muted); }
+.report-list .type.morning { color: var(--orange); border: 1px solid var(--orange); }
+.report-list .type.evening { color: var(--accent); border: 1px solid var(--accent); }
+.report-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8rem; }
+.report-controls select { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 0.8rem; cursor: pointer; }
+.report-pager { display: flex; gap: 6px; align-items: center; }
+.report-pager button { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.8rem; cursor: pointer; }
+.report-pager button:hover { background: var(--border); }
+.report-pager button:disabled { opacity: 0.3; cursor: default; }
+.report-pager button:disabled:hover { background: #22252f; }
+.report-pager .page-info { color: var(--muted); font-size: 0.75rem; }
+.back { display: inline-block; margin-bottom: 16px; color: var(--muted); font-size: 0.85rem; }
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.summary-item { background: #22252f; border-radius: 8px; padding: 14px; }
+.summary-item .label { color: var(--muted); font-size: 0.75rem; margin-bottom: 4px; }
+.summary-item .value { font-size: 1.2rem; font-weight: 600; }
+@media (max-width: 600px) {
+  table { font-size: 0.78rem; }
+  td, th { padding: 6px 6px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="../index.html">&larr; 대시보드</a>
+<header><h1>장 마감 결산 2026-04-17</h1></header>
+<p>가격 기준: 당일 종가 (2026-04-17 17:50:34)</p>
+<div class="card"><h2>포트폴리오 요약</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>총 평가금액</th><th>총 평가손익</th><th>주문가능금액</th></tr></thead><tbody><tr><td>5,035,160원</td><td>-330,553원 (<span class="neg">-6.16%</span>)</td><td>179,539원</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>보유 종목 오늘 성과</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>평균단가</th><th>당일종가</th><th>수익률</th><th>당일등락</th><th>평가금액</th><th>평가손익</th></tr></thead><tbody><tr><td>유진투자증권</td><td>5,458</td><td>5,010</td><td><span class="neg">-8.21%</span></td><td><span class="neg">-1.57%</span></td><td>901,800</td><td>-80,640</td></tr><tr><td>보성파워텍</td><td>10,906</td><td>10,280</td><td><span class="neg">-5.74%</span></td><td><span class="neg">-3.66%</span></td><td>925,200</td><td>-56,340</td></tr><tr><td>에코프로</td><td>169,486</td><td>151,900</td><td><span class="neg">-10.38%</span></td><td><span class="pos">+1.81%</span></td><td>1,063,300</td><td>-123,102</td></tr><tr><td>한라캐스트</td><td>18,521</td><td>14,460</td><td><span class="neg">-21.93%</span></td><td><span class="pos">+2.48%</span></td><td>159,060</td><td>-44,671</td></tr><tr><td>에이비엘바이오</td><td>191,320</td><td>161,500</td><td><span class="neg">-15.59%</span></td><td><span class="neg">-1.46%</span></td><td>807,500</td><td>-149,100</td></tr><tr><td>비에이치아이</td><td>91,840</td><td>98,700</td><td><span class="pos">+7.47%</span></td><td><span class="pos">+1.33%</span></td><td>493,500</td><td>+34,300</td></tr><tr><td>마이크로컨텍솔</td><td>29,775</td><td>36,100</td><td><span class="pos">+21.24%</span></td><td><span class="pos">+5.71%</span></td><td>144,400</td><td>+25,300</td></tr><tr><td>하나마이크론</td><td>31,525</td><td>36,050</td><td><span class="pos">+14.35%</span></td><td><span class="pos">+4.04%</span></td><td>144,200</td><td>+18,100</td></tr><tr><td>산일전기</td><td>175,300</td><td>198,100</td><td><span class="pos">+13.01%</span></td><td><span class="pos">+4.81%</span></td><td>396,200</td><td>+45,600</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>오늘 체결 거래</h2>
+<p>오늘 체결 없음</p>
+</div>
+<div class="card"><h2>기술적 분석 요약</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>5일MA</th><th>20일MA</th><th>RSI(14)</th><th>추세</th><th>특이신호</th></tr></thead><tbody><tr><td>유진투자증권</td><td>5,015 (아래)</td><td>4,825 (위)</td><td>55.6</td><td>횡보</td><td>-</td></tr><tr><td>보성파워텍</td><td>10,204 (위)</td><td>10,096 (위)</td><td>54.6</td><td>상승</td><td>골든크로스</td></tr><tr><td>에코프로</td><td>147,380 (위)</td><td>146,360 (위)</td><td>49.9</td><td>상승</td><td>골든크로스</td></tr><tr><td>한라캐스트</td><td>13,762 (위)</td><td>14,345 (위)</td><td>52.1</td><td>상승</td><td>-</td></tr><tr><td>에이비엘바이오</td><td>160,020 (위)</td><td>164,405 (아래)</td><td>42.9</td><td>상승</td><td>-</td></tr><tr><td>비에이치아이</td><td>94,400 (위)</td><td>95,280 (위)</td><td>54.9</td><td>상승</td><td>-</td></tr><tr><td>마이크로컨텍솔</td><td>33,800 (위)</td><td>29,190 (위)</td><td>73.6</td><td>상승</td><td>RSI과매수</td></tr><tr><td>하나마이크론</td><td>33,730 (위)</td><td>31,430 (위)</td><td>63.2</td><td>상승</td><td>-</td></tr><tr><td>산일전기</td><td>187,580 (위)</td><td>156,375 (위)</td><td>71.1</td><td>상승</td><td>RSI과매수</td></tr></tbody></table></div>
+<p>※ 5일MA/20일MA 기준: 당일종가 대비 "위"=종가가 이평선 위, "아래"=종가가 이평선 아래</p>
+</div>
+<div class="card"><h2>오늘 핵심 뉴스</h2>
+<p><strong>시장 마감 요약</strong>  </p>
+<p>코스피 6,191.92 (<span class="neg">-0.55%</span>, -34.13pt) 약보합 마감. 외국인 2조원 순매도, 개인 1.4조원·기관 1,502억원 순매수. 중동 협상 불발 불확실성에도 개인 매수세가 낙폭을 제한.</p>
+<p><strong>보유 종목 관련 뉴스</strong></p>
+<ul>
+<li>[에이비엘바이오] 4/17~22 AACR 2026 (미국 샌디에고) 참가, 이중항체 ADC 파이프라인 4/20(월) 공개 예정 (호재 잠재적)</li>
+<li>[보성파워텍] 한국전력공사와 동해안-신가평 송전선로 강관철탑 공급계약 234억원 기체결 (중립, 기공시 재확인)</li>
+</ul>
+</div>
+<div class="card"><h2>목표가·손절가 상태</h2>
+<p>모든 종목 portfolio.json 목표가/손절가 미설정 → 기술적 분석 기반 제안</p>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>당일종가</th><th>목표가(제안)</th><th>손절가(제안)</th><th>상태</th></tr></thead><tbody><tr><td>유진투자증권</td><td>5,010</td><td>5,200</td><td>4,825 (MA20)</td><td>구간 내</td></tr><tr><td>보성파워텍</td><td>10,280</td><td>10,310 (저항선)</td><td>9,800 (지지근처)</td><td>목표 근접</td></tr><tr><td>에코프로</td><td>151,900</td><td>160,000</td><td>144,600 (지지선)</td><td>구간 내</td></tr><tr><td>한라캐스트</td><td>14,460</td><td>14,580 (저항선)</td><td>13,400 (지지<span class="neg">-3%</span>)</td><td>목표 근접</td></tr><tr><td>에이비엘바이오</td><td>161,500</td><td>168,800 (저항선)</td><td>161,200 (지지선)</td><td><strong>손절 근접</strong></td></tr><tr><td>비에이치아이</td><td>98,700</td><td>105,000</td><td>91,700 (지지선)</td><td>구간 내</td></tr><tr><td>마이크로컨텍솔</td><td>36,100</td><td>40,000</td><td>29,190 (MA20)</td><td>구간 내</td></tr><tr><td>하나마이크론</td><td>36,050</td><td>40,000</td><td>31,430 (MA20)</td><td>구간 내</td></tr><tr><td>산일전기</td><td>198,100</td><td>210,000</td><td>175,300 (평단)</td><td>구간 내</td></tr></tbody></table></div>
+<p>※ 에이비엘바이오: 지지선 161,200원과 현재가 161,500원 차이 300원 — 지지 이탈 시 손절 재검토 필요</p>
+</div>
+<div class="card"><h2>관심 종목 동향</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>당일종가</th><th>당일등락</th><th>RSI</th><th>특이사항</th></tr></thead><tbody><tr><td>LS ELECTRIC</td><td>186,500</td><td><span class="neg">-1.11%</span></td><td>20.5</td><td>RSI 과매도 영역 진입 — 전력망 대형주 기술적 반등 대기</td></tr><tr><td>포스코퓨처엠</td><td>234,500</td><td><span class="pos">+4.92%</span></td><td>67.4</td><td>거래량 2.6배 급증, 자동차·배터리 섹터 반등 선도</td></tr><tr><td>비츠로테크</td><td>17,790</td><td><span class="pos">+1.72%</span></td><td>81.3</td><td>RSI 81.3 극단 과매수 (매도 완료 종목, 재진입 경계)</td></tr><tr><td>티엘비</td><td>81,500</td><td><span class="neg">-3.89%</span></td><td>62.7</td><td>반도체 섹터 약세 동반 하락</td></tr><tr><td>삼천당제약</td><td>485,500</td><td><span class="neg">-3.86%</span></td><td>37.3</td><td>바이오 섹터 하락, RSI 중립 하단</td></tr><tr><td>디앤디파마텍</td><td>78,900</td><td><span class="neg">-3.31%</span></td><td>54.2</td><td>바이오 하락세 동반</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>내일 방향성 (방향만, 구체적 가격·수량 없음)</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>톤</th><th>근거</th></tr></thead><tbody><tr><td>마이크로컨텍솔</td><td>매도 검토</td><td>RSI 73.6 과매수 + 20일 저항 29,000 대비 36,100까지 급등(<span class="pos">+24%</span>), 단기 과열 해소 가능성</td></tr><tr><td>산일전기</td><td>매도 검토</td><td>RSI 71.1 과매수 + 당일 <span class="pos">+4.81%</span> 추가 상승 + <span class="pos">+13%</span> 수익 구간, 전력망 단기 과열 주의</td></tr><tr><td>에이비엘바이오</td><td>관망</td><td>지지선(161,200) 직전 위기 + 20일선 하향 이탈 상태 — 4/20 AACR 발표 결과 확인 후 판단</td></tr><tr><td>보성파워텍</td><td>관망</td><td>골든크로스 형성이나 당일 <span class="neg">-3.66%</span> 하락 충격, 지지선 9,720 안착 여부 확인 필요</td></tr><tr><td>비에이치아이</td><td>보유 유지</td><td>RSI 54.9 중립 + 저항선(98,100) 돌파 + <span class="pos">+7.47%</span> 수익, 상승 모멘텀 유효</td></tr><tr><td>하나마이크론</td><td>보유 유지</td><td>RSI 63.2 + 거래량 1.6배 + 연속 상승세, 추세 지속 확인</td></tr><tr><td>에코프로</td><td>보유 유지</td><td>골든크로스 + RSI 49.9 중립, 추세 전환 초기 — 속도 조절 가능하나 방향성 유효</td></tr><tr><td>LS ELECTRIC</td><td>매수 검토</td><td>RSI 20.5 과매도 + 전력망 대형주, 기술적 반등 시나리오 검토 가치 있음</td></tr><tr><td>포스코퓨처엠</td><td>매수 검토</td><td><span class="pos">+4.92%</span> + 거래량 2.6배, 배터리 소재 섹터 반등 선도 — 추가 확인 후 진입 여부 결정</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>내일 추적 이벤트</h2>
+<ul>
+<li><strong>에이비엘바이오 (4/20 월)</strong>: AACR 2026 이중항체 ADC 파이프라인 데이터 공개 — 바이오 트리거 가능</li>
+<li><strong>4/18 (내일)</strong>: 주요 경제지표 발표 없음</li>
+<li><strong>4/21 (화)</strong>: 미국 소매판매 발표 예정</li>
+<li><strong>4/28~29</strong>: FOMC 회의 (한국시간 4/30 새벽 금리 발표)</li>
+</ul>
+</div>
+<div class="card"><h2>오늘의 정리</h2>
+<p>코스피 약보합(<span class="neg">-0.55%</span>) 장에서 반도체(마이크로컨텍솔 <span class="pos">+5.71%</span>, 하나마이크론 <span class="pos">+4.04%</span>)·전력망(산일전기 <span class="pos">+4.81%</span>)이 강세를 이끌며 당일 수익은 방어했으나, 에이비엘바이오·에코프로·한라캐스트 등 바이오·배터리 섹터 누적 손실로 포트폴리오 총 평가손익은 -330,553원(<span class="neg">-6.16%</span>) 적자 지속. 내일 핵심 관전 포인트는 에이비엘바이오 지지선(161,200원) 사수 여부와 RSI 과매수 구간 마이크로컨텍솔·산일전기의 단기 차익실현 타이밍, 그리고 4/20 AACR 발표 이후 바이오 섹터 방향성.</p>
+</div>
+</div>
+</body>
+</html>

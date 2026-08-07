@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" type="image/svg+xml" href="/stock-dashboard/favicon.svg">
+<title>2026-04-30-morning</title>
+<style>:root {
+  --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a;
+  --text: #e1e4ed; --muted: #8b8fa3; --accent: #6c8aff;
+  --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px; }
+header { padding: 24px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+header h1 { font-size: 1.4rem; font-weight: 600; }
+header .date { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+.card h2 { font-size: 1.1rem; margin-bottom: 14px; color: var(--accent); }
+.card h3 { font-size: 0.95rem; margin: 18px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 8px 0; }
+th { background: #22252f; color: var(--muted); text-align: left; padding: 8px 10px; font-weight: 500; white-space: nowrap; }
+td { padding: 7px 10px; border-top: 1px solid var(--border); white-space: nowrap; }
+tr:hover td { background: #1f2230; }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+.warn { color: var(--orange); }
+ul { padding-left: 20px; margin: 8px 0; }
+li { margin: 4px 0; }
+p { margin: 6px 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.report-list { list-style: none; padding: 0; }
+.report-list li { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.report-list li:last-child { border-bottom: none; }
+.report-list .type { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: #22252f; color: var(--muted); }
+.report-list .type.morning { color: var(--orange); border: 1px solid var(--orange); }
+.report-list .type.evening { color: var(--accent); border: 1px solid var(--accent); }
+.report-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8rem; }
+.report-controls select { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 0.8rem; cursor: pointer; }
+.report-pager { display: flex; gap: 6px; align-items: center; }
+.report-pager button { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.8rem; cursor: pointer; }
+.report-pager button:hover { background: var(--border); }
+.report-pager button:disabled { opacity: 0.3; cursor: default; }
+.report-pager button:disabled:hover { background: #22252f; }
+.report-pager .page-info { color: var(--muted); font-size: 0.75rem; }
+.back { display: inline-block; margin-bottom: 16px; color: var(--muted); font-size: 0.85rem; }
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.summary-item { background: #22252f; border-radius: 8px; padding: 14px; }
+.summary-item .label { color: var(--muted); font-size: 0.75rem; margin-bottom: 4px; }
+.summary-item .value { font-size: 1.2rem; font-weight: 600; }
+@media (max-width: 600px) {
+  table { font-size: 0.78rem; }
+  td, th { padding: 6px 6px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="../index.html">&larr; 대시보드</a>
+<header><h1>장 시작 전 브리핑 2026-04-30</h1></header>
+<p>가격 기준: 전일 종가 (2026-04-29)</p>
+<div class="card"><h2>해외증시</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>지수</th><th>종가</th><th>등락</th></tr></thead><tbody><tr><td>나스닥 100</td><td>-</td><td><span class="neg">-0.9%</span></td></tr><tr><td>S&P 500</td><td>-</td><td><span class="neg">-0.3%</span></td></tr><tr><td>다우</td><td>-</td><td><span class="neg">-0.3%</span></td></tr></tbody></table></div>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>종가 수치 미수집 (등락률만 확인)</p>
+</blockquote>
+</div>
+<div class="card"><h2>오늘 핵심 포인트</h2>
+<p>전일 미국 증시 소폭 하락 — 테슬라 <span class="neg">-3.5%</span> (AI·로봇 지출 회의론), 혼재된 기업 실적. 코스피는 4월 29일 장중 6,600선 돌파, 코스닥 종가 기준 1,200선 돌파 (삼성전자·SK하이닉스 실적 기반 실적 장세). 금일 삼성전자 1Q 확정실적 + 포스코퓨처엠·LG화학·한화에어로스페이스 등 대형주 동시 실적 발표 예정 — 실적 서프라이즈·쇼크 여부에 따라 섹터 변동성 주의.</p>
+</div>
+<div class="card"><h2>보유 종목 점검</h2>
+<p>포트폴리오 총평가 (현금 제외): 4,709,250원 | 투자원금: 4,778,985원 | 수익률: <strong><span class="neg">-1.46%</span></strong>  </p>
+<p>총자산 (현금 953,019원 포함): <strong>5,662,269원</strong></p>
+<p>⚠️ <strong>자동차·배터리 섹터 집중도 42% — 40% 초과 경고</strong> (에코프로+한라캐스트+에코프로비엠 합산)</p>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>평균단가</th><th>전일종가</th><th>수익률</th><th>5일선</th><th>20일선</th><th>RSI</th><th>추세</th><th>뉴스·신호</th></tr></thead><tbody><tr><td>에코프로</td><td>169,486</td><td>159,900</td><td><strong><span class="neg">-5.66%</span></strong></td><td>158,320 (아래)</td><td>151,610 (아래)</td><td>63.6</td><td>상승</td><td>외국인 순매수 1위 (2조원+)</td></tr><tr><td>한라캐스트</td><td>17,905</td><td>17,850</td><td><span class="neg">-0.31%</span></td><td>16,662 (아래)</td><td>14,782 (아래)</td><td>84.5 🔴</td><td>상승</td><td>-</td></tr><tr><td>에코프로비엠</td><td>216,187</td><td>212,500</td><td><span class="neg">-1.71%</span></td><td>209,400 (아래)</td><td>205,735 (아래)</td><td>55.8</td><td>상승</td><td>에코프로 그룹 핵심</td></tr><tr><td>지투지바이오</td><td>81,580</td><td>84,900</td><td><strong><span class="pos">+4.07%</span></strong></td><td>81,720 (아래)</td><td>73,425 (아래)</td><td>76.0 🔴</td><td>상승</td><td>바이오 외국인 순매수 상위</td></tr><tr><td>HPSP</td><td>51,000</td><td>53,400</td><td><strong><span class="pos">+4.71%</span></strong></td><td>53,260 (아래)</td><td>46,205 (아래)</td><td>71.8 🔴</td><td>상승</td><td>외국인 순매수 상위</td></tr><tr><td>삼성전자우</td><td>154,600</td><td>163,500</td><td><strong><span class="pos">+5.76%</span></strong></td><td>158,700 (아래)</td><td>144,120 (아래)</td><td>82.2 🔴</td><td>상승</td><td>코스피 6,600 돌파 수혜</td></tr><tr><td>뉴로메카</td><td>66,700</td><td>65,700</td><td><span class="neg">-1.50%</span></td><td>67,240 (위)</td><td>63,310 (위)</td><td>63.8</td><td>하락</td><td>-</td></tr><tr><td>에스피지</td><td>133,150</td><td>130,100</td><td><span class="neg">-2.29%</span></td><td>126,160 (아래)</td><td>114,365 (아래)</td><td>74.6 🔴</td><td>상승</td><td>로봇·자동화 외국인 순매수</td></tr><tr><td>엘앤씨바이오</td><td>70,000</td><td>69,900</td><td><span class="neg">-0.14%</span></td><td>70,460 (위)</td><td>69,180 (위)</td><td>62.1</td><td>하락</td><td>외국인 폭풍매수</td></tr></tbody></table></div>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>🔴 = RSI 70 이상 (과매수 구간)</p>
+</blockquote>
+</div>
+<div class="card"><h2>목표가·손절가 점검</h2>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>portfolio.json target_price/stop_loss 전종목 null → 기술적 분석 기반 제안값</p>
+</blockquote>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>전일종가</th><th>목표가(제안)</th><th>손절가(제안)</th><th>지지선</th><th>저항선</th><th>상태</th></tr></thead><tbody><tr><td>에코프로</td><td>159,900</td><td>170,000</td><td>144,000</td><td>148,800</td><td>154,550</td><td>구간 내</td></tr><tr><td>한라캐스트</td><td>17,850</td><td>19,000</td><td>16,662</td><td>13,855</td><td>14,610</td><td>구간 내</td></tr><tr><td>에코프로비엠</td><td>212,500</td><td>225,000</td><td>197,000</td><td>203,250</td><td>210,750</td><td>구간 내</td></tr><tr><td>지투지바이오</td><td>84,900</td><td>90,000</td><td>68,300</td><td>70,400</td><td>73,850</td><td>구간 내</td></tr><tr><td>HPSP</td><td>53,400</td><td>58,000</td><td>48,000</td><td>43,725</td><td>45,850</td><td>구간 내</td></tr><tr><td>삼성전자우</td><td>163,500</td><td>170,000</td><td>155,000</td><td>143,350</td><td>147,250</td><td>구간 내</td></tr><tr><td>뉴로메카</td><td>65,700</td><td>68,500</td><td>59,400</td><td>61,250</td><td>68,500</td><td>구간 내</td></tr><tr><td>에스피지</td><td>130,100</td><td>140,000</td><td>113,600</td><td>112,250</td><td>117,150</td><td>구간 내</td></tr><tr><td>엘앤씨바이오</td><td>69,900</td><td>72,100</td><td>65,800</td><td>67,800</td><td>72,100</td><td>구간 내</td></tr></tbody></table></div>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>목표가: 저항선 기반 (저항 돌파 종목은 저항선 ×1.05~1.10) | 손절가: 지지선 ×0.97 또는 5일선</p>
+</blockquote>
+</div>
+<div class="card"><h2>단기 매매 TOP 3</h2>
+<p>점수 기준: RSI≤30(+3) / 지지선 3%이내(+2) / 거래량 5일 1.5배(+2) / MA5>MA20(+1) / 추세상승(+1)</p>
+<div style="overflow-x:auto;"><table><thead><tr><th>순위</th><th>종목</th><th>섹터</th><th>전일종가</th><th>적정 매수 구간</th><th>5일선</th><th>20일선</th><th>RSI</th><th>선별이유(점수)</th><th>뉴스검증</th></tr></thead><tbody><tr><td>1</td><td>LS ELECTRIC</td><td>전력망·에너지</td><td>273,000</td><td>270,000~275,000</td><td>246,700 (아래)</td><td>410,115 (위)</td><td><strong>13.8</strong> ⚠️</td><td>RSI과매도+3 / 추세상승+1 = <strong>4점</strong></td><td>호재 (NH 목표가 275,000 상향, 북미 데이터센터 수주 1,700억) — ⚠️ MA20 데이터 이상 의심 (현재가 273,000 vs MA20 410,115 괴리 과도, 4월27일 신고가 기록 종목과 RSI 13.8 모순) → <strong>관망 권고</strong></td></tr><tr><td>2</td><td>비츠로테크</td><td>전력망·에너지</td><td>17,370</td><td>17,000~17,400</td><td>17,048 (아래)</td><td>14,686 (아래)</td><td>79.6</td><td>거래량 2.25배+2 / MA5>MA20+1 / 추세상승+1 = <strong>4점</strong></td><td>중립 (전력망 테마 강세 수혜, 개별 뉴스 미확인)</td></tr><tr><td>3</td><td>디앤디파마텍</td><td>바이오·제약</td><td>77,500</td><td>74,000~77,500</td><td>79,900 (위)</td><td>75,890 (아래)</td><td>64.9</td><td>지지선 1.64%이내+2 / MA5>MA20+1 = <strong>3점</strong></td><td>중립 (바이오 외국인 순매수 흐름 수혜)</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>장기 투자 TOP 3</h2>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>⚠️ 자동차·배터리 섹터 집중도 42% — 현대차2우B 추가 매수 비권장 (섹터 과집중)</p>
+</blockquote>
+<div style="overflow-x:auto;"><table><thead><tr><th>순위</th><th>종목</th><th>섹터</th><th>전일종가</th><th>적정 매수 구간</th><th>장기 매력 포인트</th><th>리스크</th></tr></thead><tbody><tr><td>1</td><td>삼성전자우</td><td>반도체</td><td>163,500</td><td>이미 보유 (추가: 155,000 이하 조정 시)</td><td>코스피 시총 1위 삼성전자 우선주, AI 반도체 실적 급성장, 배당 우위</td><td>RSI 82.2 과매수, 단기 조정 가능성</td></tr><tr><td>2</td><td>한미약품</td><td>바이오·제약</td><td>483,000</td><td>470,000~485,000</td><td>코스피 제약 대표주, 안정적 매출, GLP-1 파이프라인</td><td>지지선(490,500) 이탈 중, 임상 리스크</td></tr><tr><td>3</td><td>두산에너빌리티</td><td>전력망·에너지</td><td>129,200</td><td>110,000~120,000 (조정 시)</td><td>원자력·가스터빈 수주 급증, 에너지전환 핵심 인프라</td><td>RSI 88.6 극단적 과매수, 단기 조정 후 진입 필요</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>오늘의 액션 플랜</h2>
+<p>현금: 953,019원 | 매수 총약정 (전단계 체결 시): <strong>492,210원</strong> | 잔여 현금: <strong>460,809원</strong></p>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>액션</th><th>추천시간대</th><th>분할구간</th><th>총수량·비중</th><th>근거</th></tr></thead><tbody><tr><td>에코프로</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>추세 상승 / RSI 63.6 정상 / 수익률 <span class="neg">-5.66%</span> 회복 대기</td></tr><tr><td>한라캐스트</td><td>관망</td><td>-</td><td>-</td><td>-</td><td>RSI 84.5 극단 과매수 / 평단 하회(<span class="neg">-0.31%</span>) / 18,000 돌파 시 분할매도 재검토</td></tr><tr><td>에코프로비엠</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>추세 상승 / RSI 55.8 정상 / 수익률 <span class="neg">-1.71%</span> 회복 대기</td></tr><tr><td>지투지바이오</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>RSI 76.0 과매수 주의 / 수익률 <span class="pos">+4.07%</span> / 85,000 이상 시 부분 익절 고려</td></tr><tr><td>HPSP</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>RSI 71.8 과매수 / 수익률 <span class="pos">+4.71%</span> / 단주로 분할 불가</td></tr><tr><td>삼성전자우</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>장기 보유 유지 / RSI 82.2 과매수로 추가 매수 보류</td></tr><tr><td>뉴로메카</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>추세 하락 주의 / MA5(67,240)>MA20(63,310) 유지 확인 중</td></tr><tr><td>에스피지</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>RSI 74.6 과매수 / 수익률 <span class="neg">-2.29%</span> 회복 전 매도 불합리</td></tr><tr><td>엘앤씨바이오</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>추세 하락 / 지지선(67,800) 근접 시 추가 대응</td></tr><tr><td><strong>LS ELECTRIC</strong></td><td><strong>관망</strong></td><td>-</td><td>-</td><td>-</td><td>RSI·MA20 데이터 이상 의심 / 신고가 기록 + NH 목표가(275,000) 거의 도달 / 조정 후 데이터 확인 재진입 검토</td></tr><tr><td><strong>비츠로테크</strong></td><td><strong>매수</strong></td><td>장 초반 (09:00~09:30)</td><td>1차: 17,370×8 / 2차: 17,700×4 / 3차: 18,240×3</td><td>15주 / 비중 4.7%</td><td>역피라미딩 — 거래량 2.25배 급증 + MA5>MA20 + 전력망 테마 모멘텀</td></tr><tr><td><strong>디앤디파마텍</strong></td><td><strong>매수</strong></td><td>오전 10시경</td><td>1차: 77,500×1 / 2차: 76,250×1 / 3차: 74,000×1</td><td>3주 / 비중 4.0%</td><td>피라미딩 — 지지선(76,250) 1.64% 근접 + 바이오 외국인 순매수 흐름</td></tr><tr><td>삼성전자우(장기)</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>이미 보유 / RSI 82.2 과매수로 추가 매수 보류</td></tr><tr><td>현대차2우B(장기)</td><td>관망</td><td>-</td><td>-</td><td>-</td><td>⚠️ 자동차·배터리 섹터 42% 과집중 — 추가 매수 비권장 / 섹터 비중 축소 후 재검토</td></tr><tr><td>한미약품(장기)</td><td>관망</td><td>-</td><td>-</td><td>-</td><td>지지선(490,500) 이탈 상태 / RSI 48.4 / 475,000 이상 회복 확인 후 1차 진입</td></tr><tr><td>두산에너빌리티(장기)</td><td>관망</td><td>-</td><td>-</td><td>-</td><td>RSI 88.6 극단 과매수 / 110,000~120,000 조정 시 피라미딩 시작</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>전략 요약</h2>
+<p>미국 증시 소폭 약세에도 국내 실적 장세 지속 — 오늘은 신규 매수 2종목(비츠로테크·디앤디파마텍)으로 전력망·바이오 섹터에 소폭 분산하되, 자동차·배터리 섹터 집중도(42%)를 감안해 보유 종목은 전량 보유 유지한다.</p>
+</div>
+</div>
+</body>
+</html>

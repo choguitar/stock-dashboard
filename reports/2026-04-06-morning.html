@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" type="image/svg+xml" href="/stock-dashboard/favicon.svg">
+<title>2026-04-06-morning</title>
+<style>:root {
+  --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a;
+  --text: #e1e4ed; --muted: #8b8fa3; --accent: #6c8aff;
+  --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px; }
+header { padding: 24px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+header h1 { font-size: 1.4rem; font-weight: 600; }
+header .date { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+.card h2 { font-size: 1.1rem; margin-bottom: 14px; color: var(--accent); }
+.card h3 { font-size: 0.95rem; margin: 18px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 8px 0; }
+th { background: #22252f; color: var(--muted); text-align: left; padding: 8px 10px; font-weight: 500; white-space: nowrap; }
+td { padding: 7px 10px; border-top: 1px solid var(--border); white-space: nowrap; }
+tr:hover td { background: #1f2230; }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+.warn { color: var(--orange); }
+ul { padding-left: 20px; margin: 8px 0; }
+li { margin: 4px 0; }
+p { margin: 6px 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.report-list { list-style: none; padding: 0; }
+.report-list li { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.report-list li:last-child { border-bottom: none; }
+.report-list .type { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: #22252f; color: var(--muted); }
+.report-list .type.morning { color: var(--orange); border: 1px solid var(--orange); }
+.report-list .type.evening { color: var(--accent); border: 1px solid var(--accent); }
+.report-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8rem; }
+.report-controls select { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 0.8rem; cursor: pointer; }
+.report-pager { display: flex; gap: 6px; align-items: center; }
+.report-pager button { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.8rem; cursor: pointer; }
+.report-pager button:hover { background: var(--border); }
+.report-pager button:disabled { opacity: 0.3; cursor: default; }
+.report-pager button:disabled:hover { background: #22252f; }
+.report-pager .page-info { color: var(--muted); font-size: 0.75rem; }
+.back { display: inline-block; margin-bottom: 16px; color: var(--muted); font-size: 0.85rem; }
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.summary-item { background: #22252f; border-radius: 8px; padding: 14px; }
+.summary-item .label { color: var(--muted); font-size: 0.75rem; margin-bottom: 4px; }
+.summary-item .value { font-size: 1.2rem; font-weight: 600; }
+@media (max-width: 600px) {
+  table { font-size: 0.78rem; }
+  td, th { padding: 6px 6px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="../index.html">&larr; 대시보드</a>
+<header><h1>장 시작 전 브리핑 [2026-04-06]</h1></header>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p><strong>가격 기준</strong>: ★=4/3 전일종가(확인), ☆=4/2 종가(4/3 미수집)  </p>
+<p>미국 굿프라이데이(4/3~4) 휴장 → 미국장 마지막 거래일 4/2(목)  </p>
+<p>한국 마지막 거래일 4/3(금)</p>
+</blockquote>
+<div class="card"><h2>해외증시</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>지수</th><th>종가</th><th>등락</th><th>등락률</th></tr></thead><tbody><tr><td>다우존스</td><td>46,504.67</td><td>-61.07</td><td><span class="neg">-0.13%</span></td></tr><tr><td>S&P 500</td><td>6,582.69</td><td>+7.24</td><td><span class="pos">+0.11%</span></td></tr><tr><td>나스닥</td><td>21,879.18</td><td>+38.50</td><td><span class="pos">+0.18%</span></td></tr></tbody></table></div>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>4/2 마감. 굿프라이데이(4/3~4) 휴장 → 오늘 미국장도 동시 개장. 트럼프 "이란 강타" 발언에 급락 후 호르무즈 협상 소식에 낙폭 만회. WTI·브렌트유 $109 돌파(+8~9%).</p>
+</blockquote>
+</div>
+<div class="card"><h2>코스피·코스닥 직전 2거래일</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>날짜</th><th>코스피</th><th>등락</th><th>코스닥</th><th>등락</th></tr></thead><tbody><tr><td>4/2(목)</td><td>5,234.05</td><td>-244.65 (<span class="neg">-4.47%</span>)</td><td>1,056.34</td><td>-59.84 (<span class="neg">-5.36%</span>)</td></tr><tr><td>4/3(금)</td><td>5,377.30</td><td>+143.25 (<span class="pos">+2.74%</span>)</td><td>1,063.75</td><td>+7.41 (<span class="pos">+0.70%</span>)</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>오늘 핵심 포인트</h2>
+<ol style="padding-left:20px;margin:8px 0;">
+<li><strong>미국·한국 동시 주의 구간</strong> — 미국은 굿프라이데이 휴장 후 첫 개장. 주말 중동 뉴스 반영 여부가 오전 방향 결정. 트럼프 추가 발언 없으면 4/3 반등 이어질 가능성.</li>
+<li><strong>외국인 12거래일 만에 순매수(~8,000억) 전환</strong> — 삼성전자 <span class="pos">+4.2%</span>, SK하이닉스 <span class="pos">+4.5%</span> 낙폭 회복. 오늘 외국인 매수 지속 여부가 코스피 5,400 돌파 관건.</li>
+<li><strong>반도체 수출 역대 최대(328억 달러) + 삼성 1Q 영업이익 40조 전망</strong> — 실적 시즌 모멘텀 본격화. 고유가·고환율(1,512원) 부담과의 균형.</li>
+</ul>
+</div>
+<div class="card"><h2>보유종목 점검</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>평균단가</th><th>전일종가(기준)</th><th>수익률</th><th>5일MA</th><th>20일MA</th><th>RSI</th><th>추세</th><th>뉴스·신호</th></tr></thead><tbody><tr><td>유진투자증권</td><td>5,458</td><td>4,415 ☆4/2</td><td><strong><span class="neg">-19.1%</span></strong></td><td>4,654</td><td>4,876</td><td>42.0</td><td>하락</td><td>4/1 증권주 급등 후 되돌림, 4/2 재하락</td></tr><tr><td>보성파워텍</td><td>11,061</td><td>9,720 ★4/3</td><td><strong><span class="neg">-12.1%</span></strong></td><td>9,756</td><td>10,978</td><td>34.5</td><td>하락</td><td>대표이사 지분 80만주 감소(상속분할 완료, 악재 아님), 4/3 <span class="pos">+5.42%</span> 반등</td></tr><tr><td>비츠로테크</td><td>11,137</td><td>11,000 ★추정</td><td><strong><span class="neg">-1.2%</span></strong></td><td>11,402</td><td>11,080</td><td>52.2</td><td>하락</td><td>5일MA>20일MA 강세 신호 유일, 전력망 테마</td></tr><tr><td>에코프로</td><td>169,486</td><td>141,500 ★4/3</td><td><strong><span class="neg">-16.5%</span></strong></td><td>145,340</td><td>151,610</td><td>44.4</td><td>하락</td><td>2026 경영방침 발표(모든 사업장 흑자), 헝가리·인니 해외 고도화 추진</td></tr><tr><td>한라캐스트</td><td>18,521</td><td>13,800 ☆4/2</td><td><strong><span class="neg">-25.5%</span></strong></td><td>14,470</td><td>15,674</td><td>41.9</td><td>하락</td><td>수주잔고 1조 돌파, 로봇·자율주행 밸류체인 진입, 52주 신고가 보도</td></tr><tr><td>에이비엘바이오</td><td>191,320</td><td>159,800 ☆4/2</td><td><strong><span class="neg">-16.5%</span></strong></td><td>171,480</td><td>181,105</td><td>35.6</td><td>하락</td><td>AACR 2026(4/17~22) ABL206/ABL209 포스터 발표, FDA IND 승인 완료</td></tr><tr><td>현대차</td><td>458,500</td><td>471,000 ★4/3</td><td><strong><span class="pos">+2.7%</span></strong></td><td>472,700</td><td>504,825</td><td>40.0</td><td>하락</td><td>관세 25%→15% 완화, 미국 HEV <span class="pos">+14%</span> YoY, 1Q 수익성 창사 최초 기록 전망</td></tr><tr><td>삼성전자</td><td>187,300</td><td>186,200 ★4/3</td><td><strong><span class="neg">-0.6%</span></strong></td><td>178,240</td><td>186,915</td><td>47.6</td><td>횡보</td><td>1Q 영업이익 40조 전망(YoY +6배), DS부문 협력사 8,000억 지원, 목표가 240k 컨센서스</td></tr><tr><td>이수페타시스</td><td>102,900</td><td>101,800 ☆4/2</td><td><strong><span class="neg">-1.1%</span></strong></td><td>104,700</td><td>112,690</td><td>46.8</td><td>하락</td><td>구글 TPU+앤트로픽 계약 신규 매출 +1,000억, 목표가 16만원 상향(하나·신한)</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>목표가·손절가 점검 (전 종목 null → 기술적 분석 기반 제안)</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>전일종가</th><th>목표가(1차/2차)</th><th>손절가</th><th>지지선</th><th>저항선</th><th>상태</th></tr></thead><tbody><tr><td>유진투자증권</td><td>4,415</td><td>5,000 / 5,340</td><td>4,300</td><td>4,365</td><td>5,340</td><td>⚠️ 지지선 4,365 근접 (<span class="neg">-1.1%</span>), 손절 검토</td></tr><tr><td>보성파워텍</td><td>9,720</td><td>11,500 / 13,800</td><td>8,700</td><td>8,800</td><td>13,800</td><td>📊 RSI 34.5 과매도 접근, 반등 감시</td></tr><tr><td>비츠로테크</td><td>11,000</td><td>12,000 / 12,990</td><td>10,400</td><td>9,250</td><td>12,990</td><td>✅ 5일>20일 강세, 보유 유효</td></tr><tr><td>에코프로</td><td>141,500</td><td>155,000 / 174,900</td><td>138,000</td><td>138,500</td><td>174,900</td><td>⚠️ 지지 138,500 직전 (<span class="neg">-2.1%</span>)</td></tr><tr><td>한라캐스트</td><td>13,800</td><td>15,440 / 17,550</td><td>13,000</td><td>13,340</td><td>17,550</td><td>⚠️ <span class="neg">-25.5%</span> 심각, 지지 13,340 직전</td></tr><tr><td>에이비엘바이오</td><td>159,800</td><td>178,000 / 199,900</td><td>157,000</td><td>157,000</td><td>199,900</td><td>📅 AACR 4/17 이벤트, 지지 157,000 근접</td></tr><tr><td>현대차</td><td>471,000</td><td>510,000 / 564,000</td><td>445,000</td><td>445,000</td><td>564,000</td><td>✅ 수익권, 관세 완화 호재</td></tr><tr><td>삼성전자</td><td>186,200</td><td>200,000 / 209,000</td><td>175,000</td><td>167,000</td><td>209,000</td><td>📈 5일MA≈20일MA 수렴, 1Q 실적 기대</td></tr><tr><td>이수페타시스</td><td>101,800</td><td>115,000 / 132,500</td><td>96,000</td><td>96,300</td><td>132,500</td><td>📈 구글 계약 호재, 조정 후 재상승 기대</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>매수 후보 TOP 3</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>순위</th><th>종목</th><th>섹터</th><th>전일종가(4/2)</th><th>5일MA</th><th>20일MA</th><th>RSI</th><th>선별이유</th><th>추천매수구간</th><th>뉴스요약</th></tr></thead><tbody><tr><td>1</td><td><strong>디앤디파마텍</strong> (347850)</td><td>바이오·제약</td><td>69,400</td><td>72,140</td><td>78,480</td><td>29.1</td><td>RSI 과매도(29.1), 이중 임상 촉매 임박, 고점比 <span class="neg">-60%</span> 과매도</td><td>67,000~69,400 분할매수</td><td>DD02(GLP-1) 임상1상 4주 결과 임박 + DD01 MASH 2상 48주 완료 → 상반기 데이터 발표. 화이자가 파트너사 멧세라를 $100억에 인수해 사실상 화이자 파이프라인 편입. AACR(4/17~22) 바이오 섹터 수혜 기대</td></tr><tr><td>2</td><td><strong>엘앤씨바이오</strong> (290650)</td><td>바이오·의료기기</td><td>66,600</td><td>69,200</td><td>75,775</td><td>30.7</td><td>RSI 과매도(30.7), 흑자전환+생산 캐파 8배 확대 펀더멘털 전환 확인</td><td>65,000~66,600 분할매수</td><td>리투오 4Q25 매출 247억(<span class="pos">+29%</span> YoY) 3년 최고, 흑자전환 달성. 생산 캐파: 현 2.4만개→1H26 5만→2H26 8만→2027 10만개. 2026 매출 가이던스 500억(8배 급증). 고점比 <span class="neg">-40%</span> 조정 중</td></tr><tr><td>3</td><td><strong>한미반도체</strong> (042700)</td><td>반도체 장비</td><td>256,000</td><td>263,300</td><td>295,700</td><td>30.7</td><td>RSI 과매도 직전, 지지 242,500(<span class="neg">-5.6%</span>), 2Q26 HBM4 발주 본격화</td><td>245,000~256,000 분할매수</td><td>SK하이닉스향 HBM4 TC본더 428억 수주 확인. 2026 매출 8,135억(<span class="pos">+41%</span>), 영업익 4,042억(첫 4천억 돌파). 와이드 TC본더 출시 시 ASP <span class="pos">+30%</span>. 외국인 재진입 시 반도체 장비주 최선호 수혜</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>오늘의 액션 플랜</h2>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p><strong>주문가능금액 107,359원</strong> — 관심 종목 최소 단가 미달. 기존 보유종목 관리 집중.</p>
+</blockquote>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>액션</th><th>추천시간대</th><th>목표가격</th><th>수량·비중</th><th>근거</th></tr></thead><tbody><tr><td>유진투자증권</td><td><strong>손절 검토</strong></td><td>오전 10시 방향 확인 후</td><td>4,300 이탈 시</td><td>전량 또는 절반</td><td><span class="neg">-19.1%</span> 손실, 지지선 근접, 추가 하락 리스크 높음</td></tr><tr><td>보성파워텍</td><td><strong>관망</strong></td><td>오전 10시</td><td>10,000 회복 확인</td><td>—</td><td>RSI 과매도 접근, 4/3 반등 확인, 8,800 지지 유효</td></tr><tr><td>비츠로테크</td><td><strong>보유</strong></td><td>—</td><td>—</td><td>—</td><td>5일>20일 강세, RSI 52 중립, 전력망 테마</td></tr><tr><td>에코프로</td><td><strong>관망</strong></td><td>장 초반</td><td>138,500 이탈 시 손절</td><td>—</td><td>지지 138,500 직전, 이탈 시 즉시 대응</td></tr><tr><td>한라캐스트</td><td><strong>손절 검토</strong></td><td>오전 10시</td><td>13,000 이탈 시</td><td>절반 또는 전량</td><td><span class="neg">-25.5%</span> 최대손실, 단 수주잔고 1조·로봇 모멘텀 보유 시 소량 유지 가능</td></tr><tr><td>에이비엘바이오</td><td><strong>보유</strong> (이벤트 보유)</td><td>—</td><td>AACR 4/17</td><td>—</td><td>지지 157,000 이탈 전 보유, AACR 발표까지 유지</td></tr><tr><td>현대차</td><td><strong>보유</strong></td><td>—</td><td>510,000 도달 시 부분매도 검토</td><td>—</td><td>유일한 수익권, 관세 완화 + 실적 모멘텀</td></tr><tr><td>삼성전자</td><td><strong>보유</strong></td><td>—</td><td>—</td><td>—</td><td>1Q 실적 시즌 기대, 목표가 240k</td></tr><tr><td>이수페타시스</td><td><strong>보유</strong></td><td>—</td><td>—</td><td>—</td><td>구글 TPU 계약 호재, 96,300 지지</td></tr></tbody></table></div>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p><strong>오늘 신규 매수 없음</strong> — 현금 107,359원으로 관심 후보(최소 65,000원~256,000원) 매수 시 현금 전액 소진. 엘앤씨바이오(65,000원)만 1주 가능하나 리스크 집중. 입금 후 디앤디파마텍 또는 한미반도체 분할매수 검토.</p>
+</blockquote>
+</div>
+<div class="card"><h2>포트폴리오 요약 (전일종가 기준)</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>항목</th><th>금액</th></tr></thead><tbody><tr><td>주식 평가금액</td><td>4,624,600원</td></tr><tr><td>주식 투자원금</td><td>5,319,137원</td></tr><tr><td>평가손익</td><td><strong>-694,537원 (<span class="neg">-13.1%</span>)</strong></td></tr><tr><td>주문가능금액</td><td>107,359원</td></tr><tr><td>총 자산</td><td>4,731,959원</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>전략 요약</h2>
+<p>4/3 외국인 순매수 전환 + 반도체 실적 기대로 반등 흐름이나, 전 종목 하락추세 지속 + 중동 리스크 잔존. 오늘은 유진투자증권·한라캐스트 손절라인 집중 관찰하고, 에이비엘바이오(AACR 4/17)·이수페타시스(구글 계약)·삼성전자(1Q 실적)는 이벤트 보유 유지가 우선이다.</p>
+</div>
+</div>
+</body>
+</html>

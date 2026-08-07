@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" type="image/svg+xml" href="/stock-dashboard/favicon.svg">
+<title>2026-04-16-morning</title>
+<style>:root {
+  --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a;
+  --text: #e1e4ed; --muted: #8b8fa3; --accent: #6c8aff;
+  --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px; }
+header { padding: 24px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+header h1 { font-size: 1.4rem; font-weight: 600; }
+header .date { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+.card h2 { font-size: 1.1rem; margin-bottom: 14px; color: var(--accent); }
+.card h3 { font-size: 0.95rem; margin: 18px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 8px 0; }
+th { background: #22252f; color: var(--muted); text-align: left; padding: 8px 10px; font-weight: 500; white-space: nowrap; }
+td { padding: 7px 10px; border-top: 1px solid var(--border); white-space: nowrap; }
+tr:hover td { background: #1f2230; }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+.warn { color: var(--orange); }
+ul { padding-left: 20px; margin: 8px 0; }
+li { margin: 4px 0; }
+p { margin: 6px 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.report-list { list-style: none; padding: 0; }
+.report-list li { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.report-list li:last-child { border-bottom: none; }
+.report-list .type { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: #22252f; color: var(--muted); }
+.report-list .type.morning { color: var(--orange); border: 1px solid var(--orange); }
+.report-list .type.evening { color: var(--accent); border: 1px solid var(--accent); }
+.report-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8rem; }
+.report-controls select { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 0.8rem; cursor: pointer; }
+.report-pager { display: flex; gap: 6px; align-items: center; }
+.report-pager button { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.8rem; cursor: pointer; }
+.report-pager button:hover { background: var(--border); }
+.report-pager button:disabled { opacity: 0.3; cursor: default; }
+.report-pager button:disabled:hover { background: #22252f; }
+.report-pager .page-info { color: var(--muted); font-size: 0.75rem; }
+.back { display: inline-block; margin-bottom: 16px; color: var(--muted); font-size: 0.85rem; }
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.summary-item { background: #22252f; border-radius: 8px; padding: 14px; }
+.summary-item .label { color: var(--muted); font-size: 0.75rem; margin-bottom: 4px; }
+.summary-item .value { font-size: 1.2rem; font-weight: 600; }
+@media (max-width: 600px) {
+  table { font-size: 0.78rem; }
+  td, th { padding: 6px 6px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="../index.html">&larr; 대시보드</a>
+<header><h1>장 시작 전 브리핑 2026-04-16</h1></header>
+<p>가격 기준: 전일 종가 (2026-04-15 17:50:46)</p>
+<div class="card"><h2>해외증시</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>지수</th><th>종가</th><th>등락</th></tr></thead><tbody><tr><td>S&P 500</td><td>6,967.38</td><td><span class="pos">+1.18%</span></td></tr><tr><td>나스닥</td><td>23,639.08</td><td><span class="pos">+1.96%</span></td></tr><tr><td>다우존스</td><td>48,535.99</td><td><span class="pos">+0.66%</span></td></tr><tr><td>필라델피아 반도체</td><td>9,224.12</td><td><span class="pos">+2.04%</span></td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>오늘 핵심 포인트</h2>
+<p>미국 S&P500 2월 이후 최고치 경신, 나스닥·반도체 강세로 위험선호 심리 회복. 삼성전자 어닝 서프라이즈 이후 코스피 순이익 전망 상향, 외국인 8주 만에 순매수 전환으로 코스피 상승 우호적 환경. 오늘 TSMC 1Q 실적 발표 예정 → 반도체주 방향 결정 변수. 전력망·에너지 섹터는 원전협력·AI 인프라 테마 지속.</p>
+</div>
+<div class="card"><h2>보유 종목 점검</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>평균단가</th><th>전일종가</th><th>수익률</th><th>5일선</th><th>20일선</th><th>RSI</th><th>추세</th><th>뉴스·신호</th></tr></thead><tbody><tr><td>유진투자증권</td><td>5,458</td><td>5,090</td><td><span class="neg">-6.74%</span></td><td>위</td><td>위</td><td>57.6</td><td>상승</td><td>-</td></tr><tr><td>보성파워텍</td><td>10,906</td><td>10,400</td><td><span class="neg">-4.64%</span></td><td>위</td><td>위</td><td>54.7</td><td>상승</td><td>원전협력 수혜 기대, 거래량 2.08배</td></tr><tr><td>비츠로테크</td><td>11,854</td><td>16,250</td><td><span class="pos">+37.08%</span></td><td>위</td><td>위</td><td>77.1</td><td>상승</td><td>RSI 70선 이탈(과매수), 거래량 9.68배 과열</td></tr><tr><td>에코프로</td><td>169,486</td><td>147,900</td><td><span class="neg">-12.73%</span></td><td>위</td><td>위</td><td>47.5</td><td>횡보</td><td>데드크로스 발생, 전일 <span class="neg">-1.5%</span></td></tr><tr><td>한라캐스트</td><td>18,521</td><td>13,740</td><td><span class="neg">-25.81%</span></td><td>위</td><td>아래</td><td>45.7</td><td>상승</td><td>지지선(14,520) 이미 이탈, 자율주행·로봇 수혜 기대</td></tr><tr><td>에이비엘바이오</td><td>191,320</td><td>163,800</td><td><span class="neg">-14.38%</span></td><td>위</td><td>아래</td><td>48.0</td><td>상승</td><td>지지선(170,550) 이미 이탈, 전일 <span class="neg">-4.72%</span></td></tr><tr><td>비에이치아이</td><td>91,840</td><td>93,700</td><td><span class="pos">+2.02%</span></td><td>위</td><td>아래</td><td>55.0</td><td>횡보</td><td>원전 테마 이력, 지지선 근접(93,400)</td></tr><tr><td>마이크로컨텍솔</td><td>29,775</td><td>34,600</td><td><span class="pos">+16.21%</span></td><td>위</td><td>위</td><td>68.2</td><td>상승</td><td>저항선(28,975) 돌파 후 추세 유지</td></tr><tr><td>하나마이크론</td><td>31,525</td><td>33,350</td><td><span class="pos">+5.79%</span></td><td>위</td><td>위</td><td>53.5</td><td>상승</td><td>골든크로스 발생</td></tr><tr><td>산일전기</td><td>175,300</td><td>194,300</td><td><span class="pos">+10.84%</span></td><td>위</td><td>위</td><td>70.5</td><td>상승</td><td>RSI 70선 이탈, 목표주가 23.9만 상향(유안타)</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>목표가·손절가 점검</h2>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>전 종목 target_price / stop_loss = null → 기술적 분석 기반 제안값.  </p>
+<p>† 저항선 이미 돌파, 목표가 임의 재설정 (<span class="pos">+10%</span> 기준).</p>
+</blockquote>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>전일종가</th><th>목표가</th><th>손절가</th><th>지지선</th><th>저항선</th><th>상태</th></tr></thead><tbody><tr><td>유진투자증권</td><td>5,090</td><td>4,952</td><td>4,639</td><td>4,782</td><td>4,952</td><td>구간 내</td></tr><tr><td>보성파워텍</td><td>10,400</td><td>10,460</td><td>9,482</td><td>9,775</td><td>10,460</td><td>구간 내</td></tr><tr><td>비츠로테크</td><td>16,250</td><td>17,000†</td><td>11,829</td><td>11,075</td><td>11,750†</td><td>목표 도달</td></tr><tr><td>에코프로</td><td>147,900</td><td>153,500</td><td>141,863</td><td>146,250</td><td>153,500</td><td>구간 내</td></tr><tr><td>한라캐스트</td><td>13,740</td><td>15,955</td><td>14,084</td><td>14,520</td><td>15,955</td><td>손절 근접</td></tr><tr><td>에이비엘바이오</td><td>163,800</td><td>182,900</td><td>165,183</td><td>170,550</td><td>182,900</td><td>손절 근접</td></tr><tr><td>비에이치아이</td><td>93,700</td><td>99,850</td><td>90,598</td><td>93,400</td><td>99,850</td><td>구간 내</td></tr><tr><td>마이크로컨텍솔</td><td>34,600</td><td>38,060†</td><td>26,433</td><td>27,250</td><td>28,975†</td><td>목표 도달</td></tr><tr><td>하나마이크론</td><td>33,350</td><td>36,685†</td><td>29,925</td><td>30,850</td><td>32,900†</td><td>목표 도달</td></tr><tr><td>산일전기</td><td>194,300</td><td>213,730†</td><td>137,595</td><td>141,850</td><td>149,400†</td><td>목표 도달</td></tr></tbody></table></div>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p><strong>한라캐스트</strong>: 현재가(13,740) < 손절가(14,084) · 지지선(14,520) 이미 이탈.  </p>
+<p><strong>에이비엘바이오</strong>: 현재가(163,800) < 손절가(165,183) · 지지선(170,550) 이미 이탈.</p>
+</blockquote>
+</div>
+<div class="card"><h2>매수 후보 TOP 3</h2>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>⚠️ <strong>LS ELECTRIC(010120)</strong>: 2026-04-13 액면분할로 daily 데이터에 분할 전 주가(700K~800K) 혼재. 기술적 지지·저항·RSI 계산 신뢰 불가. Cash 한도(129,259원) 초과(186,800원/주) → <strong>관망</strong>.</p>
+</blockquote>
+<div style="overflow-x:auto;"><table><thead><tr><th>순위</th><th>종목</th><th>섹터</th><th>전일종가</th><th>5일선</th><th>20일선</th><th>RSI</th><th>선별이유</th><th>뉴스검증</th></tr></thead><tbody><tr><td>1</td><td>LS ELECTRIC</td><td>전력망_에너지</td><td>186,800</td><td>⚠️분석불가</td><td>⚠️분석불가</td><td>⚠️19.1(신뢰불가)</td><td>RSI≤30(+3), 지지선근접(+2)</td><td>호재: 액면분할 후 13.71% 급등, AI데이터센터·원전 수혜주</td></tr><tr><td>2</td><td>디앤디파마텍</td><td>바이오_제약</td><td>79,800</td><td>위</td><td>위</td><td>54.9</td><td>거래량2.5배(+2), 5MA>20MA(+1), 5일상승(+1)</td><td>호재: 2265억원 CB 발행, MASH 임상 가속화, 당일 <span class="pos">+4%</span></td></tr><tr><td>3</td><td>두산에너빌리티</td><td>전력망_에너지</td><td>104,200</td><td>위</td><td>위</td><td>60.9</td><td>거래량2.16배(+2), 5MA>20MA(+1), 5일상승(+1)</td><td>호재: 목표주가 12.2만원 상향(메리츠), SMR 수주 임박</td></tr></tbody></table></div>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>뉴로메카(4점)·한미반도체(3점) 차순위 대기.  </p>
+<p><strong>⚠️ 두산에너빌리티 매수 시 전력망_에너지 섹터 비중 39.5% 경고 (40% 경계).</strong></p>
+</blockquote>
+</div>
+<div class="card"><h2>오늘의 액션 플랜</h2>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p><strong>현금 현황</strong>: 129,259원 → 단독 매수 불가 수준. 손절 실행 시 약 970,000원 추가 확보 가능.</p>
+</blockquote>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>액션</th><th>추천시간대</th><th>분할구간</th><th>총수량·비중</th><th>근거</th></tr></thead><tbody><tr><td>한라캐스트</td><td>손절</td><td>장 초반 09:00~09:30</td><td>전량 ×11 @ 13,740</td><td>11주 / 2.9%</td><td>완전청산, 손절가(14,084) 이탈·지지선 파괴·<span class="neg">-25.8%</span></td></tr><tr><td>에이비엘바이오</td><td>손절</td><td>장 초반 09:00~09:30</td><td>전량 ×5 @ 163,800</td><td>5주 / 15.8%</td><td>완전청산, 손절가(165,183) 이탈·지지선 파괴·<span class="neg">-14.4%</span></td></tr><tr><td>비츠로테크</td><td>매도</td><td>오전 10시경</td><td>1차: 16,500×1 / 2차: 17,000×2 / 3차: 17,500×1</td><td>4주 전량 / 1.3%</td><td>수익률 구간 매도, RSI 77.1+거래량 9.68배 과열, <span class="pos">+37%</span></td></tr><tr><td>산일전기</td><td>매도</td><td>오전 10시경</td><td>1차: 194,000×1 / 2차: 196,000×1</td><td>2주 전량 / 7.5%</td><td>이익실현분할, RSI 70.5 과매수, 목표가 이미 도달</td></tr><tr><td>두산에너빌리티</td><td>매수</td><td>오후 2시 이후</td><td>1차: 104,200×3 / 2차: 102,000×3 / 3차: 100,000×4</td><td>10주 / 19.8%</td><td>피라미딩, 거래량2.16배+5일상승+SMR 호재 · 손절 현금 확보 후 실행</td></tr><tr><td>디앤디파마텍</td><td>매수</td><td>오후 2시 이후</td><td>1차: 79,800×2 / 2차: 78,000×2 / 3차: 76,000×2</td><td>6주 / 8.9%</td><td>피라미딩, 거래량2.5배+CB발행 호재+5일상승 · 손절 현금 확보 후 실행</td></tr><tr><td>에코프로</td><td>관망</td><td>-</td><td>-</td><td>-</td><td>데드크로스, 지지선(146,250) 붕괴 여부 확인 대기</td></tr><tr><td>유진투자증권</td><td>보유</td><td>-</td><td>-</td><td>180주 / 17.7%</td><td>5MA·20MA 위, 추세 상승, 뚜렷한 신호 없음</td></tr><tr><td>보성파워텍</td><td>보유</td><td>-</td><td>-</td><td>90주 / 18.1%</td><td>거래량 2.08배, 저항선(10,460) 돌파 관찰</td></tr><tr><td>비에이치아이</td><td>보유</td><td>-</td><td>-</td><td>5주 / 9.0%</td><td>지지선(93,400) 근접 지지 확인, 거래량 1.63배</td></tr><tr><td>마이크로컨텍솔</td><td>보유</td><td>-</td><td>-</td><td>4주 / 2.7%</td><td>RSI 68.2 과매수 근접이나 추세 유지, 저항 돌파 후 추세 관찰</td></tr><tr><td>하나마이크론</td><td>보유</td><td>-</td><td>-</td><td>4주 / 2.6%</td><td>골든크로스, 추세 상승 지속</td></tr><tr><td>LS ELECTRIC</td><td>관망</td><td>-</td><td>-</td><td>-</td><td>액면분할 데이터 오염, Cash 부족(186,800 > 129,259)</td></tr></tbody></table></div>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p><strong>두산에너빌리티·디앤디파마텍 매수 조건</strong>: ① 한라캐스트·에이비엘바이오 손절 체결 확인 후 ② 오후 2시 이후 시장 방향성 확인 시 실행.  </p>
+<p><strong>두산에너빌리티 매수 총액</strong>: 3단계 체결 시 104,200×3 + 102,000×3 + 100,000×4 = 312,600 + 306,000 + 400,000 = 1,018,600원 ≤ 포트폴리오 20%(1,036,160원) ✓  </p>
+<p><strong>디앤디파마텍 매수 총액</strong>: 79,800×2 + 78,000×2 + 76,000×2 = 467,600원 ✓</p>
+</blockquote>
+</div>
+<div class="card"><h2>전략 요약</h2>
+<p>한라캐스트·에이비엘바이오 손절(지지선 이탈·손절가 이하)과 비츠로테크·산일전기 이익실현 매도로 현금을 확보하고, 미국 증시 반등 수혜 및 전력망·바이오 호재 종목인 두산에너빌리티·디앤디파마텍에 오후 피라미딩 진입을 검토한다.</p>
+</div>
+</div>
+</body>
+</html>

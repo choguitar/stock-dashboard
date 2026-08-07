@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" type="image/svg+xml" href="/stock-dashboard/favicon.svg">
+<title>주식 대시보드</title>
+<style>:root {
+  --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a;
+  --text: #e1e4ed; --muted: #8b8fa3; --accent: #6c8aff;
+  --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px; }
+header { padding: 24px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+header h1 { font-size: 1.4rem; font-weight: 600; }
+header .date { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+.card h2 { font-size: 1.1rem; margin-bottom: 14px; color: var(--accent); }
+.card h3 { font-size: 0.95rem; margin: 18px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 8px 0; }
+th { background: #22252f; color: var(--muted); text-align: left; padding: 8px 10px; font-weight: 500; white-space: nowrap; }
+td { padding: 7px 10px; border-top: 1px solid var(--border); white-space: nowrap; }
+tr:hover td { background: #1f2230; }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+.warn { color: var(--orange); }
+ul { padding-left: 20px; margin: 8px 0; }
+li { margin: 4px 0; }
+p { margin: 6px 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.report-list { list-style: none; padding: 0; }
+.report-list li { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.report-list li:last-child { border-bottom: none; }
+.report-list .type { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: #22252f; color: var(--muted); }
+.report-list .type.morning { color: var(--orange); border: 1px solid var(--orange); }
+.report-list .type.evening { color: var(--accent); border: 1px solid var(--accent); }
+.report-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8rem; }
+.report-controls select { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 0.8rem; cursor: pointer; }
+.report-pager { display: flex; gap: 6px; align-items: center; }
+.report-pager button { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.8rem; cursor: pointer; }
+.report-pager button:hover { background: var(--border); }
+.report-pager button:disabled { opacity: 0.3; cursor: default; }
+.report-pager button:disabled:hover { background: #22252f; }
+.report-pager .page-info { color: var(--muted); font-size: 0.75rem; }
+.back { display: inline-block; margin-bottom: 16px; color: var(--muted); font-size: 0.85rem; }
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.summary-item { background: #22252f; border-radius: 8px; padding: 14px; }
+.summary-item .label { color: var(--muted); font-size: 0.75rem; margin-bottom: 4px; }
+.summary-item .value { font-size: 1.2rem; font-weight: 600; }
+@media (max-width: 600px) {
+  table { font-size: 0.78rem; }
+  td, th { padding: 6px 6px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 16px; margin: 8px 0; }
+.chart-item { background: #22252f; border-radius: 8px; padding: 14px; }
+.chart-item .chart-title { color: var(--muted); font-size: 0.8rem; margin-bottom: 8px; font-weight: 500; }
+@media (max-width: 600px) { .chart-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>주식 포트폴리오 대시보드</h1>
+<div class="date">마지막 업데이트: 2026-08-07 08:23
+ <a href="realtime.html"
+    style="margin-left:12px;padding:4px 10px;background:#22252f;border:1px solid #2a2d3a;border-radius:6px;font-size:0.8rem;color:#6c8aff;">실시간 주가 &rarr;</a>
+</div>
+</header>
+<div class="card"><h2>포트폴리오</h2><div class="summary-grid">
+<div class="summary-item"><div class="label">총 평가</div><div class="value">8,088,040원</div></div>
+<div class="summary-item"><div class="label">투자금</div><div class="value">10,599,512원</div></div>
+<div class="summary-item"><div class="label">수익률</div><div class="value neg">-23.7%</div></div>
+<div class="summary-item"><div class="label">수익금</div><div class="value neg">-2,511,472원</div></div>
+<div class="summary-item"><div class="label">현금</div><div class="value">38,247원</div></div>
+</div><div style="overflow-x:auto;"><table>
+<thead><tr><th>종목</th><th>시장</th><th>평균단가</th><th>현재가</th><th>수량</th><th>평가금액</th><th>수익률</th><th>손익</th></tr></thead>
+<tbody><tr><td><strong>뉴로메카</strong></td><td>코스닥</td><td>66,175</td><td>19,430</td><td>8</td><td>155,440</td><td class="neg">-70.6%</td><td class="neg">-373,960</td></tr>
+<tr><td><strong>에스피지</strong></td><td>코스닥</td><td>129,104</td><td>101,700</td><td>78</td><td>7,932,600</td><td class="neg">-21.2%</td><td class="neg">-2,137,512</td></tr></tbody></table></div></div>
+<div class="card"><h2>종목별 추이</h2><div class="chart-grid"><div class="chart-item"><div class="chart-title">뉴로메카 (348340)</div><canvas id="chart_348340" height="160"></canvas></div><div class="chart-item"><div class="chart-title">에스피지 (058610)</div><canvas id="chart_058610" height="160"></canvas></div></div></div>
+<div class="card"><h2>장전 / 장후</h2><div class="report-controls">
+<div><label>표시 개수: <select id="pageSize" onchange="paginate()">
+<option value="10" selected>10</option><option value="20">20</option>
+<option value="50">50</option><option value="100">100</option>
+</select></label></div>
+<div class="report-pager">
+<button id="prevBtn" onclick="changePage(-1)">&lsaquo; 이전</button>
+<span id="pageInfo" class="page-info"></span>
+<button id="nextBtn" onclick="changePage(1)">다음 &rsaquo;</button>
+</div></div><ul class="report-list"><li><a href="reports/2026-06-05-morning.html">2026-06-05</a><span class="type morning">장전</span></li><li><a href="reports/2026-06-04-morning.html">2026-06-04</a><span class="type morning">장전</span></li><li><a href="reports/2026-06-03-morning.html">2026-06-03</a><span class="type morning">장전</span></li><li><a href="reports/2026-06-02-morning.html">2026-06-02</a><span class="type morning">장전</span></li><li><a href="reports/2026-06-01-morning.html">2026-06-01</a><span class="type morning">장전</span></li><li><a href="reports/2026-05-01-morning.html">2026-05-01</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-30-morning.html">2026-04-30</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-30-evening.html">2026-04-30</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-29-morning.html">2026-04-29</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-29-evening.html">2026-04-29</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-28-morning.html">2026-04-28</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-28-evening.html">2026-04-28</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-27-morning.html">2026-04-27</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-27-evening.html">2026-04-27</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-24-morning.html">2026-04-24</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-24-evening.html">2026-04-24</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-23-morning.html">2026-04-23</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-23-evening.html">2026-04-23</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-22-morning.html">2026-04-22</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-22-evening.html">2026-04-22</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-21-morning.html">2026-04-21</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-21-evening.html">2026-04-21</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-20-morning.html">2026-04-20</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-20-evening.html">2026-04-20</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-17-morning.html">2026-04-17</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-17-evening.html">2026-04-17</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-16-morning.html">2026-04-16</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-16-evening.html">2026-04-16</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-15-morning.html">2026-04-15</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-15-evening.html">2026-04-15</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-14-morning.html">2026-04-14</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-14-evening.html">2026-04-14</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-13-morning.html">2026-04-13</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-13-evening.html">2026-04-13</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-10-morning.html">2026-04-10</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-10-evening.html">2026-04-10</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-09-morning.html">2026-04-09</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-09-evening.html">2026-04-09</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-08-morning.html">2026-04-08</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-08-evening.html">2026-04-08</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-07-morning.html">2026-04-07</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-07-evening.html">2026-04-07</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-06-morning.html">2026-04-06</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-06-evening.html">2026-04-06</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-03-morning.html">2026-04-03</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-03-evening.html">2026-04-03</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-02-morning.html">2026-04-02</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-02-evening.html">2026-04-02</a><span class="type evening">장후</span></li><li><a href="reports/2026-04-01-morning.html">2026-04-01</a><span class="type morning">장전</span></li><li><a href="reports/2026-04-01-evening.html">2026-04-01</a><span class="type evening">장후</span></li><li><a href="reports/2026-03-31-morning.html">2026-03-31</a><span class="type morning">장전</span></li><li><a href="reports/2026-03-30-morning.html">2026-03-30</a><span class="type morning">장전</span></li><li><a href="reports/2026-03-30-evening.html">2026-03-30</a><span class="type evening">장후</span></li><li><a href="reports/2026-03-27-morning.html">2026-03-27</a><span class="type morning">장전</span></li></ul></div><script>
+let curPage=0;
+function paginate(){
+  const size=+document.getElementById('pageSize').value;
+  const items=document.querySelectorAll('.report-list li');
+  const total=items.length, pages=Math.ceil(total/size);
+  if(curPage>=pages)curPage=pages-1;
+  items.forEach((li,i)=>{li.style.display=(i>=curPage*size&&i<(curPage+1)*size)?'':'none';});
+  document.getElementById('prevBtn').disabled=curPage<=0;
+  document.getElementById('nextBtn').disabled=curPage>=pages-1;
+  document.getElementById('pageInfo').textContent=pages>1?(curPage+1)+'/'+pages:'';
+}
+function changePage(d){curPage+=d;paginate();}
+document.addEventListener('DOMContentLoaded',paginate);
+</script>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<script>
+new Chart(document.getElementById('chart_348340'),{type:'line',data:{labels:["06-26", "06-29", "06-30", "07-01", "07-02", "07-03", "07-06", "07-07", "07-08", "07-09", "07-10", "07-13", "07-14", "07-15", "07-16", "07-20", "07-21", "07-22", "07-23", "07-24", "07-27", "07-28", "07-29", "07-30", "07-31", "08-03", "08-04", "08-05", "08-06", "08-07"],datasets:[{label:'종가',data:[33850, 37950, 37700, 38500, 34600, 35700, 34250, 33050, 30450, 32050, 32950, 30650, 29500, 31700, 30400, 28150, 29250, 30550, 29300, 26800, 27900, 25450, 23900, 23050, 26150, 27700, 31500, 21500, 19870, 19430],borderColor:'#6c8aff',borderWidth:2,pointRadius:2,tension:0.1,fill:false},{label:'5일MA',data:[null, null, null, null, 36520, 36890, 36150, 35220, 33610, 33100, 32550, 31830, 31120, 31370, 31040, 30080, 29800, 30010, 29530, 28810, 28760, 28000, 26670, 25420, 25290, 25250, 26460, 25980, 25344, 24000],borderColor:'#f59e0b',borderWidth:1.5,pointRadius:0,borderDash:[4,2],tension:0.3,fill:false},{label:'20일MA',data:[null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 32368, 32070, 31445, 30755, 29982, 29560, 29160, 29022, 28445, 27916, 27285],borderColor:'#ef4444',borderWidth:1.5,pointRadius:0,borderDash:[6,3],tension:0.3,fill:false},{label:'평단 66,175',data:[66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175, 66175],borderColor:'#22c55e',borderWidth:1,pointRadius:0,borderDash:[4,4],tension:0,fill:false}]},options:{responsive:true,plugins:{legend:{display:true,labels:{color:'#8b8fa3',font:{size:10},boxWidth:12}}},scales:{x:{ticks:{color:'#8b8fa3',font:{size:9},maxRotation:45},grid:{color:'#2a2d3a'}},y:{ticks:{color:'#8b8fa3',font:{size:9},callback:function(v){return v.toLocaleString();}},grid:{color:'#2a2d3a'}}}}});
+new Chart(document.getElementById('chart_058610'),{type:'line',data:{labels:["06-26", "06-29", "06-30", "07-01", "07-02", "07-03", "07-06", "07-07", "07-08", "07-09", "07-10", "07-13", "07-14", "07-15", "07-16", "07-20", "07-21", "07-22", "07-23", "07-24", "07-27", "07-28", "07-29", "07-30", "07-31", "08-03", "08-04", "08-05", "08-06", "08-07"],datasets:[{label:'종가',data:[72400, 79800, 80300, 81400, 74000, 76700, 75900, 71600, 66200, 72000, 74000, 68900, 66200, 70600, 66000, 62600, 66000, 82600, 83700, 71600, 75000, 68000, 81800, 76800, 94600, 108700, 108800, 108900, 108400, 101700],borderColor:'#6c8aff',borderWidth:2,pointRadius:2,tension:0.1,fill:false},{label:'5일MA',data:[null, null, null, null, 77580, 78440, 77660, 75920, 72880, 72480, 71940, 70540, 69460, 70340, 69140, 66860, 66280, 69560, 72180, 73300, 75780, 76180, 76020, 74640, 79240, 85980, 94140, 99560, 105880, 107300],borderColor:'#f59e0b',borderWidth:1.5,pointRadius:0,borderDash:[4,2],tension:0.3,fill:false},{label:'20일MA',data:[null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 73125, 73255, 72665, 72740, 72510, 73540, 75140, 76785, 78650, 80760, 82245],borderColor:'#ef4444',borderWidth:1.5,pointRadius:0,borderDash:[6,3],tension:0.3,fill:false},{label:'평단 129,104',data:[129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104, 129104],borderColor:'#22c55e',borderWidth:1,pointRadius:0,borderDash:[4,4],tension:0,fill:false}]},options:{responsive:true,plugins:{legend:{display:true,labels:{color:'#8b8fa3',font:{size:10},boxWidth:12}}},scales:{x:{ticks:{color:'#8b8fa3',font:{size:9},maxRotation:45},grid:{color:'#2a2d3a'}},y:{ticks:{color:'#8b8fa3',font:{size:9},callback:function(v){return v.toLocaleString();}},grid:{color:'#2a2d3a'}}}}});
+</script>
+</body>
+</html>

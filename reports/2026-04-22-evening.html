@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" type="image/svg+xml" href="/stock-dashboard/favicon.svg">
+<title>2026-04-22-evening</title>
+<style>:root {
+  --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a;
+  --text: #e1e4ed; --muted: #8b8fa3; --accent: #6c8aff;
+  --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px; }
+header { padding: 24px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+header h1 { font-size: 1.4rem; font-weight: 600; }
+header .date { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+.card h2 { font-size: 1.1rem; margin-bottom: 14px; color: var(--accent); }
+.card h3 { font-size: 0.95rem; margin: 18px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 8px 0; }
+th { background: #22252f; color: var(--muted); text-align: left; padding: 8px 10px; font-weight: 500; white-space: nowrap; }
+td { padding: 7px 10px; border-top: 1px solid var(--border); white-space: nowrap; }
+tr:hover td { background: #1f2230; }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+.warn { color: var(--orange); }
+ul { padding-left: 20px; margin: 8px 0; }
+li { margin: 4px 0; }
+p { margin: 6px 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.report-list { list-style: none; padding: 0; }
+.report-list li { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.report-list li:last-child { border-bottom: none; }
+.report-list .type { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: #22252f; color: var(--muted); }
+.report-list .type.morning { color: var(--orange); border: 1px solid var(--orange); }
+.report-list .type.evening { color: var(--accent); border: 1px solid var(--accent); }
+.report-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8rem; }
+.report-controls select { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 0.8rem; cursor: pointer; }
+.report-pager { display: flex; gap: 6px; align-items: center; }
+.report-pager button { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.8rem; cursor: pointer; }
+.report-pager button:hover { background: var(--border); }
+.report-pager button:disabled { opacity: 0.3; cursor: default; }
+.report-pager button:disabled:hover { background: #22252f; }
+.report-pager .page-info { color: var(--muted); font-size: 0.75rem; }
+.back { display: inline-block; margin-bottom: 16px; color: var(--muted); font-size: 0.85rem; }
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.summary-item { background: #22252f; border-radius: 8px; padding: 14px; }
+.summary-item .label { color: var(--muted); font-size: 0.75rem; margin-bottom: 4px; }
+.summary-item .value { font-size: 1.2rem; font-weight: 600; }
+@media (max-width: 600px) {
+  table { font-size: 0.78rem; }
+  td, th { padding: 6px 6px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="../index.html">&larr; 대시보드</a>
+<header><h1>장 마감 결산 2026-04-22</h1></header>
+<p>가격 기준: 당일 종가 (2026-04-22 17:54:23)</p>
+<div class="card"><h2>포트폴리오 요약</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>총 평가금액</th><th>총 평가손익</th><th>주문가능금액</th></tr></thead><tbody><tr><td>5,224,790원</td><td>-383,993원 (<span class="neg">-6.85%</span>)</td><td>68,819원</td></tr></tbody></table></div>
+<p>총 자산: 5,293,609원</p>
+</div>
+<div class="card"><h2>보유 종목 오늘 성과</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>평균단가</th><th>당일종가</th><th>수익률</th><th>당일등락</th><th>평가금액</th><th>평가손익</th></tr></thead><tbody><tr><td>유진투자증권</td><td>5,458</td><td>5,080</td><td><span class="neg">-6.93%</span></td><td><span class="pos">+0.40%</span></td><td>914,400</td><td>-68,040</td></tr><tr><td>보성파워텍</td><td>10,906</td><td>10,030</td><td><span class="neg">-8.03%</span></td><td><span class="neg">-1.18%</span></td><td>902,700</td><td>-78,840</td></tr><tr><td>에코프로</td><td>169,486</td><td>164,300</td><td><span class="neg">-3.06%</span></td><td><span class="pos">+0.37%</span></td><td>1,150,100</td><td>-36,302</td></tr><tr><td>한라캐스트</td><td>18,521</td><td>16,290</td><td><span class="neg">-12.05%</span></td><td><span class="pos">+1.31%</span></td><td>179,190</td><td>-24,541</td></tr><tr><td>에이비엘바이오</td><td>191,320</td><td>150,400</td><td><span class="neg">-21.39%</span></td><td><span class="neg">-3.53%</span></td><td>752,000</td><td>-204,600</td></tr><tr><td>비에이치아이</td><td>91,840</td><td>98,200</td><td><span class="pos">+6.93%</span></td><td><span class="pos">+0.41%</span></td><td>294,600</td><td>+19,080</td></tr><tr><td>마이크로컨텍솔</td><td>29,775</td><td>34,850</td><td><span class="pos">+17.04%</span></td><td><span class="pos">+1.46%</span></td><td>34,850</td><td>+5,075</td></tr><tr><td>이뮨온시아</td><td>7,531</td><td>7,350</td><td><span class="neg">-2.40%</span></td><td><span class="pos">+0.55%</span></td><td>124,950</td><td>-3,077</td></tr><tr><td>에코프로비엠</td><td>216,187</td><td>218,000</td><td><span class="pos">+0.84%</span></td><td><span class="neg">-1.13%</span></td><td>872,000</td><td>+7,252</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>오늘 체결 거래</h2>
+<p>오늘 총 실현손익: <strong>+104,245원</strong> (7건 매도 / 1종목 분할매수 4건)</p>
+<div style="overflow-x:auto;"><table><thead><tr><th>유형</th><th>종목</th><th>체결가</th><th>수량</th><th>실현손익</th><th>비고</th></tr></thead><tbody><tr><td>매도</td><td>하나마이크론</td><td>37,900</td><td>1</td><td>+6,375원</td><td>평균단가 31,525</td></tr><tr><td>매도</td><td>이수페타시스</td><td>139,100</td><td>1</td><td>+9,300원</td><td>평균단가 129,800</td></tr><tr><td>매도</td><td>마이크로컨텍솔</td><td>34,150</td><td>1</td><td>+4,375원</td><td>평균단가 29,775</td></tr><tr><td>매도</td><td>산일전기</td><td>205,000</td><td>1</td><td>+29,700원</td><td>평균단가 175,300</td></tr><tr><td>매도</td><td>산일전기</td><td>210,000</td><td>1</td><td>+34,700원</td><td>평균단가 175,300</td></tr><tr><td>매수</td><td>에코프로비엠</td><td>216,750</td><td>1</td><td>-</td><td>신규 분할매수</td></tr><tr><td>매수</td><td>에코프로비엠</td><td>214,500</td><td>1</td><td>-</td><td>신규 분할매수</td></tr><tr><td>매도</td><td>하나마이크론</td><td>40,000</td><td>1</td><td>+8,475원</td><td>전량 청산</td></tr><tr><td>매도</td><td>비에이치아이</td><td>97,500</td><td>2</td><td>+11,320원</td><td>평균단가 91,840</td></tr><tr><td>매수</td><td>에코프로비엠</td><td>217,000</td><td>1</td><td>-</td><td>신규 분할매수</td></tr><tr><td>매수</td><td>에코프로비엠</td><td>216,500</td><td>1</td><td>-</td><td>신규 분할매수</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>기술적 분석 요약</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>5일MA</th><th>20일MA</th><th>RSI(14)</th><th>추세</th><th>특이신호</th></tr></thead><tbody><tr><td>유진투자증권</td><td>5,054 (위)</td><td>4,832 (위)</td><td>55.8</td><td>횡보</td><td>-</td></tr><tr><td>보성파워텍</td><td>10,242 (아래)</td><td>9,920 (위)</td><td>45.3</td><td>하락</td><td>-</td></tr><tr><td>에코프로</td><td>156,940 (위)</td><td>148,545 (위)</td><td>63.3</td><td>상승</td><td>-</td></tr><tr><td>한라캐스트</td><td>15,312 (위)</td><td>14,320 (위)</td><td>58.9</td><td>상승</td><td>-</td></tr><tr><td>에이비엘바이오</td><td>158,380 (아래)</td><td>162,030 (아래)</td><td>35.1</td><td>하락</td><td>-</td></tr><tr><td>비에이치아이</td><td>98,180 (위)</td><td>94,620 (위)</td><td>50.8</td><td>상승</td><td>-</td></tr><tr><td>마이크로컨텍솔</td><td>34,900 (아래)</td><td>30,382 (위)</td><td>65.3</td><td>상승</td><td>-</td></tr><tr><td>이뮨온시아</td><td>7,492 (아래)</td><td>7,802 (아래)</td><td>41.6</td><td>하락</td><td>-</td></tr><tr><td>에코프로비엠</td><td>212,300 (위)</td><td>203,340 (위)</td><td>62.9</td><td>상승</td><td>-</td></tr></tbody></table></div>
+<p>*5일MA/20일MA의 (위/아래): 당일종가 대비 이평선 위치. 위=이평선 아래(종가 > 이평선), 아래=이평선 위(종가 < 이평선)*</p>
+</div>
+<div class="card"><h2>오늘 핵심 뉴스</h2>
+<p><strong>시장 마감</strong>: 코스피 <span class="pos">+2.07%</span>(+123.64pt) 6,091.39 마감. 반도체·이차전지·보안주 주도 강세, 코스닥 8거래일 연속 상승세 지속.</p>
+<ul>
+<li><strong>[에이비엘바이오]</strong> AACR 2026(미국 샌디에고)에서 이중항체 ADC 파이프라인 ABL206(NEOK001)/ABL209(NEOK002) 비임상 데이터 포스터 발표(4/20), FDA 희귀의약품 지정 획득(4/8). 이벤트 소화 이후 오늘 <span class="neg">-3.53%</span> 차익 실현 압력 [단기 악재]</li>
+<li><strong>[에코프로/에코프로비엠]</strong> 이차전지 부활 기대감 + 기관 매수세 유입. 에코프로비엠 증권사 평균 목표주가 223,000원으로 상향(1월 173,000원 대비 <span class="pos">+29%</span>). 에코프로 그룹 시총 9위 복귀 [호재]</li>
+<li><strong>[시장 전반]</strong> 외국인 귀환, 코스피 2026년 사상 최대 실적(영업이익 866조, 전년比<span class="pos">+182%</span>) 기대감과 머니무브(예금·부동산→국내주식) 가속화가 증시 상승 동력으로 작용 [호재]</li>
+</ul>
+</div>
+<div class="card"><h2>목표가·손절가 상태</h2>
+<p>*모든 종목 목표가·손절가 미설정 — 기술적 분석 기반 제안값 병기*</p>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>당일종가</th><th>목표가</th><th>손절가</th><th>상태</th></tr></thead><tbody><tr><td>유진투자증권</td><td>5,080</td><td>5,500</td><td>4,832</td><td>구간 내 (제안: 목표가 5,500원 / 손절가 4,832원 [MA20])</td></tr><tr><td>보성파워텍</td><td>10,030</td><td>10,285</td><td>9,356</td><td>구간 내 (제안: 목표가 10,285원 [저항선] / 손절가 9,356원 [지지선<span class="neg">-3%</span>])</td></tr><tr><td>에코프로</td><td>164,300</td><td>175,000</td><td>148,545</td><td>구간 내 (제안: 목표가 175,000원 / 손절가 148,545원 [MA20])</td></tr><tr><td>한라캐스트</td><td>16,290</td><td>18,000</td><td>14,320</td><td>구간 내 (제안: 목표가 18,000원 / 손절가 14,320원 [MA20])</td></tr><tr><td>에이비엘바이오</td><td>150,400</td><td>165,250</td><td>145,000</td><td><strong>손절 근접</strong> (지지선 156,450 하회 중. 제안: 목표가 165,250원 [저항선] / 손절가 145,000원)</td></tr><tr><td>비에이치아이</td><td>98,200</td><td>105,000</td><td>94,620</td><td>목표 근접 (저항선 97,500 돌파. 제안: 목표가 105,000원 / 손절가 94,620원 [MA20])</td></tr><tr><td>마이크로컨텍솔</td><td>34,850</td><td>40,000</td><td>30,382</td><td>구간 내 (제안: 목표가 40,000원 / 손절가 30,382원 [MA20])</td></tr><tr><td>이뮨온시아</td><td>7,350</td><td>7,730</td><td>7,144</td><td><strong>손절 근접</strong> (MA5·MA20 하회, 지지선 7,365 근접. 제안: 목표가 7,730원 [저항선] / 손절가 7,144원 [지지선<span class="neg">-3%</span>])</td></tr><tr><td>에코프로비엠</td><td>218,000</td><td>230,000</td><td>203,340</td><td>구간 내 (제안: 목표가 230,000원 / 손절가 203,340원 [MA20])</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>관심 종목 동향</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>당일종가</th><th>당일등락</th><th>RSI</th><th>특이사항</th></tr></thead><tbody><tr><td>이수페타시스</td><td>161,400</td><td><span class="pos">+21.2%</span></td><td>75.6</td><td>거래량 2.62배, 극강세. 오늘 전량 매도 완료(139,100원)</td></tr><tr><td>티엘비</td><td>82,300</td><td><span class="pos">+6.1%</span></td><td>62.2</td><td>반도체 PCB 테마 동반 강세</td></tr><tr><td>하나마이크론</td><td>39,900</td><td><span class="pos">+4.9%</span></td><td>68.5</td><td>오늘 잔량 전량 청산(37,900 / 40,000원)</td></tr><tr><td>케이씨텍</td><td>57,300</td><td><span class="pos">+4.4%</span></td><td>70.0</td><td>RSI 과매수 진입 경계</td></tr><tr><td>LS ELECTRIC</td><td>194,200</td><td><span class="pos">+5.1%</span></td><td>21.3</td><td>RSI 극과매도(21.3) 상태에서 강반등 — 기술적 반등 신호</td></tr><tr><td>HD현대일렉트릭</td><td>1,090,000</td><td><span class="pos">+3.0%</span></td><td>64.3</td><td>전력망 테마 상승세</td></tr><tr><td>포스코퓨처엠</td><td>257,500</td><td><span class="pos">+0.4%</span></td><td>80.1</td><td>RSI 80 초과 극과매수 — 단기 조정 위험</td></tr><tr><td>산일전기</td><td>208,500</td><td><span class="pos">+1.7%</span></td><td>72.4</td><td>오늘 전량 매도 완료(205,000 / 210,000원), RSI 과매수 잔류</td></tr><tr><td>삼천당제약</td><td>403,000</td><td><span class="neg">-15.2%</span></td><td>35.0</td><td>거래량 2.58배, 급락 — 원인 확인 필요</td></tr><tr><td>비츠로테크</td><td>16,800</td><td><span class="neg">-4.5%</span></td><td>69.6</td><td>전량 매도 완료 종목, 추가 하락</td></tr><tr><td>뉴로메카</td><td>67,400</td><td><span class="neg">-3.3%</span></td><td>53.3</td><td>로봇 섹터 약세</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>내일 방향성</h2>
+<p>*방향과 근거만 제시. 구체적 진입가·수량·분할구간은 아침 브리핑에서 확인.*</p>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>톤</th><th>근거</th></tr></thead><tbody><tr><td>에이비엘바이오</td><td>손절 경고</td><td>지지선(156,450) 이탈 + MA5·MA20 전부 위 + AACR 모멘텀 소진, 손실 <span class="neg">-21.39%</span> 확대 중</td></tr><tr><td>이뮨온시아</td><td>관망</td><td>지지선(7,365) 직전, MA5·MA20 하회, 하락 추세 — 반등 확인 전 추가 매수 보류</td></tr><tr><td>보성파워텍</td><td>관망</td><td>MA5 하회, 하락 추세, 거래량 감소 — 방향 전환 신호 미확인</td></tr><tr><td>비에이치아이</td><td>매도 검토</td><td>저항선(97,500) 돌파 상태(잔량 3주), 추가 분할 매도 적기 검토</td></tr><tr><td>에코프로</td><td>보유 유지</td><td>MA5·MA20 상단, 상승 추세, 이차전지 기관 매수 모멘텀 유효</td></tr><tr><td>에코프로비엠</td><td>보유 유지</td><td>신규 포지션(오늘 4주 매수), MA5·MA20 위, 목표주가 상향 모멘텀</td></tr><tr><td>마이크로컨텍솔</td><td>보유 유지</td><td>1주 소규모 보유, 상승 추세 유지, MA20 대비 충분한 버퍼</td></tr><tr><td>LS ELECTRIC</td><td>매수 검토</td><td>RSI 21.3 극과매도 + 오늘 <span class="pos">+5.1%</span> 기술적 반등 신호 — 전력망 섹터 강세 기조와 부합</td></tr><tr><td>삼천당제약</td><td>관망</td><td><span class="neg">-15.2%</span> 급락 원인 미확인, 거래량 급증 — 악재 파악 선행 필요</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>내일 추적 이벤트</h2>
+<ul>
+<li><strong>한국 소비자심리지수</strong> (4/23 06:00 발표) — 내수 경기 방향 가늠자</li>
+<li><strong>FOMC 금리 결정</strong> (4/30 한국시간 새벽 3시) — 시장 선반영 동향 주목</li>
+<li><strong>미국 1Q 2026 GDP</strong> (4/30 발표 예정) — FOMC와 동일 날짜, 증시 변동성 대비</li>
+</ul>
+</div>
+<div class="card"><h2>오늘의 정리</h2>
+<p>하나마이크론·이수페타시스·산일전기·마이크로컨텍솔·비에이치아이 등 7건 매도를 통해 실현손익 <strong>+104,245원</strong>을 확보했고, 에코프로비엠 4주를 평균 216,187원에 신규 편입했다. 에이비엘바이오가 지지선(156,450)을 이탈한 채 <span class="neg">-21.39%</span> 손실로 포트폴리오 최대 리스크 요인으로 부상한 만큼, 내일 추가 하락 여부와 제안 손절가(145,000원) 유효성이 최우선 확인 대상이다.</p>
+</div>
+</div>
+</body>
+</html>

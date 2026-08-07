@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" type="image/svg+xml" href="/stock-dashboard/favicon.svg">
+<title>2026-06-04-morning</title>
+<style>:root {
+  --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a;
+  --text: #e1e4ed; --muted: #8b8fa3; --accent: #6c8aff;
+  --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px; }
+header { padding: 24px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+header h1 { font-size: 1.4rem; font-weight: 600; }
+header .date { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+.card h2 { font-size: 1.1rem; margin-bottom: 14px; color: var(--accent); }
+.card h3 { font-size: 0.95rem; margin: 18px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 8px 0; }
+th { background: #22252f; color: var(--muted); text-align: left; padding: 8px 10px; font-weight: 500; white-space: nowrap; }
+td { padding: 7px 10px; border-top: 1px solid var(--border); white-space: nowrap; }
+tr:hover td { background: #1f2230; }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+.warn { color: var(--orange); }
+ul { padding-left: 20px; margin: 8px 0; }
+li { margin: 4px 0; }
+p { margin: 6px 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.report-list { list-style: none; padding: 0; }
+.report-list li { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.report-list li:last-child { border-bottom: none; }
+.report-list .type { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: #22252f; color: var(--muted); }
+.report-list .type.morning { color: var(--orange); border: 1px solid var(--orange); }
+.report-list .type.evening { color: var(--accent); border: 1px solid var(--accent); }
+.report-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8rem; }
+.report-controls select { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 0.8rem; cursor: pointer; }
+.report-pager { display: flex; gap: 6px; align-items: center; }
+.report-pager button { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.8rem; cursor: pointer; }
+.report-pager button:hover { background: var(--border); }
+.report-pager button:disabled { opacity: 0.3; cursor: default; }
+.report-pager button:disabled:hover { background: #22252f; }
+.report-pager .page-info { color: var(--muted); font-size: 0.75rem; }
+.back { display: inline-block; margin-bottom: 16px; color: var(--muted); font-size: 0.85rem; }
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.summary-item { background: #22252f; border-radius: 8px; padding: 14px; }
+.summary-item .label { color: var(--muted); font-size: 0.75rem; margin-bottom: 4px; }
+.summary-item .value { font-size: 1.2rem; font-weight: 600; }
+@media (max-width: 600px) {
+  table { font-size: 0.78rem; }
+  td, th { padding: 6px 6px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="../index.html">&larr; 대시보드</a>
+<header><h1>장 시작 전 브리핑 2026-06-04</h1></header>
+<p>가격 기준: 전일 종가 (2026-06-04)</p>
+<div class="card"><h2>해외증시</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>지수</th><th>종가</th><th>등락</th></tr></thead><tbody><tr><td>나스닥</td><td>26,853.97</td><td>-</td></tr><tr><td>S&P500</td><td>7,553.70</td><td>-</td></tr><tr><td>다우</td><td>50,687.10</td><td>-</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>오늘 핵심 포인트</h2>
+<ul>
+<li>미국 3대 지수는 전일 기준 혼조/강보합 흐름이며, 국내는 코스피 <span class="neg">-2.29%</span>, 코스닥 <span class="pos">+3.54%</span> 수준의 최근 흐름을 참고할 구간이다.</li>
+<li>현재 포트폴리오 핵심 리스크는 보유 종목 수익률(뉴로메카 <span class="neg">-24.14%</span> / 에스피지 <span class="neg">-12.78%</span>)과 로봇 섹터 집중도다.</li>
+<li>단기 기술 점수 상위 후보는 이뮨온시아, HD현대일렉트릭, 삼천당제약 순이며, 현금 38,247원 기준 실제 진입 가능성도 함께 봐야 한다.</li>
+</ul>
+</div>
+<div class="card"><h2>보유 종목 점검</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>평균단가</th><th>전일종가</th><th>수익률</th><th>5일선</th><th>20일선</th><th>RSI</th><th>추세</th><th>뉴스·신호</th></tr></thead><tbody><tr><td>뉴로메카</td><td>66,175</td><td>50,200</td><td><span class="neg">-24.14%</span></td><td>아래</td><td>아래</td><td>38.1</td><td>하락</td><td>v.daum.net: [기로에 선 K-피지컬AI] '로봇의 몸'과 'AI 두뇌'…뉴로메카·마음AI 부상 - v.daum.net</td></tr><tr><td>에스피지</td><td>129,104</td><td>112,600</td><td><span class="neg">-12.78%</span></td><td>아래</td><td>아래</td><td>43.0</td><td>횡보</td><td>매일경제 마켓: 특징주, 에스피지-로봇(산업용/협동로봇 등) 테마 상승세에 6.52% ↑ - 매일경제 마켓</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>목표가·손절가 점검</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>전일종가</th><th>목표가</th><th>손절가</th><th>지지선</th><th>저항선</th><th>상태</th></tr></thead><tbody><tr><td>뉴로메카</td><td>50,200</td><td>66,900</td><td>59,200</td><td>61,050</td><td>66,900</td><td>손절 근접</td></tr><tr><td>에스피지</td><td>112,600</td><td>133,250</td><td>117,700</td><td>121,300</td><td>133,250</td><td>손절 근접</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>단기 매매 TOP 3</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>순위</th><th>종목</th><th>섹터</th><th>전일종가</th><th>적정 매수 구간</th><th>5일선</th><th>20일선</th><th>RSI</th><th>선별이유(점수)</th><th>뉴스검증</th></tr></thead><tbody><tr><td>1</td><td>이뮨온시아</td><td>바이오_제약</td><td>4,595</td><td>1차 4,595 / 2차 4,500</td><td>5,661</td><td>5,887</td><td>29.9</td><td>RSI<=30, 거래량1.81배 (5점)</td><td>중립: 이뮨온시아 "IMC-002 병용요법, 삼중음성유방암서 ORR 25% 확인" - 히트뉴스</td></tr><tr><td>2</td><td>HD현대일렉트릭</td><td>전력망_에너지</td><td>1,028,000</td><td>1차 1,028,000 / 2차 1,007,400</td><td>1,037,800</td><td>1,182,850</td><td>26.5</td><td>RSI<=30 (3점)</td><td>호재: HD현대일렉트릭 북미 전시회 잇단 출격…수주 확대 총력전 - 더구루</td></tr><tr><td>3</td><td>삼천당제약</td><td>바이오_제약</td><td>314,500</td><td>1차 314,500 / 2차 308,200</td><td>324,000</td><td>368,650</td><td>28.6</td><td>RSI<=30 (3점)</td><td>중립: [약업분석] 삼천당제약 1Q 매출 649억원…영업익·순익 동반 확대 - 약업신문</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>장기 투자 TOP 3</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>순위</th><th>종목</th><th>섹터</th><th>전일종가</th><th>적정 매수 구간</th><th>장기 매력 포인트</th><th>리스크</th></tr></thead><tbody><tr><td>1</td><td>삼성전자우</td><td>반도체</td><td>222,500</td><td>215,280 ~ 193,805</td><td>반도체 대표주, 우선주 배당 메리트, 메모리 업황 회복 수혜</td><td>단기 급등 뒤 숨고르기 가능성</td></tr><tr><td>2</td><td>현대차2우B</td><td>자동차_배터리</td><td>269,000</td><td>276,400 ~ 269,400</td><td>우선주 배당 매력, 주주환원 기대, 보통주 대비 가격 메리트</td><td>판매 둔화나 우선주 괴리 확대 가능성</td></tr><tr><td>3</td><td>한미약품</td><td>바이오_제약</td><td>494,000</td><td>503,300 ~ 459,875</td><td>업종 대표 바이오, 실적 체력 양호, 이벤트 드리븐 모멘텀</td><td>임상 이벤트 결과에 따른 변동성</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>오늘의 액션 플랜</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>액션</th><th>추천시간대</th><th>분할구간</th><th>총수량·비중</th><th>근거</th></tr></thead><tbody><tr><td>뉴로메카</td><td>손절</td><td>오전 10시경</td><td>전량 ×8 @ 50,200</td><td>8주 / 4.4%</td><td>손절가 하회 또는 추세 훼손</td></tr><tr><td>에스피지</td><td>손절</td><td>오전 10시경</td><td>전량 ×78 @ 112,600</td><td>78주 / 95.2%</td><td>손절가 하회 또는 추세 훼손</td></tr><tr><td>이뮨온시아</td><td>매수</td><td>오전 10시경</td><td>1차 4,595 / 2차 4,500</td><td>현금 범위 내 분할</td><td>기술적 점수 상위 후보</td></tr><tr><td>HD현대일렉트릭</td><td>매수</td><td>오전 10시경</td><td>1차 1,028,000 / 2차 1,007,400</td><td>현금 범위 내 분할</td><td>기술적 점수 상위 후보</td></tr><tr><td>삼천당제약</td><td>매수</td><td>오전 10시경</td><td>1차 314,500 / 2차 308,200</td><td>현금 범위 내 분할</td><td>기술적 점수 상위 후보</td></tr><tr><td>삼성전자우</td><td>매수</td><td>장 초반(09:00~09:30)</td><td>1차 222,500 / 2차 227,000 / 3차 233,600</td><td>현금 범위 내 분할</td><td>기술적 점수 상위 후보</td></tr><tr><td>현대차2우B</td><td>매수</td><td>장 초반(09:00~09:30)</td><td>1차 269,000 / 2차 274,400 / 3차 282,400</td><td>현금 범위 내 분할</td><td>기술적 점수 상위 후보</td></tr><tr><td>한미약품</td><td>매수</td><td>장 초반(09:00~09:30)</td><td>1차 494,000 / 2차 503,900 / 3차 518,700</td><td>현금 범위 내 분할</td><td>기술적 점수 상위 후보</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>전략 요약</h2>
+<p>단기 점수 상위 후보는 분할 진입, 보유 종목은 목표가·손절가 기준 관리가 핵심이다.</p>
+</div>
+</div>
+</body>
+</html>

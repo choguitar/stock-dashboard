@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<link rel="icon" type="image/svg+xml" href="/stock-dashboard/favicon.svg">
+<title>실시간 주가 모니터</title>
+<style>
+:root{--bg:#0f1117;--card:#1a1d27;--border:#2a2d3a;--text:#e1e4ed;--muted:#8b8fa3;--accent:#6c8aff;--green:#22c55e;--red:#ef4444;--orange:#f59e0b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.header{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--border);margin-bottom:16px}
+.header h1{font-size:1.2rem;font-weight:600}
+.meta{color:var(--muted);font-size:0.8rem;display:flex;align-items:center;gap:8px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%}
+.dot.open{background:var(--green)}.dot.closed{background:var(--red)}
+.rbtn{background:#22252f;border:1px solid var(--border);color:var(--text);padding:4px 10px;border-radius:6px;cursor:pointer;font-size:0.8rem}
+.rbtn:hover{background:var(--border)}
+.controls{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;align-items:center}
+.sep{width:1px;height:24px;background:var(--border);margin:0 6px}
+.btn{background:#22252f;border:1px solid var(--border);color:var(--muted);padding:5px 12px;border-radius:6px;cursor:pointer;font-size:0.78rem;transition:all 0.15s}
+.btn:hover{background:var(--border);color:var(--text)}
+.btn.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:0.8rem}
+th{background:#22252f;color:var(--muted);text-align:left;padding:7px 8px;font-weight:500;white-space:nowrap}
+td{padding:6px 8px;border-top:1px solid var(--border);white-space:nowrap}
+tr:hover td{background:#1f2230}
+.pos{color:var(--green);font-weight:600}.neg{color:var(--red);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:14px}
+.gitem{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px}
+.gtitle{color:var(--muted);font-size:0.8rem;margin-bottom:8px;font-weight:500;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.gprice{color:#e6e8ef;font-size:0.85rem;font-weight:600;font-variant-numeric:tabular-nums}
+.gprice .chg{font-size:0.72rem;font-weight:500;margin-left:4px}
+.gprice .gavg{color:var(--muted);font-size:0.72rem;font-weight:500;margin-left:8px}
+.loading{text-align:center;color:var(--muted);padding:60px 0;font-size:0.9rem}
+.back{color:var(--muted);font-size:0.82rem;display:inline-block;margin-bottom:8px}
+.srow{display:flex;gap:20px;margin-bottom:12px;flex-wrap:wrap}
+.sitem .label{color:var(--muted);font-size:0.72rem}
+.sitem .value{font-size:1.05rem;font-weight:600}
+.rate-warn{background:#2a2000;color:var(--orange);padding:8px 12px;border-radius:6px;font-size:0.78rem;margin-bottom:12px;display:none}
+.search{background:#22252f;border:1px solid var(--border);color:var(--text);padding:5px 10px;border-radius:6px;font-size:0.78rem;width:140px}
+.search:focus{outline:none;border-color:var(--accent)}
+.search::placeholder{color:var(--muted)}
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr}table{font-size:0.72rem}
+  td,th{padding:5px}
+  .btn{padding:4px 8px;font-size:0.72rem}
+  .header h1{font-size:1rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="index.html">&larr; 대시보드</a>
+  <div class="header">
+    <h1>실시간 주가 모니터</h1>
+    <div class="meta">
+      <span id="status"></span>
+      <button class="rbtn" onclick="doFetch()">새로고침</button>
+    </div>
+  </div>
+  <div id="rateWarn" class="rate-warn"></div>
+  <div class="controls">
+    <button class="btn on" data-m="realtime" onclick="setMode('realtime')">실시간</button>
+    <button class="btn" data-m="daily" onclick="setMode('daily')">일봉</button>
+    <span id="zoomBtns" style="display:inline-flex;gap:4px;align-items:center;margin-left:4px">
+      <button class="btn" onclick="zoomWindow(-1)" title="더 넓게 (과거까지)">−</button>
+      <span id="bucketLabel" style="color:var(--muted);font-size:0.75rem;min-width:42px;text-align:center">30분</span>
+      <button class="btn" onclick="zoomWindow(1)" title="더 좁게 (최신만)">+</button>
+    </span>
+    <div class="sep"></div>
+    <button class="btn on" data-s="all" onclick="setSector('all')">전체</button>
+    <span id="sbtns"></span>
+    <div class="sep"></div>
+    <input type="text" class="search" id="searchInput" placeholder="종목명 검색..." oninput="setSearch(this.value)">
+  </div>
+  <div id="summary" class="card" style="display:none"></div>
+  <div id="charts" class="grid"></div>
+  <div id="loading" class="loading">데이터 로딩 중...</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<script>
+const GIST_ID = 'f97a4dd7831ac75e15accaca27ef1317';
+
+const API = 'https://api.github.com/gists/' + GIST_ID;
+let DATA = null, etag = null;
+let mode = 'realtime', sector = 'all', searchQuery = '';
+let cmap = {};
+// 표시 윈도우 크기(분). 0 = 전체. + 는 줌아웃(더 넓게), - 는 줌인(최신만).
+const WINDOW_STEPS = [30, 60, 120, 240, 0];
+let windowIdx = 0; // 기본 30분
+function currentWindow(){return WINDOW_STEPS[windowIdx];}
+function windowLabel(){const w=currentWindow();return w===0?'전체':w+'분';}
+
+/* ── Fetch with Conditional Requests ── */
+async function doFetch() {
+  try {
+    const hdrs = {};
+    if (etag) hdrs['If-None-Match'] = etag;
+    const r = await fetch(API, {headers: hdrs});
+
+    // Rate limit 체크
+    const remain = r.headers.get('X-RateLimit-Remaining');
+    const reset = r.headers.get('X-RateLimit-Reset');
+    if (remain !== null && parseInt(remain) < 10) {
+      const resetTime = new Date(parseInt(reset) * 1000).toLocaleTimeString('ko');
+      document.getElementById('rateWarn').style.display = 'block';
+      document.getElementById('rateWarn').textContent =
+        'API 요청 한도 임박 (잔여: ' + remain + '). ' + resetTime + ' 이후 리셋.';
+    } else {
+      document.getElementById('rateWarn').style.display = 'none';
+    }
+
+    if (r.status === 304) return; // 변동 없음 — 파싱/렌더링 생략
+    if (r.status === 403) {
+      document.getElementById('rateWarn').style.display = 'block';
+      document.getElementById('rateWarn').textContent =
+        'API 요청 한도 초과. 잠시 후 자동 재시도합니다.';
+      return;
+    }
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+
+    etag = r.headers.get('ETag');
+    const gist = await r.json();
+    const raw = gist.files['data.json'];
+    if (!raw) throw new Error('data.json not found in gist');
+    DATA = JSON.parse(raw.content);
+    document.getElementById('loading').style.display = 'none';
+    buildSectorBtns();
+    render();
+  } catch (e) {
+    if (!DATA) {
+      document.getElementById('loading').textContent =
+        '데이터를 불러올 수 없습니다. 수집기가 실행 중인지 확인하세요.';
+    }
+    console.error(e);
+  }
+}
+
+/* ── Controls ── */
+function setMode(m) {
+  mode = m;
+  document.querySelectorAll('[data-m]').forEach(
+    b => b.classList.toggle('on', b.dataset.m === m));
+  document.getElementById('zoomBtns').style.display = (m === 'realtime') ? 'inline-flex' : 'none';
+  render();
+}
+function zoomWindow(dir){
+  // dir > 0 = 줌인(최신만, 윈도우 축소), dir < 0 = 줌아웃(더 과거까지)
+  const next = windowIdx - dir;
+  if(next < 0 || next >= WINDOW_STEPS.length) return;
+  windowIdx = next;
+  document.getElementById('bucketLabel').textContent = windowLabel();
+  if(mode === 'realtime') render();
+}
+function setSector(s) {
+  sector = s;
+  document.querySelectorAll('[data-s]').forEach(
+    b => b.classList.toggle('on', b.dataset.s === s));
+  render();
+}
+function buildSectorBtns() {
+  if (!DATA) return;
+  // 섹터 버튼은 매번 재생성되므로 현재 sector 값에 따라 'on' 클래스 유지
+  document.getElementById('sbtns').innerHTML = DATA.sectors.map(s =>
+    '<button class="btn' + (sector === s ? ' on' : '') + '" data-s="' + s + '" onclick="setSector(\'' + s + '\')">' +
+    s.replace(/_/g,' ') + '</button>'
+  ).join('');
+  // 정적 "전체" 버튼도 동기화
+  document.querySelectorAll('[data-s="all"]').forEach(
+    b => b.classList.toggle('on', sector === 'all'));
+}
+let _searchTimer;
+function setSearch(q) {
+  // 키 입력마다 render하면 33개 차트가 매번 rebuild되어 렉 발생 → debounce
+  clearTimeout(_searchTimer);
+  _searchTimer = setTimeout(() => {
+    searchQuery = q.trim().toLowerCase();
+    render();
+  }, 200);
+}
+
+function matchesFilters(h) {
+  if (sector !== 'all' && h.sector !== sector) return false;
+  if (searchQuery && !h.name.toLowerCase().includes(searchQuery)) return false;
+  return true;
+}
+
+function filteredHoldings() {
+  if (!DATA) return [];
+  return (DATA.holdings || []).filter(matchesFilters);
+}
+
+function filteredAll() {
+  if (!DATA) return [];
+  const all = [...(DATA.holdings || []), ...(DATA.watchlist || [])];
+  return all.filter(matchesFilters);
+}
+
+/* ── Render ── */
+function render() {
+  if (!DATA) return;
+  renderStatus();
+  renderSummary();
+  renderCharts();
+}
+
+/* KST 기준 장 상태 (클라이언트 시계 기준 — Gist의 market_open은 스테일일 수 있음) */
+function isKSTMarketOpen() {
+  const fmt = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'Asia/Seoul', hour12: false,
+    weekday: 'short', hour: '2-digit', minute: '2-digit'
+  });
+  const p = fmt.formatToParts(new Date());
+  const wk = p.find(x => x.type === 'weekday').value;
+  if (wk === 'Sat' || wk === 'Sun') return false;
+  const hr = parseInt(p.find(x => x.type === 'hour').value);
+  const mn = parseInt(p.find(x => x.type === 'minute').value);
+  const mins = hr * 60 + mn;
+  return mins >= 540 && mins <= 940;  // 9:00~15:40 (장전 동시호가 제외)
+}
+
+function getKSTDateStr() {
+  return new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
+}
+
+function renderStatus() {
+  const o = isKSTMarketOpen();
+  const dataDate = DATA.updated_at.slice(0, 10);
+  const today = getKSTDateStr();
+  const stale = dataDate !== today && dataDate !== '초기화 중';
+
+  // 장 중인데 updated_at이 3분 이상 오래되면 collector 중단 의심
+  let liveStale = false;
+  if (o && !stale && DATA.updated_at !== '초기화 중') {
+    const ts = new Date(DATA.updated_at.replace(' ', 'T') + '+09:00').getTime();
+    liveStale = Date.now() - ts > 3 * 60 * 1000;
+  }
+
+  let label = '';
+  if (stale) {
+    label = ' <span style="color:var(--orange)">⚠ ' + dataDate + ' 데이터</span>';
+  } else if (liveStale) {
+    label = ' <span style="color:var(--orange)">⚠ 수집 중단?</span>';
+  }
+  document.getElementById('status').innerHTML =
+    '<span class="dot ' + (o?'open':'closed') + '"></span> ' +
+    (o?'장중':'장 마감') + ' | ' + DATA.updated_at.slice(11,16) + label;
+}
+
+function renderSummary() {
+  const fmt = n => n.toLocaleString();
+
+  // 요약 통계는 필터 무관하게 항상 전체 포트폴리오 기준
+  const allH = DATA.holdings || [];
+  let tEval=0, tInv=0;
+  allH.forEach(h => { tEval += h.price*h.shares; tInv += h.avg_price*h.shares; });
+  const tP=tEval-tInv, tp=tInv?tP/tInv*100:0, tc=tP>=0?'pos':'neg';
+
+  // 테이블 행은 필터된 결과만
+  const hs = filteredHoldings();
+  const rows = hs.map(h => {
+    const ev=h.price*h.shares, inv=h.avg_price*h.shares, pnl=ev-inv;
+    const pct=(h.price-h.avg_price)/h.avg_price*100;
+    const c=pnl>=0?'pos':'neg', cc=h.change_pct>=0?'pos':'neg';
+    return '<tr><td><strong>'+h.name+'</strong></td>'+
+      '<td>'+fmt(h.avg_price)+'</td>'+
+      '<td>'+fmt(h.price)+'</td>'+
+      '<td class="'+cc+'">'+(h.change_pct>=0?'+':'')+h.change_pct.toFixed(2)+'%</td>'+
+      '<td>'+h.shares+'</td><td>'+fmt(ev)+'</td>'+
+      '<td class="'+c+'">'+(pct>=0?'+':'')+pct.toFixed(1)+'%</td>'+
+      '<td class="'+c+'">'+(pnl>=0?'+':'')+fmt(pnl)+'</td></tr>';
+  }).join('');
+
+  const el=document.getElementById('summary');
+  el.style.display='block';
+  el.innerHTML=
+    '<div class="srow">'+
+    '<div class="sitem"><div class="label">총 평가</div><div class="value">'+fmt(tEval)+'</div></div>'+
+    '<div class="sitem"><div class="label">투자금</div><div class="value">'+fmt(tInv)+'</div></div>'+
+    '<div class="sitem"><div class="label">수익률</div><div class="value '+tc+'">'+(tp>=0?'+':'')+tp.toFixed(1)+'%</div></div>'+
+    '<div class="sitem"><div class="label">수익금</div><div class="value '+tc+'">'+(tP>=0?'+':'')+fmt(tP)+'</div></div>'+
+    '<div class="sitem"><div class="label">현금</div><div class="value">'+fmt(DATA.cash||0)+'</div></div>'+
+    '</div>'+
+    '<div style="overflow-x:auto"><table>'+
+    '<thead><tr><th>종목</th><th>평단</th><th>현재가</th><th>등락</th><th>수량</th><th>평가금</th><th>수익률</th><th>손익</th></tr></thead>'+
+    '<tbody>'+rows+'</tbody></table></div>';
+}
+
+/* ── Charts ── */
+function renderCharts() {
+  Object.values(cmap).forEach(c=>c.destroy()); cmap={};
+  const hs=filteredAll(), ct=document.getElementById('charts');
+  ct.innerHTML=hs.map(h=>{
+    const cc=h.change_pct>=0?'pos':'neg';
+    const sign=h.change_pct>=0?'+':'';
+    const avgHtml=h.avg_price
+      ? '<span class="gavg">평단 '+h.avg_price.toLocaleString()+'</span>'
+      : '';
+    const priceHtml=h.price
+      ? '<span class="gprice">'+h.price.toLocaleString()
+        +'<span class="chg '+cc+'">'+sign+h.change_pct.toFixed(2)+'%</span>'
+        +avgHtml+'</span>'
+      : '';
+    return '<div class="gitem"><div class="gtitle">'
+      + '<span>'+(h.avg_price?'':'<span style="color:var(--muted);font-size:0.7rem">[관심] </span>')
+      + h.name+' ('+h.code+')</span>'
+      + priceHtml+'</div>'
+      + '<canvas id="c_'+h.code+'" height="180"></canvas></div>';
+  }).join('');
+  hs.forEach(h=>{
+    const cv=document.getElementById('c_'+h.code);
+    if(!cv)return;
+    cmap[h.code]=mode==='realtime'?drawRT(cv,h):drawDaily(cv,h);
+  });
+}
+
+function bOpts(){
+  return{responsive:true,animation:{duration:0},
+    plugins:{legend:{display:true,labels:{color:'#8b8fa3',font:{size:10},boxWidth:12}}},
+    scales:{
+      x:{ticks:{color:'#8b8fa3',font:{size:9},maxRotation:45},grid:{color:'#2a2d3a'}},
+      y:{ticks:{color:'#8b8fa3',font:{size:9},callback:v=>v.toLocaleString()},grid:{color:'#2a2d3a'}}
+    }};
+}
+
+/* ── Realtime OHLC Chart ── */
+function drawRT(cv,h){
+  const raw=DATA.intraday[h.code]||[];
+  // 신 포맷: [time, o, h, l, c]. 구 포맷([time, price])은 o=h=l=c=price로 취급.
+  let ohlc=raw.map(x=>x.length>=5
+    ? {d:x[0],o:x[1],h:x[2],l:x[3],c:x[4]}
+    : {d:x[0],o:x[1],h:x[1],l:x[1],c:x[1]});
+  if(!ohlc.length) return new Chart(cv,{type:'bar',data:{labels:['데이터 없음'],datasets:[]},options:bOpts()});
+
+  // 분봉 이동평균은 윈도우 자르기 전 전체 시리즈로 계산 (윈도우 좌측 끝도 정확한 MA 사용)
+  const fullCloses=ohlc.map(d=>d.c);
+  let ma5=calcMA(fullCloses,5), ma20=calcMA(fullCloses,20);
+
+  // 윈도우 필터: 최근 N분만 (0 = 전체)
+  const win=currentWindow();
+  if(win>0 && ohlc.length>win){
+    ohlc=ohlc.slice(-win);
+    ma5=ma5.slice(-win);
+    ma20=ma20.slice(-win);
+  }
+
+  // 이전 종가 기반으로 도지(o==c) 바의 색상 판단
+  const bodies=ohlc.map(d=>[Math.min(d.o,d.c),Math.max(d.o,d.c)]);
+  const colors=ohlc.map((d,i)=>{
+    if(d.c>d.o) return '#22c55e';
+    if(d.c<d.o) return '#ef4444';
+    const prev=i>0?ohlc[i-1].c:d.o;
+    return d.c>=prev?'#22c55e':'#ef4444';
+  });
+  const bg=colors.map(c=>c==='#22c55e'?'rgba(34,197,94,0.6)':'rgba(239,68,68,0.6)');
+
+  let aH=Math.max(...ohlc.map(d=>d.h)), aL=Math.min(...ohlc.map(d=>d.l));
+  const pad=(aH-aL)*0.08||aH*0.01;
+
+  const opts=bOpts();
+  opts.scales.y.min=Math.max(0,aL-pad);
+  opts.scales.y.max=aH+pad;
+
+  const labels=ohlc.map(d=>d.d);
+  const datasets=[
+    {data:bodies,backgroundColor:bg,borderColor:colors,borderWidth:1,barPercentage:0.8,categoryPercentage:1.0,label:'OHLC',order:3},
+    {type:'line',data:ma5,borderColor:'#f59e0b',borderWidth:1.5,pointRadius:0,borderDash:[4,2],label:'5분MA',tension:0.3,fill:false,order:1,spanGaps:true},
+    {type:'line',data:ma20,borderColor:'#ef4444',borderWidth:1.5,pointRadius:0,borderDash:[6,3],label:'20분MA',tension:0.3,fill:false,order:1,spanGaps:true},
+  ];
+
+  return new Chart(cv,{type:'bar',
+    data:{labels,datasets},
+    options:opts,
+    plugins:[{id:'wicks',afterDatasetsDraw(chart){
+      const meta=chart.getDatasetMeta(0),ctx=chart.ctx,ys=chart.scales.y;
+      meta.data.forEach((bar,i)=>{
+        const d=ohlc[i]; if(!d||!bar)return;
+        const color=colors[i];
+        ctx.strokeStyle=color; ctx.lineWidth=1;
+        // 고저 꼬리
+        if(d.h!==d.l){
+          ctx.beginPath();
+          ctx.moveTo(bar.x,ys.getPixelForValue(d.h));
+          ctx.lineTo(bar.x,ys.getPixelForValue(d.l));
+          ctx.stroke();
+        }
+        // 도지(o==c) 또는 body 높이 거의 0일 때 수평 틱
+        const bodyPx=Math.abs(ys.getPixelForValue(d.o)-ys.getPixelForValue(d.c));
+        if(bodyPx<2){
+          const w=(bar.width||6)*0.8;
+          const y=ys.getPixelForValue(d.c);
+          ctx.beginPath();
+          ctx.lineWidth=1.5;
+          ctx.moveTo(bar.x-w/2,y);
+          ctx.lineTo(bar.x+w/2,y);
+          ctx.stroke();
+        }
+      });
+    }}]
+  });
+}
+
+/* ── Daily OHLC Bar Chart ── */
+function calcMA(c,p){return c.map((_,i)=>{if(i<p-1)return null;const s=c.slice(i-p+1,i+1);return Math.round(s.reduce((a,b)=>a+b,0)/p);});}
+
+function drawDaily(cv,h){
+  const e=DATA.daily[h.code]||[];
+  if(!e.length) return new Chart(cv,{type:'bar',data:{labels:['데이터 없음'],datasets:[]},options:bOpts()});
+
+  const ohlc=e.map(x=>({d:x[0],o:x[1],h:x[2],l:x[3],c:x[4]}));
+  const closes=ohlc.map(d=>d.c);
+  const ma5=calcMA(closes,5), ma20=calcMA(closes,20);
+
+  const bodies=ohlc.map(d=>[Math.min(d.o,d.c),Math.max(d.o,d.c)]);
+  const bg=ohlc.map(d=>d.c>=d.o?'rgba(34,197,94,0.6)':'rgba(239,68,68,0.6)');
+  const bd=ohlc.map(d=>d.c>=d.o?'#22c55e':'#ef4444');
+
+  const vH=ohlc.filter(d=>d.h>0);
+  let aH=Math.max(...vH.map(d=>d.h)), aL=Math.min(...vH.map(d=>d.l));
+  // 평단이 OHLC 범위 밖이면 Y축에 포함 (손실/이익 큰 종목에서 평단 선 clipping 방지)
+  if(h.avg_price){ aH=Math.max(aH,h.avg_price); aL=Math.min(aL,h.avg_price); }
+  const pad=(aH-aL)*0.08;
+
+  const opts=bOpts();
+  opts.scales.y.min=Math.max(0,aL-pad);
+  opts.scales.y.max=aH+pad;
+
+  const datasets=[
+    {data:bodies,backgroundColor:bg,borderColor:bd,borderWidth:1,barPercentage:0.5,label:'OHLC',order:3},
+    {type:'line',data:ma5,borderColor:'#f59e0b',borderWidth:1.5,pointRadius:0,borderDash:[4,2],label:'5일선',tension:0.3,fill:false,order:1},
+    {type:'line',data:ma20,borderColor:'#ef4444',borderWidth:1.5,pointRadius:0,borderDash:[6,3],label:'20일선',tension:0.3,fill:false,order:1},
+  ];
+  if(h.avg_price){
+    datasets.push({type:'line',data:Array(ohlc.length).fill(h.avg_price),borderColor:'#22c55e',borderWidth:1,pointRadius:0,borderDash:[4,4],label:'평단',fill:false,order:1});
+  }
+
+  return new Chart(cv,{type:'bar',
+    data:{labels:ohlc.map(d=>d.d),datasets},
+    options:opts,
+    plugins:[{id:'wicks',afterDatasetsDraw(chart){
+      const meta=chart.getDatasetMeta(0),ctx=chart.ctx,ys=chart.scales.y;
+      meta.data.forEach((bar,i)=>{
+        const d=ohlc[i]; if(!d||!d.h||!bar)return;
+        ctx.beginPath();
+        ctx.strokeStyle=d.c>=d.o?'#22c55e':'#ef4444';
+        ctx.lineWidth=1;
+        ctx.moveTo(bar.x,ys.getPixelForValue(d.h));
+        ctx.lineTo(bar.x,ys.getPixelForValue(d.l));
+        ctx.stroke();
+      });
+    }}]
+  });
+}
+
+/* ── Init ── */
+doFetch();
+setInterval(doFetch, 90000);
+</script>
+</body>
+</html>

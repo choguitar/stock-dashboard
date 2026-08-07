@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" type="image/svg+xml" href="/stock-dashboard/favicon.svg">
+<title>2026-05-01-morning</title>
+<style>:root {
+  --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a;
+  --text: #e1e4ed; --muted: #8b8fa3; --accent: #6c8aff;
+  --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px; }
+header { padding: 24px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+header h1 { font-size: 1.4rem; font-weight: 600; }
+header .date { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+.card h2 { font-size: 1.1rem; margin-bottom: 14px; color: var(--accent); }
+.card h3 { font-size: 0.95rem; margin: 18px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 8px 0; }
+th { background: #22252f; color: var(--muted); text-align: left; padding: 8px 10px; font-weight: 500; white-space: nowrap; }
+td { padding: 7px 10px; border-top: 1px solid var(--border); white-space: nowrap; }
+tr:hover td { background: #1f2230; }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+.warn { color: var(--orange); }
+ul { padding-left: 20px; margin: 8px 0; }
+li { margin: 4px 0; }
+p { margin: 6px 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.report-list { list-style: none; padding: 0; }
+.report-list li { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.report-list li:last-child { border-bottom: none; }
+.report-list .type { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: #22252f; color: var(--muted); }
+.report-list .type.morning { color: var(--orange); border: 1px solid var(--orange); }
+.report-list .type.evening { color: var(--accent); border: 1px solid var(--accent); }
+.report-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8rem; }
+.report-controls select { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: 0.8rem; cursor: pointer; }
+.report-pager { display: flex; gap: 6px; align-items: center; }
+.report-pager button { background: #22252f; color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; font-size: 0.8rem; cursor: pointer; }
+.report-pager button:hover { background: var(--border); }
+.report-pager button:disabled { opacity: 0.3; cursor: default; }
+.report-pager button:disabled:hover { background: #22252f; }
+.report-pager .page-info { color: var(--muted); font-size: 0.75rem; }
+.back { display: inline-block; margin-bottom: 16px; color: var(--muted); font-size: 0.85rem; }
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.summary-item { background: #22252f; border-radius: 8px; padding: 14px; }
+.summary-item .label { color: var(--muted); font-size: 0.75rem; margin-bottom: 4px; }
+.summary-item .value { font-size: 1.2rem; font-weight: 600; }
+@media (max-width: 600px) {
+  table { font-size: 0.78rem; }
+  td, th { padding: 6px 6px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="back" href="../index.html">&larr; 대시보드</a>
+<header><h1>장 시작 전 브리핑 2026-05-01</h1></header>
+<p>가격 기준: 전일 종가 (2026-04-30)</p>
+<div class="card"><h2>해외증시</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>지수</th><th>등락</th><th>비고</th></tr></thead><tbody><tr><td>다우존스</td><td><span class="neg">-0.57%</span> (48,861)</td><td>유가 폭등·금리 동결 부담</td></tr><tr><td>S&P 500</td><td><span class="neg">-0.04%</span></td><td></td></tr><tr><td>나스닥</td><td><span class="pos">+0.04%</span></td><td>인텔 <span class="pos">+12%</span> 주도</td></tr><tr><td>필라델피아 반도체</td><td>강세</td><td>인텔 12% 급등</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>오늘 핵심 포인트</h2>
+<p>미국 3대 지수 혼조 마감. 국제유가 6% 폭등(배럴당 ~120달러)·FOMC 금리 동결로 다우·S&P500 소폭 하락, 나스닥은 반도체(인텔 <span class="pos">+12%</span>) 강세로 보합.</p>
+<p>전일(4/30) 코스피 6,615(<span class="pos">+2.15%</span>), 코스닥 1,226(<span class="pos">+1.86%</span>) 사상 최고. 반도체·전력기기·2차전지 실적 전망 상향이 매수 동력.</p>
+<p>5/1 근로자의 날(유급휴일) — 주식시장 정상 개장. 에코프로 1Q26 영업익 602억(42배↑), 에코프로비엠 영업익 209억(흑자 전환) 실적 발표.</p>
+</div>
+<div class="card"><h2>보유 종목 점검</h2>
+<blockquote style="border-left:3px solid var(--accent);padding:8px 12px;color:var(--muted);margin:8px 0;">
+<p>⚠️ 자동차_배터리 섹터 비중 44.7% — 40% 초과 (에코프로+한라캐스트+에코프로비엠)</p>
+</blockquote>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>평균단가</th><th>전일종가</th><th>수익률</th><th>5일선</th><th>20일선</th><th>RSI</th><th>추세</th><th>뉴스·신호</th></tr></thead><tbody><tr><td>에코프로</td><td>169,486</td><td>152,900</td><td><strong><span class="neg">-9.79%</span></strong></td><td>아래(157,460)</td><td>위(152,135)</td><td>49.0</td><td>하락</td><td>1Q26 영업익 602억(42배↑) — 실적 호재</td></tr><tr><td>한라캐스트</td><td>17,905</td><td>17,130</td><td><span class="neg">-4.33%</span></td><td>위(16,980)</td><td>위(14,948)</td><td>55.6</td><td>상승</td><td>-</td></tr><tr><td>에코프로비엠</td><td>216,187</td><td>206,000</td><td><span class="neg">-4.71%</span></td><td>아래(209,500)</td><td>위(206,190)</td><td>51.9</td><td>하락</td><td>1Q26 영업익 209억, 실적 발표</td></tr><tr><td>지투지바이오</td><td>81,580</td><td>85,600</td><td><strong><span class="pos">+4.93%</span></strong></td><td>위(82,540)</td><td>위(74,325)</td><td>55.5</td><td>상승</td><td>외국인 순매수</td></tr><tr><td>HPSP</td><td>51,000</td><td>52,600</td><td><span class="pos">+3.14%</span></td><td>아래(53,580)</td><td>위(46,792)</td><td>57.1</td><td>하락</td><td>-</td></tr><tr><td>삼성전자우</td><td>156,367</td><td>158,300</td><td><span class="pos">+1.24%</span></td><td>아래(159,120)</td><td>위(146,105)</td><td>59.7</td><td>상승</td><td>-</td></tr><tr><td>뉴로메카</td><td>66,700</td><td>64,800</td><td><span class="neg">-2.85%</span></td><td>아래(66,860)</td><td>위(63,530)</td><td>47.9</td><td>하락</td><td>에스피지·로보티즈 외국인 순매수 동반</td></tr><tr><td>에스피지</td><td>133,150</td><td>127,600</td><td><span class="neg">-4.17%</span></td><td>아래(128,920)</td><td>위(115,355)</td><td>57.3</td><td>상승</td><td>외국인 순매수 (AI·스마트팩토리)</td></tr><tr><td>엘앤씨바이오</td><td>70,000</td><td>63,200</td><td><strong><span class="neg">-9.71%</span></strong></td><td>아래(69,100)</td><td>아래(69,010)</td><td>35.6</td><td>하락</td><td>외국인 순매수 — 단, 손절가 이탈</td></tr><tr><td>비츠로테크</td><td>17,340</td><td>16,950</td><td><span class="neg">-2.25%</span></td><td>아래(17,122)</td><td>위(14,973)</td><td>62.0</td><td>상승</td><td>-</td></tr><tr><td>디앤디파마텍</td><td>75,900</td><td>74,200</td><td><span class="neg">-2.24%</span></td><td>아래(78,800)</td><td>아래(76,130)</td><td>43.7</td><td>하락</td><td>외국인 순매수 동반</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>목표가·손절가 점검</h2>
+<p>*portfolio.json 값 전부 null → 기술적 분석 기반 제안값. 목표가=저항선, 손절가=지지선×0.97*</p>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>전일종가</th><th>목표가(제안)</th><th>손절가(제안)</th><th>지지선</th><th>저항선</th><th>상태</th></tr></thead><tbody><tr><td>에코프로</td><td>152,900</td><td>153,950</td><td>144,700</td><td>149,200</td><td>153,950</td><td>목표 근접</td></tr><tr><td>한라캐스트</td><td>17,130</td><td>14,610</td><td>13,500</td><td>13,955</td><td>14,610</td><td><strong>목표 도달 이상</strong></td></tr><tr><td>에코프로비엠</td><td>206,000</td><td>210,750</td><td>197,600</td><td>203,750</td><td>210,750</td><td>구간 내</td></tr><tr><td>지투지바이오</td><td>85,600</td><td>73,850</td><td>69,300</td><td>71,450</td><td>73,850</td><td><strong>목표 도달 이상</strong></td></tr><tr><td>HPSP</td><td>52,600</td><td>46,275</td><td>42,500</td><td>43,825</td><td>46,275</td><td><strong>목표 도달 이상</strong></td></tr><tr><td>삼성전자우</td><td>158,300</td><td>148,600</td><td>140,000</td><td>144,350</td><td>148,600</td><td><strong>목표 도달 이상</strong></td></tr><tr><td>뉴로메카</td><td>64,800</td><td>67,400</td><td>60,800</td><td>62,700</td><td>67,400</td><td>구간 내</td></tr><tr><td>에스피지</td><td>127,600</td><td>117,150</td><td>109,200</td><td>112,600</td><td>117,150</td><td><strong>목표 도달 이상</strong></td></tr><tr><td>엘앤씨바이오</td><td>63,200</td><td>72,050</td><td>65,800</td><td>67,800</td><td>72,050</td><td><strong>손절 근접</strong> (손절가 이탈)</td></tr><tr><td>비츠로테크</td><td>16,950</td><td>17,120</td><td>15,800</td><td>16,290</td><td>17,120</td><td>목표 근접</td></tr><tr><td>디앤디파마텍</td><td>74,200</td><td>80,100</td><td>74,000</td><td>76,250</td><td>80,100</td><td><strong>손절 근접</strong></td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>단기 매매 TOP 3</h2>
+<p>*점수 기준: RSI≤30(+3), 지지선 3%이내(+2), 거래량 1.5배(+2), MA5>MA20(+1), 추세 상승(+1)*</p>
+<div style="overflow-x:auto;"><table><thead><tr><th>순위</th><th>종목</th><th>섹터</th><th>전일종가</th><th>적정 매수 구간</th><th>5일선</th><th>20일선</th><th>RSI</th><th>선별이유(점수)</th><th>뉴스검증</th></tr></thead><tbody><tr><td>1</td><td>산일전기</td><td>전력망</td><td>266,000</td><td>230,000~240,000</td><td>위(232,500)</td><td>위(188,950)</td><td>77.6</td><td>거래량2.86x(+2), MA5>MA20(+1), 추세상승(+1) — 4점</td><td>호재 — 수주 33조·수주 호황</td></tr><tr><td>2</td><td>마이크로컨텍솔</td><td>반도체</td><td>37,400</td><td>35,000~36,500</td><td>위(35,920)</td><td>위(32,845)</td><td>67.8</td><td>거래량1.92x(+2), MA5>MA20(+1), 추세상승(+1) — 4점</td><td>중립 — 관련 뉴스 없음</td></tr><tr><td>3</td><td>LS ELECTRIC</td><td>전력망</td><td>278,000</td><td>270,000~278,000</td><td>아래(258,900)</td><td>아래(386,065)</td><td>28.5</td><td>RSI과매도(+3), 추세상승(+1) — 4점</td><td>호재 — 수주잔고 4.1조, 매출 YoY<span class="pos">+19%</span></td></tr></tbody></table></div>
+<p>*산일전기: RSI 77.6 과매수 — 점수 1위이나 단기 피크아웃 위험. 액션 플랜에서 관망 조정.*</p>
+</div>
+<div class="card"><h2>장기 투자 TOP 3</h2>
+<div style="overflow-x:auto;"><table><thead><tr><th>순위</th><th>종목</th><th>섹터</th><th>전일종가</th><th>적정 매수 구간</th><th>장기 매력 포인트</th><th>리스크</th></tr></thead><tbody><tr><td>1</td><td>삼성전자우</td><td>반도체</td><td>158,300</td><td>144,000~148,000 (20일선·지지선)</td><td>반도체 업종 압도적 1위 우선주, 보통주 대비 배당 우위, 이미 보유 중 추가 적립 가능</td><td>반도체 업황 둔화, 메모리 가격 변동</td></tr><tr><td>2</td><td>HD현대일렉트릭</td><td>전력망</td><td>1,252,000</td><td>1,044,000~1,091,000 (지지선·저항선)</td><td>전력기기 업종 대표, 1Q26 영업익 2,583억·수주잔액 12.5조, AI 전력인프라 슈퍼사이클</td><td>RSI 67.1 과열 구간, 고주가로 소액 진입 어려움</td></tr><tr><td>3</td><td>현대차2우B</td><td>자동차</td><td>248,000</td><td>244,000~252,000 (지지선~저항선)</td><td>현대차 우선주, 보통주 대비 저가 진입·배당 우위, MA5>MA20 단기 상승</td><td>미국 관세·유가 상승으로 완성차 수익성 압박</td></tr></tbody></table></div>
+</div>
+<div class="card"><h2>오늘의 액션 플랜</h2>
+<p>*현금: 1,357,339원 / 총 포트폴리오(주식+현금): 6,474,329원 / 종목당 20% 한도: 1,294,866원*</p>
+<p>*⚠️ 자동차_배터리 섹터 44.7% 초과 — 해당 섹터 신규 매수 자제*</p>
+<div style="overflow-x:auto;"><table><thead><tr><th>종목</th><th>액션</th><th>추천시간대</th><th>분할구간</th><th>총수량·비중</th><th>근거</th></tr></thead><tbody><tr><td>엘앤씨바이오</td><td><strong>손절</strong></td><td>장 초반(09:00~09:30)</td><td>전량 ×9 @ 63,200</td><td>9주 회수 568,800원</td><td>손절가(65,800) 이탈, MA5·MA20 모두 아래, 하락추세 — 완전 청산</td></tr><tr><td>LS ELECTRIC</td><td><strong>매수</strong></td><td>오전 10시경</td><td>1차: 278,000×2 / 2차: 272,000×2</td><td>4주 / 비중 17.0%</td><td>축소분할(RSI 28.5 과매도), 수주 호재, 손절회수 cash 활용</td></tr><tr><td>마이크로컨텍솔</td><td><strong>매수</strong></td><td>오후 2시 이후</td><td>1차: 37,400×11 / 2차: 38,100×6 / 3차: 39,200×4</td><td>21주 / 비중 12.3%</td><td>역피라미딩(RSI 67.8·상승 추세 확인), 거래량 1.92x</td></tr><tr><td>산일전기</td><td><strong>관망</strong></td><td>-</td><td>-</td><td>-</td><td>RSI 77.6 과매수 — 기술적 피크아웃 위험, 다음 눌림목 확인 후 재평가</td></tr><tr><td>디앤디파마텍</td><td><strong>관망</strong></td><td>-</td><td>-</td><td>-</td><td>손절 근접(74,200 vs 손절 74,000), 추세 반전 확인 필요</td></tr><tr><td>에코프로</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>실적 호조(42배↑), 지지선(149,200) 근접 주시</td></tr><tr><td>에코프로비엠</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>지지선(203,750) 1.1% 이내 — 이탈 시 손절 검토</td></tr><tr><td>한라캐스트</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>상승추세 유지, MA5>MA20</td></tr><tr><td>지투지바이오</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>상승추세·외국인 순매수 유지</td></tr><tr><td>HPSP</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>저항선(46,275) 대비 고점 유지</td></tr><tr><td>삼성전자우</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>상승추세, 목표 초과 — 추가 매수는 지지선(144,000) 대기</td></tr><tr><td>뉴로메카</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>지지선(62,700) 유지 여부 주시</td></tr><tr><td>에스피지</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>외국인 순매수, 상승추세 유지</td></tr><tr><td>비츠로테크</td><td>보유</td><td>-</td><td>-</td><td>-</td><td>목표가(17,120) 도달 임박 — 저항선 돌파 시 일부 익절 고려</td></tr><tr><td>삼성전자우 (장기추가)</td><td>관망</td><td>-</td><td>1차: 144,000 / 2차: 146,000 (현금 소진 후 참고)</td><td>현금 부족 — 구간 참고용</td><td>장기 적립 타이밍, 지지선 근처 분할</td></tr><tr><td>HD현대일렉트릭 (장기)</td><td>관망</td><td>-</td><td>1차: 1,044,000 / 2차: 1,068,000 (현금 소진 후 참고)</td><td>현금 부족 — 구간 참고용</td><td>슈퍼사이클 장기 보유, 지지선 진입</td></tr><tr><td>현대차2우B (장기)</td><td>관망</td><td>-</td><td>1차: 244,500 / 2차: 240,000 (현금 소진 후 참고)</td><td>현금 부족 — 구간 참고용</td><td>우선주 배당 우위, 지지선 근접</td></tr></tbody></table></div>
+<p>*매수 총액 점검: LS ELECTRIC 1,100,000 + 마이크로컨텍솔 796,800 = 1,896,800원 / 엘앤씨바이오 손절 회수 568,800 포함 가용현금 1,926,139원 ✓*</p>
+</div>
+<div class="card"><h2>전략 요약</h2>
+<p>엘앤씨바이오 손절(손절가 이탈)로 현금을 확보하고, RSI 과매도의 LS ELECTRIC(수주 호재)과 모멘텀 강한 마이크로컨텍솔에 분할 진입하는 방어적 교체 매매를 실행한다. 자동차_배터리 섹터 집중도(44.7%)가 한도를 초과한 상태로 해당 섹터 신규 매수는 자제한다.</p>
+</div>
+</div>
+</body>
+</html>
